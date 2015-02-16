@@ -7,7 +7,7 @@
     <!--<![endif]-->
     <!-- start: HEAD -->
     <head>
-        <title>Clip-One - Responsive Admin Template</title>
+        <title>Admin Page</title>
         <!-- start: META -->
         <meta charset="utf-8" />
         <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
@@ -28,6 +28,7 @@
         <link rel="stylesheet" href="{{asset('assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/theme_light.css')}}" type="text/css" id="skin_color">
         <link rel="stylesheet" href="{{asset('assets/css/print.css')}}" type="text/css" media="print"/>
+        <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css')}}">
         <!--[if IE 7]>
         <link rel="stylesheet" href="{{asset('assets/plugins/font-awesome/css/font-awesome-ie7.min.css')}}">
         <![endif]-->
@@ -62,12 +63,15 @@
         <script src="{{asset('assets/plugins/ckeditor/ckeditor.js')}}"></script>
         <script src="{{asset('assets/plugins/ckeditor/adapters/jquery.js')}}"></script>
         <script src='{{asset('assets/js/angular.min.js')}}'></script>
+        <script src='{{asset('assets/js/ui-bootstrap-tpls-0.12.0.min.js')}}'></script>
+        <script src='{{asset('assets/js/angular-file-upload.min.js')}}'></script>
+        <script src='{{asset('assets/js/angular-file-upload-shim.min.js')}}'></script>
         <script src='{{asset('assets/js/admin.js')}}'></script>
         <script>
-                                    jQuery(document).ready(function() {
-                            CKEDITOR.disableAutoInline = true;
-                                    $('textarea.ckeditor').ckeditor();
-                            });
+                                            jQuery(document).ready(function() {
+                                    CKEDITOR.disableAutoInline = true;
+                                            $('textarea.ckeditor').ckeditor();
+                                    });
 
         </script>
         <!-- end: MAIN JAVASCRIPTS -->

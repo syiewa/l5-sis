@@ -63,6 +63,8 @@ class DataStatisController extends Controller {
      */
     public function show($id) {
         //
+        $data = Data::find($Id);
+        return response()->json($data);
     }
 
     /**
@@ -73,6 +75,9 @@ class DataStatisController extends Controller {
      */
     public function edit($id) {
         //
+        $data['title'] = 'Edit Data Statis';
+        $data['data'] = Data::find($id);
+        return view('backend.datastatis.edit', $data);
     }
 
     /**
@@ -81,8 +86,13 @@ class DataStatisController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update($id) {
+    public function update(Request $request, $id) {
         //
+        $input = $request->all();
+        $data = Data::find($id);
+        if ($data->update($input)) {
+            return response()->json(array('success' => TRUE, 'msg' => 'Data Berhasil diupdate'));
+        }
     }
 
     /**
@@ -93,6 +103,10 @@ class DataStatisController extends Controller {
      */
     public function destroy($id) {
         //
+        $data = Data::find($id);
+        if ($data->delete()) {
+            return response()->json(array('success' => TRUE, 'msg' => 'Data Berhasil Dihapus'));
+        }
     }
 
 }
