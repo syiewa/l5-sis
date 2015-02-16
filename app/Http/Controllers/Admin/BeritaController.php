@@ -45,28 +45,28 @@ class BeritaController extends Controller {
         //
         $destinationPath = public_path() . '/upload';
         $input = $request->except('file');
-        if ($input['data']) {
-            $data = json_decode($input['data']);
+        $data = json_decode($input['data']);
+        if (isset($data->id_berita)) {
             $berita = Berita::find($data->id_berita);
             if ($request->hasFile('file')) {
-                $request->file('file')->move($destinationPath);
-                $berita->gambar = $request->file('file')->getClientOriginalName();
                 $checkfile = file_exists($destinationPath . '/' . $berita->gambar);
                 if ($checkfile) {
                     unlink($destinationPath . '/' . $berita->gambar);
                 }
+                $berita->gambar = $request->file('file')->getClientOriginalName();
+                $request->file('file')->move($destinationPath, $berita->gambar);
             }
-            $berita->judul_berita = $data->judul_berita;
-            $berita->isi = $data->isi;
         } else {
-            $berita = new Berita($input);
+            $berita = new Berita();
             $berita->tanggal = date('Y-m-d');
             $berita->waktu = date('H:i:s');
             if ($request->hasFile('file')) {
-                $request->file('file')->move($destinationPath);
                 $berita->gambar = $request->file('file')->getClientOriginalName();
+                $request->file('file')->move($destinationPath, $berita->gambar);
             }
         }
+        $berita->judul_berita = $data->judul_berita;
+        $berita->isi = $data->isi;
         if ($berita->save()) {
             return response()->json(array('success' => TRUE));
         };

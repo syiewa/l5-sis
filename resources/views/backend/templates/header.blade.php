@@ -67,31 +67,36 @@
                         Dashboard
                     </a>
                 </li>
-                <li>
+                <li class="{{setActive('admin.datastatis.index')}}">
                     <a href="{{route('admin.datastatis.index')}}">
-                        Data Statis
+                        Data Statis   
                     </a>
                 </li>
-                <li>
+                <li class="{{setActive('admin.berita.index')}} || {{setActive('admin.pengumuman.index')}}">
                     <a href="javascript:void(0)" class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown">
                         <span class="selected"></span>
                         Data Dinamis <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li>
+                        <li class="{{setActive('admin.berita.index')}}">
                             <a href="{{route('admin.berita.index')}}">
                                 Index Berita
                             </a>
                         </li>
+                        <li class="{{setActive('admin.pengumuman.index')}}">
+                            <a href="{{route('admin.pengumuman.index')}}">
+                                Pengumuman
+                            </a>
+                        </li>
                     </ul>
                 </li>
-                <li class="active">
+                <li>
                     <a href="javascript:void(0)" class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown">
                         <span class="selected"></span>
                         Layouts <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="active">
+                        <li>
                             <a href="javascript:void(0)">
                                 Horizontal Menu
                             </a>

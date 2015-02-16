@@ -23,12 +23,16 @@ Route::controllers([
 Route::group(['prefix' => 'admin'], function() {
     Route::resource('datastatis', 'Admin\DataStatisController');
     Route::resource('berita', 'Admin\BeritaController');
+    Route::resource('pengumuman', 'Admin\PengumumanController');
 });
 Route::group(['prefix' => 'api'], function() {
     Route::get('datastatis', 'Admin\DataStatisController@apiDataStatis');
     Route::get('datastatis/{id}', 'Admin\DataStatisController@show');
     Route::get('menu', 'Admin\DataStatisController@apiCreateMenu');
-    
-    Route::get('berita','Admin\BeritaController@apiBerita');
-    Route::get('berita/{id}','Admin\BeritaController@show');
+
+    Route::get('berita', 'Admin\BeritaController@apiBerita');
+    Route::get('berita/{id}', 'Admin\BeritaController@show');
+
+    Route::get('pengumuman', 'Admin\PengumumanController@apiPengumuman');
+    Route::get('pengumuman/{id}', 'Admin\PengumumanController@show');
 });
