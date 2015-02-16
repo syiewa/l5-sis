@@ -24,4 +24,5 @@ Route::resource('datastatis', 'Admin\DataStatisController');
 Route::group(['prefix' => 'api'], function()
 {
     Route::get('datastatis', 'Admin\DataStatisController@apiDataStatis');
+    Route::get('menu', 'Admin\DataStatisController@apiCreateMenu');
 });

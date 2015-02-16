@@ -69,10 +69,11 @@
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="status in data | filter:query">
-                                        <td class="center"><% status['id'] %></td>
-                                        <td><% status['title'] %></td>
-                                        <td><% status['id_parent'] %></td>
-                                        <td><% status['level'] %></td>
+                                        
+                                        <td class="center"><% status['menu']['id'] %></td>
+                                        <td><% status['menu']['title'] %></td>
+                                        <td><% status['menu']['id_parent'] %></td>
+                                        <td><% status['menu']['level'] %></td>
                                         <td class="center">
                                             <div class="visible-md visible-lg hidden-sm hidden-xs">
                                                 <a data-original-title="Edit" data-placement="top" class="btn btn-xs btn-teal tooltips" href="#"><i class="fa fa-edit"></i></a>
