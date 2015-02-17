@@ -47,6 +47,10 @@ app.controller('datastatis', function($scope, $http, $filter, $timeout, baseURL)
 app.controller('datastatiscreate', function($scope, $http, $filter, baseURL) {
     $scope.data = {};
     $scope.menu = {};
+    $scope.alerts = [];
+    $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+    };
     $http.get(baseURL.url('api/menu')).success(function(data) {
         $scope.menu = data;
     });
@@ -56,6 +60,12 @@ app.controller('datastatiscreate', function($scope, $http, $filter, baseURL) {
             if (data.success) {
                 window.location.replace(baseURL.url('admin/datastatis'));
             }
+        }).error(function(e) {
+            var x;
+            for (x in e) {
+                $scope.alerts.push({'type': "error", 'msg': (e[x][0])});
+            }
+            console.log($scope.alerts);
         });
     }
 });

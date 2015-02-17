@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\DataStatisPostRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Data;
@@ -46,7 +47,7 @@ class DataStatisController extends Controller {
      *
      * @return Response
      */
-    public function store(Request $request) {
+    public function store(DataStatisPostRequest $request) {
         //
         $input = $request->all();
         $data = new Data($input);
