@@ -7,17 +7,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <!-- start: PAGE TITLE & BREADCRUMB -->
-                <ol class="breadcrumb">
-                    <li>
-                        <i class="clip-home-3"></i>
-                        <a href="#">
-                            Home
-                        </a>
-                    </li>
-                    <li class="active">
-                        Dashboard
-                    </li>
-                </ol>
+{!! Breadcrumbs::render('pengumumanedit'); !!}
                 <div class="page-header">
                     <h1>{{$title}}</h1>
                 </div>
@@ -38,7 +28,7 @@
                         <div id="panel_tab2_example1" class="tab-pane active">
                             <form class="form-horizontal" role="form" name="beritaForm" ng-submit="submit({{$data->id_pengumuman}})" enctype="multipart/form-data">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label" for="form-field-1"> Judul Berita </label>
+                                    <label class="col-sm-2 control-label" for="form-field-1"> Judul Pengumuman </label>
                                     <div class="col-sm-9">
                                         <input type='text' class='col-sm-10 form-control' name='judul_pengumuman' ng-model="data.judul_pengumuman"/>
                                     </div>

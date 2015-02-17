@@ -6,18 +6,7 @@
         <!-- start: PAGE HEADER -->
         <div class="row">
             <div class="col-sm-12">
-                <!-- start: PAGE TITLE & BREADCRUMB -->
-                <ol class="breadcrumb">
-                    <li>
-                        <i class="clip-home-3"></i>
-                        <a href="#">
-                            Home
-                        </a>
-                    </li>
-                    <li class="active">
-                        Dashboard
-                    </li>
-                </ol>
+{!! Breadcrumbs::render('agendacreate'); !!}
                 <div class="page-header">
                     <h1>{{$title}}</h1>
                 </div>
@@ -111,7 +100,7 @@
                                         <button class="btn btn-success" type="submit">
                                             Save
                                         </button>
-                                        <a href='{{route('admin.berita.index')}}' class="btn btn-blue">Back</a>
+                                        <a href='{{route('admin.agenda.index')}}' class="btn btn-blue">Back</a>
                                     </div>
                                 </div>
                             </form>

@@ -6,18 +6,7 @@
         <!-- start: PAGE HEADER -->
         <div class="row">
             <div class="col-sm-12">
-                <!-- start: PAGE TITLE & BREADCRUMB -->
-                <ol class="breadcrumb">
-                    <li>
-                        <i class="clip-home-3"></i>
-                        <a href="#">
-                            Home
-                        </a>
-                    </li>
-                    <li class="active">
-                        Dashboard
-                    </li>
-                </ol>
+{!! Breadcrumbs::render('siswaedit',$kelas_id); !!}
                 <div class="page-header">
                     <h1>{{$title}}</h1>
                 </div>
@@ -30,7 +19,7 @@
                     <ul class="nav nav-tabs tab-bricky" id="myTab">
                         <li class="active">
                             <a data-toggle="tab" href="#panel_tab2_example1">
-                                <i class="green fa fa-home"></i> Tambah Siswa
+                                <i class="green fa fa-home"></i> {{$title}}
                             </a>
                         </li>
                     </ul>

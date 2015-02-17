@@ -16,7 +16,7 @@ class AgendaController extends Controller {
      */
     public function index() {
         //
-        $data['title'] = 'Menu Agenda Sekolah';
+        $data['title'] = 'Agenda Sekolah';
         return view('backend.agenda.index', $data);
     }
 

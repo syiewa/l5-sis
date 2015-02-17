@@ -70,7 +70,7 @@ class PengumumanController extends Controller {
      */
     public function edit($id) {
         //
-        $data['title'] = 'Edit Berita';
+        $data['title'] = 'Edit Pengumuman';
         $data['data'] = Pengumuman::find($id);
         return view('backend.pengumuman.edit', $data);
     }

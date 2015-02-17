@@ -7,18 +7,8 @@
         <!-- start: PAGE HEADER -->
         <div class="row">
             <div class="col-sm-12">
+                {!! Breadcrumbs::render('datastatis') !!}
                 <!-- start: PAGE TITLE & BREADCRUMB -->
-                <ol class="breadcrumb">
-                    <li>
-                        <i class="clip-home-3"></i>
-                        <a href="#">
-                            Home
-                        </a>
-                    </li>
-                    <li class="active">
-                        Dashboard
-                    </li>
-                </ol>
                 <div class="page-header">
                     <h1>
                         {{$title}} <br />
