@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Data;
-use App\Models\Menu;
+use Illuminate\Http\Request;
+use App\Models\Agenda;
 
-class DataStatisController extends Controller {
+class AgendaController extends Controller {
 
     /**
      * Display a listing of the resource.
@@ -16,12 +16,12 @@ class DataStatisController extends Controller {
      */
     public function index() {
         //
-        $data['title'] = 'Menu Data Statis';
-        return view('backend.datastatis.index', $data);
+        $data['title'] = 'Menu Agenda Sekolah';
+        return view('backend.agenda.index', $data);
     }
 
-    public function apiDataStatis() {
-        $data = Data::with('menu')->orderBy('data_id')->get();
+    public function apiAgenda() {
+        $data = Agenda::orderBy('tgl_mulai', 'desc')->get();
         return response()->json($data);
     }
 
@@ -32,13 +32,8 @@ class DataStatisController extends Controller {
      */
     public function create() {
         //
-        $data['title'] = 'Tambah Data Statis';
-        return View('backend.datastatis.create', $data);
-    }
-
-    public function apiCreateMenu() {
-        $data = Menu::DropdownMenu();
-        return response()->json($data);
+        $data['title'] = 'Tambah Agenda';
+        return View('backend.agenda.create', $data);
     }
 
     /**
@@ -49,8 +44,11 @@ class DataStatisController extends Controller {
     public function store(Request $request) {
         //
         $input = $request->all();
-        $data = new Data($input);
-        if ($data->save()) {
+        $input['tgl_mulai'] = formatDate($input['tgl_mulai']);
+        $input['tgl_selesai'] = formatDate($input['tgl_selesai']);
+        $input['tgl_posting'] = date('Y-m-d');
+        $agenda = new Agenda($input);
+        if ($agenda->save()) {
             return response()->json(array('success' => TRUE));
         }
     }
@@ -63,7 +61,7 @@ class DataStatisController extends Controller {
      */
     public function show($id) {
         //
-        $data = Data::find($Id);
+        $data = Agenda::find($id);
         return response()->json($data);
     }
 
@@ -75,9 +73,9 @@ class DataStatisController extends Controller {
      */
     public function edit($id) {
         //
-        $data['title'] = 'Edit Data Statis';
-        $data['data'] = Data::find($id);
-        return view('backend.datastatis.edit', $data);
+        $data['title'] = 'Edit Agenda';
+        $data['data'] = Agenda::find($id);
+        return view('backend.agenda.edit', $data);
     }
 
     /**
@@ -86,12 +84,14 @@ class DataStatisController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id) {
+    public function update(Request $request,$id) {
         //
         $input = $request->all();
-        $data = Data::find($id);
-        if ($data->update($input)) {
-            return response()->json(array('success' => TRUE, 'msg' => 'Data Berhasil diupdate'));
+        $input['tgl_mulai'] = formatDate($input['tgl_mulai']);
+        $input['tgl_selesai'] = formatDate($input['tgl_selesai']);
+        $agenda = Agenda::find($id);
+        if ($agenda->update($input)) {
+            return response()->json(array('success' => TRUE));
         }
     }
 
@@ -103,9 +103,9 @@ class DataStatisController extends Controller {
      */
     public function destroy($id) {
         //
-        $data = Data::find($id);
-        if ($data->delete()) {
-            return response()->json(array('success' => TRUE, 'msg' => 'Data Berhasil Dihapus'));
+        $agenda = Agenda::find($id);
+        if ($agenda->delete()) {
+            return response()->json(array('success' => TRUE));
         }
     }
 

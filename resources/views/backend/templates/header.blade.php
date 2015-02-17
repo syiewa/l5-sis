@@ -10,7 +10,7 @@
             <!-- end: RESPONSIVE MENU TOGGLER -->
             <!-- start: LOGO -->
             <a class="navbar-brand" href="index.html">
-                CLIP<i class="clip-clip"></i>ONE
+                SMA NEGERI 1
             </a>
             <!-- end: LOGO -->
         </div>
@@ -67,118 +67,54 @@
                         Dashboard
                     </a>
                 </li>
-                <li class="{{setActive('admin.datastatis.index')}}">
+                <li class="{{setActive('admin.datastatis')}}">
                     <a href="{{route('admin.datastatis.index')}}">
                         Data Statis   
                     </a>
                 </li>
-                <li class="{{setActive('admin.berita.index')}} || {{setActive('admin.pengumuman.index')}}">
+                <li class="{{setActive('admin.berita')}}  {{setActive('admin.pengumuman')}}  {{setActive('admin.agenda')}}">
                     <a href="javascript:void(0)" class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown">
                         <span class="selected"></span>
                         Data Dinamis <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="{{setActive('admin.berita.index')}}">
+                        <li class="{{setActive('admin.berita')}}">
                             <a href="{{route('admin.berita.index')}}">
                                 Index Berita
                             </a>
                         </li>
-                        <li class="{{setActive('admin.pengumuman.index')}}">
+                        <li class="{{setActive('admin.pengumuman')}}">
                             <a href="{{route('admin.pengumuman.index')}}">
                                 Pengumuman
                             </a>
                         </li>
+                        <li class="{{setActive('admin.agenda')}}">
+                            <a href="{{route('admin.agenda.index')}}">
+                                Agenda Sekolah
+                            </a>
+                        </li>
                     </ul>
                 </li>
-                <li>
+                <li class="{{setActive('admin.kelas')}} {{setActive('admin.siswa')}} {{setActive('admin.pegawai')}}">
                     <a href="javascript:void(0)" class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown">
                         <span class="selected"></span>
-                        Layouts <i class="fa fa-angle-down"></i>
+                        Sekolah <i class="fa fa-angle-down"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li>
-                            <a href="javascript:void(0)">
-                                Horizontal Menu
+                        <li class="{{setActive('admin.kelas')}}{{setActive('admin.siswa')}}">
+                            <a href="{{route('admin.kelas.index')}}">
+                                Data Kelas & Siswa
                             </a>
                         </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                Sidebar Closed
+                        <li class="{{setActive('admin.pegawai')}}">
+                            <a href="{{route('admin.pengumuman.index')}}">
+                                Data Kepegawaian
                             </a>
                         </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                Sidebar Fixed Page
+                        <li class="{{setActive('admin.alumni')}}">
+                            <a href="{{route('admin.agenda.index')}}">
+                                Data Alumni
                             </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                Boxed Layout
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                Footer Fixed
-                            </a>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a href="javascript:void(0)">
-                                More options
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#">
-                                        Second level link
-                                    </a>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a href="javascript:void(0)">
-                                        More options
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                Third level link
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                Third level link
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                Third level link
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                Third level link
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">
-                                                Third level link
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        Second level link
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        Second level link
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">
-                                        Second level link
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
                 </li>

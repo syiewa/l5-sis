@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,7 +13,7 @@ class Data extends Model {
     public $timestamps = false;
 
     public function menu() {
-        return $this->belongsTo('App\Menu', 'data_id');
+        return $this->belongsTo('App\Models\Menu', 'data_id');
     }
 
 }

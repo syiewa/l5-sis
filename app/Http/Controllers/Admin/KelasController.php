@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Data;
-use App\Models\Menu;
+use Illuminate\Http\Request;
+use App\Models\Kelas;
 
-class DataStatisController extends Controller {
+class KelasController extends Controller {
 
     /**
      * Display a listing of the resource.
@@ -16,12 +16,17 @@ class DataStatisController extends Controller {
      */
     public function index() {
         //
-        $data['title'] = 'Menu Data Statis';
-        return view('backend.datastatis.index', $data);
+        $data['title'] = 'Menu Kelas';
+        return view('backend.kelas.index', $data);
     }
 
-    public function apiDataStatis() {
-        $data = Data::with('menu')->orderBy('data_id')->get();
+    public function apiKelas() {
+        $data = Kelas::all();
+        return response()->json($data);
+    }
+
+    public function apiCreateKelas() {
+        $data = Kelas::DropdownKelas();
         return response()->json($data);
     }
 
@@ -32,13 +37,8 @@ class DataStatisController extends Controller {
      */
     public function create() {
         //
-        $data['title'] = 'Tambah Data Statis';
-        return View('backend.datastatis.create', $data);
-    }
-
-    public function apiCreateMenu() {
-        $data = Menu::DropdownMenu();
-        return response()->json($data);
+        $data['title'] = 'Tambah Kelas';
+        return View('backend.kelas.create', $data);
     }
 
     /**
@@ -49,8 +49,8 @@ class DataStatisController extends Controller {
     public function store(Request $request) {
         //
         $input = $request->all();
-        $data = new Data($input);
-        if ($data->save()) {
+        $kelas = new Kelas($input);
+        if ($kelas->save()) {
             return response()->json(array('success' => TRUE));
         }
     }
@@ -61,9 +61,9 @@ class DataStatisController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function show($id) {
+    public function show(Request $request, $id) {
         //
-        $data = Data::find($Id);
+        $data = Kelas::find($id);
         return response()->json($data);
     }
 
@@ -75,9 +75,9 @@ class DataStatisController extends Controller {
      */
     public function edit($id) {
         //
-        $data['title'] = 'Edit Data Statis';
-        $data['data'] = Data::find($id);
-        return view('backend.datastatis.edit', $data);
+        $data['title'] = 'Edit Kelas';
+        $data['data'] = Kelas::find($id);
+        return view('backend.kelas.edit', $data);
     }
 
     /**
@@ -89,9 +89,9 @@ class DataStatisController extends Controller {
     public function update(Request $request, $id) {
         //
         $input = $request->all();
-        $data = Data::find($id);
-        if ($data->update($input)) {
-            return response()->json(array('success' => TRUE, 'msg' => 'Data Berhasil diupdate'));
+        $kelas = Kelas::find($id);
+        if ($kelas->update($input)) {
+            return response()->json(array('success' => TRUE));
         }
     }
 
@@ -103,9 +103,9 @@ class DataStatisController extends Controller {
      */
     public function destroy($id) {
         //
-        $data = Data::find($id);
-        if ($data->delete()) {
-            return response()->json(array('success' => TRUE, 'msg' => 'Data Berhasil Dihapus'));
+        $kelas = Kelas::find($id);
+        if ($kelas->delete()) {
+            return response()->json(array('success' => TRUE));
         }
     }
 

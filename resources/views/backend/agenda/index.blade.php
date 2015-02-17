@@ -1,7 +1,7 @@
 @extends('backend/templates/index')
 
 @section('content')
-<div class="main-content" ng-controller="datastatis">
+<div class="main-content" ng-controller="agenda">
     <!-- end: SPANEL CONFIGURATION MODAL FORM -->
     <div class="container">
         <!-- start: PAGE HEADER -->
@@ -22,7 +22,7 @@
                 <div class="page-header">
                     <h1>
                         {{$title}} <br />
-                        <small>Tampilan utama / home screen Control Panel</small>
+                        <small>Tulis agenda di situs website SMA Negeri 1</small>
                     </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
@@ -37,8 +37,8 @@
                     <div class="panel-heading">
                     </div>
                     <div class="panel-body">
-                        <alert ng-repeat="alert in alerts" type="<%alert.type%>" close="closeAlert($index)"><% alert.msg %></alert>
-                        <a class="btn btn-green add-row" href="{{route('admin.datastatis.create')}}">
+                        <alert ng-repeat="alert in alerts" type="<%alert.type%>" close="closeAlert($index)"><%alert.msg%></alert>
+                        <a class="btn btn-green add-row" href="{{route('admin.agenda.create')}}">
                             Add New <i class="fa fa-plus"></i>
                         </a>
                         <div class="pull-right col-sm-5">
@@ -47,25 +47,22 @@
                         <table id="sample-table-1" class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th class="center">Data ID</th>
-                                    <th>Judul Data</th>
-                                    <th>ID Parent</th>
-                                    <th>Level</th>
+                                    <th>Judul Agenda</th>
+                                    <th>Tanggal Posting</th>
+                                    <th>Tempat</th>
                                     <th class="hidden-xs center">Aksi Data</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="status in data| filter:query">
-
-                                    <td class="center"><% status['menu']['id'] %></td>
-                                    <td><% status['menu']['title'] %></td>
-                                    <td><% status['menu']['id_parent'] %></td>
-                                    <td><% status['menu']['level'] %></td>
+                                <tr ng-repeat="status in data| filter:paginate">
+                                    <td><% status['tema_agenda'] %></td>
+                                    <td><% status['tgl_mulai'] %></td>
+                                    <td><% status['tempat'] %></td>
                                     <td class="center">
                                         <div class="visible-md visible-lg hidden-sm hidden-xs">
-                                            <a data-original-title="Edit" data-placement="top" class="btn btn-xs btn-teal tooltips" href="{{url('admin/datastatis')}}/<% status['id_data']%>/edit"><i class="fa fa-edit"></i></a>
-                                            <a data-original-title="Remove" data-placement="top" class="btn btn-xs btn-bricky tooltips" href="#" ng-click="delete(status['id_data'])"><i class="fa fa-times fa fa-white"></i></a>
+                                            <a data-original-title="Edit" data-placement="top" class="btn btn-xs btn-teal tooltips" href="{{url('admin/agenda')}}/<% status['id_agenda']%>/edit"><i class="fa fa-edit"></i></a>
+                                            <a data-original-title="Remove" data-placement="top" class="btn btn-xs btn-bricky tooltips" href="#" ng-click="delete(status['id_agenda'])"><i class="fa fa-times fa fa-white"></i></a>
                                         </div>
                                         <div class="visible-xs visible-sm hidden-md hidden-lg">
                                             <div class="btn-group">
@@ -74,12 +71,12 @@
                                                 </a>
                                                 <ul class="dropdown-menu pull-right" role="menu">
                                                     <li role="presentation">
-                                                        <a href="{{url('admin/datastatis')}}/<% status['id_data']%>/edit" tabindex="-1" role="menuitem">
+                                                        <a href="{{url('admin/agenda')}}/<% status['id_data']%>/edit" tabindex="-1" role="menuitem">
                                                             <i class="fa fa-edit"></i> Edit
                                                         </a>
                                                     </li>
                                                     <li role="presentation">
-                                                        <a href="#" tabindex="-1" role="menuitem" ng-click="delete(status['id_data'])">
+                                                        <a href="#" tabindex="-1" role="menuitem" ng-click="delete(status['id_agenda'])">
                                                             <i class="fa fa-times"></i> Remove 
                                                         </a>
                                                     </li>
@@ -90,6 +87,10 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <pagination total-items="totalItems" ng-model="currentPage"
+                                    max-size="10" boundary-links="true"
+                                    items-per-page="numPerPage" class="pagination-sm">
+                        </pagination>
                     </div>
                 </div>
             </div>

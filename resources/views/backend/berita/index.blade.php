@@ -18,19 +18,12 @@
                     <li class="active">
                         Dashboard
                     </li>
-                    <li class="search-box">
-                        <form class="sidebar-search">
-                            <div class="form-group">
-                                <input type="text" placeholder="Start Searching...">
-                                <button class="submit">
-                                    <i class="clip-search-3"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </li>
                 </ol>
                 <div class="page-header">
-                    <h1>{{$title}}</h1>
+                    <h1>
+                        {{$title}} <br />
+                        <small>Tulis berita di situs website SMA Negeri 1</small>
+                    </h1>
                 </div>
                 <!-- end: PAGE TITLE & BREADCRUMB -->
             </div>
@@ -42,12 +35,6 @@
                 <!-- start: BASIC TABLE PANEL -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <i class="fa fa-external-link-square"></i>
-                        Data Berita
-                        <div class="panel-tools">
-                            <a href="#" class="btn btn-xs btn-link panel-collapse collapses">
-                            </a>
-                        </div>
                     </div>
                     <div class="panel-body">
                         <alert ng-repeat="alert in alerts" type="<%alert.type%>" close="closeAlert($index)"><%alert.msg%></alert>

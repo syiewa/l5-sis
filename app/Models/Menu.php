@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,7 +12,7 @@ class Menu extends Model {
     public $timestamps = false;
 
     public function datas() {
-        return $this->hasMany('App\Data', 'data_id');
+        return $this->hasMany('App\Models\Data', 'data_id');
     }
 
     public function scopeDropdownMenu($query) {
