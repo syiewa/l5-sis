@@ -44,7 +44,7 @@ app.controller('datastatis', function($scope, $http, $filter, $timeout, baseURL)
         }
     }
 });
-app.controller('datastatiscreate', function($scope, $http, $filter, baseURL) {
+app.controller('datastatiscreate', function($scope, $http, $filter, $timeout, baseURL) {
     $scope.data = {};
     $scope.menu = {};
     $scope.alerts = [];
@@ -65,7 +65,9 @@ app.controller('datastatiscreate', function($scope, $http, $filter, baseURL) {
             for (x in e) {
                 $scope.alerts.push({'type': "error", 'msg': (e[x][0])});
             }
-            console.log($scope.alerts);
+            $timeout(function() {
+                $scope.alerts = [];
+            }, 5000);
         });
     }
 });
