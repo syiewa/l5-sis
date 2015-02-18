@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests;
+use App\Http\Requests\AgendaRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Agenda;
@@ -41,7 +41,7 @@ class AgendaController extends Controller {
      *
      * @return Response
      */
-    public function store(Request $request) {
+    public function store(AgendaRequest $request) {
         //
         $input = $request->all();
         $input['tgl_mulai'] = formatDate($input['tgl_mulai']);
@@ -84,7 +84,7 @@ class AgendaController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request,$id) {
+    public function update(AgendaRequest $request,$id) {
         //
         $input = $request->all();
         $input['tgl_mulai'] = formatDate($input['tgl_mulai']);

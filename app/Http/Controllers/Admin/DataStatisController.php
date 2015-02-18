@@ -87,7 +87,7 @@ class DataStatisController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id) {
+    public function update(DataStatisPostRequest $request, $id) {
         //
         $input = $request->all();
         $data = Data::find($id);

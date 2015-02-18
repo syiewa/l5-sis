@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests;
+use App\Http\Requests\BeritaRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Berita;
@@ -42,7 +42,7 @@ class BeritaController extends Controller {
      *
      * @return Response
      */
-    public function store(Request $request) {
+    public function store(BeritaRequest $request) {
         //
         $destinationPath = public_path() . '/upload';
         $input = $request->except('file');
@@ -104,7 +104,7 @@ class BeritaController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id) {
+    public function update(BeritaRequest $request, $id) {
         //
         $berita = Berita::find($id);
         if ($berita->update($request->all())) {

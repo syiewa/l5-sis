@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests;
+use App\Http\Requests\SiswaRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Siswa;
@@ -49,7 +49,7 @@ class SiswaController extends Controller {
      *
      * @return Response
      */
-    public function store(Request $request,$id = null) {
+    public function store(SiswaRequest $request,$id = null) {
         //
         $input = $request->all();
         $siswa = new Siswa($input);
@@ -64,7 +64,7 @@ class SiswaController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function show(Request $request, $id) {
+    public function show($id) {
         //
         $data = Siswa::find($id);
         return response()->json($data);
@@ -90,7 +90,7 @@ class SiswaController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $kelas_id, $id) {
+    public function update(SiswaRequest $request, $kelas_id, $id) {
         //
         $input = $request->all();
         $siswa = Siswa::find($id);

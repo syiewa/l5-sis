@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests;
+use App\Http\Requests\PengumumanRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pengumuman;
@@ -40,7 +40,7 @@ class PengumumanController extends Controller {
      *
      * @return Response
      */
-    public function store(Request $request) {
+    public function store(PengumumanRequest $request) {
         //
         $input = $request->all();
         $pengumuman = new Pengumuman($input);
@@ -81,7 +81,7 @@ class PengumumanController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id) {
+    public function update(PengumumanRequest $request, $id) {
         //
         $input = $request->all();
         $pengumuman = Pengumuman::find($id);

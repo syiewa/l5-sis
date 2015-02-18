@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class DataStatisPostRequest extends Request {
+class KelasRequest extends Request {
 
     /**
      * Determine if the user is authorized to make this request.
@@ -12,7 +12,7 @@ class DataStatisPostRequest extends Request {
      * @return bool
      */
     public function authorize() {
-        return true;
+        return TRUE;
     }
 
     /**
@@ -22,17 +22,15 @@ class DataStatisPostRequest extends Request {
      */
     public function rules() {
         return [
-            'data_id' => 'required',
-            'content' => 'required',
-            'file' => 'image'
+            'nama_kelas' => 'required',
+            'tahun_ajaran' => 'required',
         ];
     }
 
     public function messages() {
         return [
-            'data_id.required' => 'Kategori Diperlukan!',
-            'content.required' => 'Isi Diperlukan!',
-            'file.image' => 'File hanya boleh berupa gambar',
+            'nama_kelas.required' => 'Nama Kelas Diperlukan!',
+            'tahun_ajaran.required' => 'Tahun Ajaran Diperlukan!',
         ];
     }
 

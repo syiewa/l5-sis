@@ -63,7 +63,7 @@ app.controller('datastatiscreate', function($scope, $http, $filter, $timeout, ba
         }).error(function(e) {
             var x;
             for (x in e) {
-                $scope.alerts.push({'type': "error", 'msg': (e[x][0])});
+                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
             }
             $timeout(function() {
                 $scope.alerts = [];
@@ -74,6 +74,10 @@ app.controller('datastatiscreate', function($scope, $http, $filter, $timeout, ba
 app.controller('datastatisedit', function($scope, $http, $filter, $timeout, baseURL) {
     $scope.menu = {};
     $scope.data = {};
+    $scope.alerts = [];
+    $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+    };
     $http.get(baseURL.url('api/menu')).success(function(data) {
         $scope.menu = data;
     });
@@ -85,7 +89,16 @@ app.controller('datastatisedit', function($scope, $http, $filter, $timeout, base
                     window.location.replace(baseURL.url());
                 }, 3000);
             }
+        }).error(function(e) {
+            var x;
+            for (x in e) {
+                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+            }
+            $timeout(function() {
+                $scope.alerts = [];
+            }, 5000);
         });
+        ;
     }
 });
 
@@ -134,6 +147,10 @@ app.controller('databerita', function($scope, $http, $filter, $timeout, baseURL)
 });
 app.controller('beritacreate', function($scope, $http, $filter, $timeout, $upload, baseURL) {
     $scope.data = {};
+    $scope.alerts = [];
+    $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+    };
     $scope.submit = function() {
         $scope.data['isi'] = CKEDITOR.instances.editor1.getData();
         if ($scope.data.foto) {
@@ -156,7 +173,15 @@ app.controller('beritacreate', function($scope, $http, $filter, $timeout, $uploa
                         window.location.replace(baseURL.url('admin/berita'));
                     }, 3000);
                 }
-            })
+            }).error(function(e) {
+                var x;
+                for (x in e) {
+                    $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+                }
+                $timeout(function() {
+                    $scope.alerts = [];
+                }, 5000);
+            });
         }
     }
 });
@@ -188,7 +213,15 @@ app.controller('beritaedit', function($scope, $http, $filter, $timeout, $upload,
                         window.location.replace(baseURL.url('admin/berita'));
                     }, 3000);
                 }
-            })
+            }).error(function(e) {
+                var x;
+                for (x in e) {
+                    $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+                }
+                $timeout(function() {
+                    $scope.alerts = [];
+                }, 5000);
+            });
         }
     }
 });
@@ -220,9 +253,9 @@ app.controller('pengumuman', function($scope, $http, $filter, $timeout, baseURL)
     })
     $scope.delete = function(id) {
         if (confirm("Anda yakin untuk menghapus data?") === true) {
-            $http.delete(baseURL.url('admin/pengumuman') + id).success(function(data) {
+            $http.delete(baseURL.url('admin/pengumuman/') + id).success(function(data) {
                 if (data.success) {
-                    $http.get(baseURL.url('admin/pengumuman')).success(function(data) {
+                    $http.get(baseURL.url('api/pengumuman')).success(function(data) {
                         $scope.data = data;
                         $scope.alerts.push({type: 'success', msg: 'Data Berhasil Dihapus'});
                         $timeout(function() {
@@ -234,20 +267,36 @@ app.controller('pengumuman', function($scope, $http, $filter, $timeout, baseURL)
         }
     }
 });
-app.controller('pengumumancreate', function($scope, $http, $filter, baseURL) {
+app.controller('pengumumancreate', function($scope, $http, $filter,$timeout, baseURL) {
     $scope.data = {};
+    $scope.alerts = [];
+    $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+    };
     $scope.submit = function() {
         $scope.data['isi'] = CKEDITOR.instances.editor1.getData();
         $http.post(baseURL.url('admin/pengumuman'), $scope.data).success(function(data) {
             if (data.success) {
                 window.location.replace(baseURL.url('admin/pengumuman'));
             }
+        }).error(function(e) {
+            var x;
+            for (x in e) {
+                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+            }
+            $timeout(function() {
+                $scope.alerts = [];
+            }, 5000);
         });
     }
 });
 
 app.controller('pengumumanedit', function($scope, $http, $filter, $timeout, baseURL) {
     $scope.data = {};
+    $scope.alerts = [];
+    $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+    };
     var id = $filter('_uriseg')(4);
     $http.get(baseURL.url('api/pengumuman/') + id).success(function(data) {
         $scope.data = data;
@@ -260,6 +309,14 @@ app.controller('pengumumanedit', function($scope, $http, $filter, $timeout, base
                     window.location.replace(baseURL.url('admin/pengumuman'));
                 }, 3000);
             }
+        }).error(function(e) {
+            var x;
+            for (x in e) {
+                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+            }
+            $timeout(function() {
+                $scope.alerts = [];
+            }, 5000);
         });
     }
 });
@@ -306,8 +363,12 @@ app.controller('agenda', function($scope, $http, $filter, $timeout, baseURL) {
         }
     }
 });
-app.controller('agendacreate', function($scope, $http, $filter, baseURL) {
+app.controller('agendacreate', function($scope, $http, $filter,$timeout, baseURL) {
     $scope.data = {};
+    $scope.alerts = [];
+    $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+    };
     $scope.mulai = false;
     $scope.selesai = false;
     $scope.dateOptions = {
@@ -321,11 +382,23 @@ app.controller('agendacreate', function($scope, $http, $filter, baseURL) {
             if (data.success) {
                 window.location.replace(baseURL.url('admin/agenda'));
             }
+        }).error(function(e) {
+            var x;
+            for (x in e) {
+                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+            }
+            $timeout(function() {
+                $scope.alerts = [];
+            }, 5000);
         });
     }
 });
 app.controller('agendaedit', function($scope, $http, $filter, $timeout, baseURL) {
     $scope.data = {};
+    $scope.alerts = [];
+    $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+    };
     $scope.mulai = false;
     $scope.selesai = false;
     $scope.dateOptions = {
@@ -345,6 +418,14 @@ app.controller('agendaedit', function($scope, $http, $filter, $timeout, baseURL)
                     window.location.replace(baseURL.url('admin/agenda'));
                 }, 3000);
             }
+        }).error(function(e) {
+            var x;
+            for (x in e) {
+                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+            }
+            $timeout(function() {
+                $scope.alerts = [];
+            }, 5000);
         });
     }
 });
@@ -391,29 +472,53 @@ app.controller('kelas', function($scope, $http, $filter, $timeout, baseURL) {
         }
     }
 });
-app.controller('kelascreate', function($scope, $http, $filter, baseURL) {
+app.controller('kelascreate', function($scope, $http, $filter,$timeout, baseURL) {
     $scope.data = {};
+    $scope.alerts = [];
+    $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+    };
     $scope.submit = function() {
-        $http.post('http://laravel.dev/admin/kelas', $scope.data).success(function(data) {
+        $http.post(baseURL.url('admin/kelas'), $scope.data).success(function(data) {
             if (data.success) {
-                window.location.replace('http://laravel.dev/admin/kelas');
+                window.location.replace(baseURL.url('admin/kelas'));
             }
+        }).error(function(e) {
+            var x;
+            for (x in e) {
+                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+            }
+            $timeout(function() {
+                $scope.alerts = [];
+            }, 5000);
         });
     }
 });
 app.controller('kelasedit', function($scope, $http, $filter, $timeout, baseURL) {
     $scope.data = {};
+    $scope.alerts = [];
+    $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+    };
     var id = $filter('_uriseg')(4);
     $http.get(baseURL.url('api/kelas/') + id).success(function(data) {
         $scope.data = data;
     })
     $scope.submit = function(id) {
-        $http.put(baseURL.url('admin/kelas') + id, $scope.data).success(function(data) {
+        $http.put(baseURL.url('admin/kelas/') + id, $scope.data).success(function(data) {
             if (data.success) {
                 $timeout(function() {
                     window.location.replace(baseURL.url('admin/kelas'));
                 }, 3000);
             }
+        }).error(function(e) {
+            var x;
+            for (x in e) {
+                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+            }
+            $timeout(function() {
+                $scope.alerts = [];
+            }, 5000);
         });
     }
 });
@@ -461,8 +566,12 @@ app.controller('siswa', function($scope, $http, $filter, $timeout, baseURL) {
         }
     }
 });
-app.controller('siswacreate', function($scope, $http, $filter, baseURL) {
+app.controller('siswacreate', function($scope, $http, $filter,$timeout, baseURL) {
     $scope.data = {};
+    $scope.alerts = [];
+    $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+    };
     var id = $filter('_uriseg')(4);
     $scope.data['id_kelas'] = id;
     $scope.kelas = {};
@@ -474,11 +583,23 @@ app.controller('siswacreate', function($scope, $http, $filter, baseURL) {
             if (data.success) {
                 window.location.replace(baseURL.url('admin/kelas/') + $scope.data['id_kelas'] + '/siswa');
             }
+        }).error(function(e) {
+            var x;
+            for (x in e) {
+                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+            }
+            $timeout(function() {
+                $scope.alerts = [];
+            }, 5000);
         });
     }
 });
 app.controller('siswaedit', function($scope, $http, $filter, $timeout, baseURL) {
     $scope.data = {};
+    $scope.alerts = [];
+    $scope.closeAlert = function(index) {
+        $scope.alerts.splice(index, 1);
+    };
     var kelas_id = $filter('_uriseg')(4);
     var id = $filter('_uriseg')(6);
     $http.get(baseURL.url('api/siswa/') + id).success(function(data) {
@@ -495,6 +616,14 @@ app.controller('siswaedit', function($scope, $http, $filter, $timeout, baseURL) 
                     window.location.replace(baseURL.url('admin/kelas/') + $scope.data['id_kelas'] + '/siswa');
                 }, 3000);
             }
+        }).error(function(e) {
+            var x;
+            for (x in e) {
+                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+            }
+            $timeout(function() {
+                $scope.alerts = [];
+            }, 5000);
         });
     }
 });

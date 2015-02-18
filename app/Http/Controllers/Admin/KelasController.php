@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests;
+use App\Http\Requests\KelasRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Kelas;
@@ -46,7 +46,7 @@ class KelasController extends Controller {
      *
      * @return Response
      */
-    public function store(Request $request) {
+    public function store(KelasRequest $request) {
         //
         $input = $request->all();
         $kelas = new Kelas($input);
@@ -61,7 +61,7 @@ class KelasController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function show(Request $request, $id) {
+    public function show($id) {
         //
         $data = Kelas::find($id);
         return response()->json($data);
@@ -86,7 +86,7 @@ class KelasController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id) {
+    public function update(KelasRequest $request, $id) {
         //
         $input = $request->all();
         $kelas = Kelas::find($id);
