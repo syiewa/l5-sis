@@ -80,3 +80,51 @@ Breadcrumbs::register('siswaedit', function($breadcrumbs,$id) {
     $breadcrumbs->parent('siswa',$id);
     $breadcrumbs->push('Edit Siswa', route('admin.kelas.{id}.siswa.edit', $id), ['icon' => '']);
 });
+Breadcrumbs::register('pegawai', function($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Data Pegawai', route('admin.pegawai.index'), ['icon' => '']);
+});
+Breadcrumbs::register('pegawaicreate', function($breadcrumbs) {
+    $breadcrumbs->parent('pegawai');
+    $breadcrumbs->push('Tambah Pegawai', route('admin.pegawai.create'), ['icon' => '']);
+});
+Breadcrumbs::register('pegawaiedit', function($breadcrumbs) {
+    $breadcrumbs->parent('pegawai');
+    $breadcrumbs->push('Edit Pegawai', route('admin.pegawai.edit'), ['icon' => '']);
+});
+Breadcrumbs::register('polling', function($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Data Polling', route('admin.polling.index'), ['icon' => '']);
+});
+Breadcrumbs::register('pollingcreate', function($breadcrumbs) {
+    $breadcrumbs->parent('polling');
+    $breadcrumbs->push('Tambah Polling', route('admin.polling.create'), ['icon' => '']);
+});
+Breadcrumbs::register('pollingedit', function($breadcrumbs) {
+    $breadcrumbs->parent('polling');
+    $breadcrumbs->push('Edit Polling', route('admin.polling.edit'), ['icon' => '']);
+});
+Breadcrumbs::register('jawaban', function($breadcrumbs, $id) {
+    $breadcrumbs->parent('polling');
+    $breadcrumbs->push('Jawaban', route('admin.polling.{id}.jawaban.index',$id), ['icon' => '']);
+});
+Breadcrumbs::register('jawabancreate', function($breadcrumbs, $id) {
+    $breadcrumbs->parent('jawaban',$id);
+    $breadcrumbs->push('Tambah Jawaban', url('admin.polling.{id}.jawaban.create', $id), ['icon' => '']);
+});
+Breadcrumbs::register('jawabanedit', function($breadcrumbs,$id) {
+    $breadcrumbs->parent('jawaban',$id);
+    $breadcrumbs->push('Edit Jawaban', route('admin.polling.{id}.jawaban.edit', $id), ['icon' => '']);
+});
+Breadcrumbs::register('galeri', function($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Data Galeri', route('admin.galeri.index'), ['icon' => '']);
+});
+Breadcrumbs::register('galericreate', function($breadcrumbs) {
+    $breadcrumbs->parent('galeri');
+    $breadcrumbs->push('Tambah Galeri', route('admin.galeri.create'), ['icon' => '']);
+});
+Breadcrumbs::register('galeriedit', function($breadcrumbs) {
+    $breadcrumbs->parent('galeri');
+    $breadcrumbs->push('Edit Galeri', route('admin.galeri.edit'), ['icon' => '']);
+});

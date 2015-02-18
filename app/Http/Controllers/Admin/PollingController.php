@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\PegawaiRequest;
+use App\Http\Requests\PollingRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Pegawai;
+use App\Models\Polling;
 
-class PegawaiController extends Controller {
+class PollingController extends Controller {
 
     /**
      * Display a listing of the resource.
@@ -16,12 +16,17 @@ class PegawaiController extends Controller {
      */
     public function index() {
         //
-        $data['title'] = 'Data Pegawai';
-        return view('backend.pegawai.index', $data);
+        $data['title'] = 'Data Polling';
+        return view('backend.polling.index', $data);
     }
 
-    public function apiPegawai() {
-        $data = Pegawai::orderBy('nip')->get();
+    public function apiPolling() {
+        $data = Polling::all();
+        return response()->json($data);
+    }
+
+    public function apiCreatePolling() {
+        $data = Polling::DropdownPoll();
         return response()->json($data);
     }
 
@@ -32,8 +37,8 @@ class PegawaiController extends Controller {
      */
     public function create() {
         //
-        $data['title'] = 'Tambah Pegawai';
-        return View('backend.pegawai.create', $data);
+        $data['title'] = 'Tambah Polling';
+        return View('backend.polling.create', $data);
     }
 
     /**
@@ -41,11 +46,14 @@ class PegawaiController extends Controller {
      *
      * @return Response
      */
-    public function store(PegawaiRequest $request) {
+    public function store(PollingRequest $request) {
         //
         $input = $request->all();
-        $pegawai = new Pegawai($input);
-        if ($pegawai->save()) {
+        $polling = new Polling($input);
+        if ($input['status'] == 'Y') {
+            Polling::where('status', '=', 'Y')->update(['status' => 'N']);
+        }
+        if ($polling->save()) {
             return response()->json(array('success' => TRUE));
         }
     }
@@ -58,7 +66,7 @@ class PegawaiController extends Controller {
      */
     public function show($id) {
         //
-        $data = Pegawai::find($id);
+        $data = Polling::find($id);
         return response()->json($data);
     }
 
@@ -70,9 +78,9 @@ class PegawaiController extends Controller {
      */
     public function edit($id) {
         //
-        $data['title'] = 'Edit Pegawai';
-        $data['data'] = Pegawai::find($id);
-        return view('backend.pegawai.edit', $data);
+        $data['title'] = 'Edit Polling';
+        $data['data'] = Polling::find($id);
+        return view('backend.polling.edit', $data);
     }
 
     /**
@@ -81,13 +89,14 @@ class PegawaiController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update(PegawaiRequest $request, $id) {
+    public function update(PollingRequest $request, $id) {
         //
         $input = $request->all();
-        $input['tgl_mulai'] = formatDate($input['tgl_mulai']);
-        $input['tgl_selesai'] = formatDate($input['tgl_selesai']);
-        $pegawai = Pegawai::find($id);
-        if ($pegawai->update($input)) {
+        $polling = Polling::find($id);
+        if ($input['status'] == 'Y') {
+            Polling::where('status', '=', 'Y')->update(['status' => 'N']);
+        }
+        if ($polling->update($input)) {
             return response()->json(array('success' => TRUE));
         }
     }
@@ -100,8 +109,8 @@ class PegawaiController extends Controller {
      */
     public function destroy($id) {
         //
-        $pegawai = Pegawai::find($id);
-        if ($pegawai->delete()) {
+        $polling = Polling::find($id);
+        if ($polling->delete()) {
             return response()->json(array('success' => TRUE));
         }
     }

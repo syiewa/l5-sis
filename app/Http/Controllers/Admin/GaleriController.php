@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\PegawaiRequest;
+use App\Http\Requests\GaleriRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Pegawai;
+use App\Models\Galeri;
 
-class PegawaiController extends Controller {
+class GaleriController extends Controller {
 
     /**
      * Display a listing of the resource.
@@ -16,12 +16,17 @@ class PegawaiController extends Controller {
      */
     public function index() {
         //
-        $data['title'] = 'Data Pegawai';
-        return view('backend.pegawai.index', $data);
+        $data['title'] = 'Data Galeri';
+        return view('backend.galeri.index', $data);
     }
 
-    public function apiPegawai() {
-        $data = Pegawai::orderBy('nip')->get();
+    public function apiGaleri() {
+        $data = Galeri::orderBy('id_album','desc')->get();
+        return response()->json($data);
+    }
+
+    public function apiCreateGaleri() {
+        $data = Galeri::DropdownPoll();
         return response()->json($data);
     }
 
@@ -32,8 +37,8 @@ class PegawaiController extends Controller {
      */
     public function create() {
         //
-        $data['title'] = 'Tambah Pegawai';
-        return View('backend.pegawai.create', $data);
+        $data['title'] = 'Tambah Galeri';
+        return View('backend.galeri.create', $data);
     }
 
     /**
@@ -41,11 +46,11 @@ class PegawaiController extends Controller {
      *
      * @return Response
      */
-    public function store(PegawaiRequest $request) {
+    public function store(GaleriRequest $request) {
         //
         $input = $request->all();
-        $pegawai = new Pegawai($input);
-        if ($pegawai->save()) {
+        $galeri = new Galeri($input);
+        if ($galeri->save()) {
             return response()->json(array('success' => TRUE));
         }
     }
@@ -58,7 +63,7 @@ class PegawaiController extends Controller {
      */
     public function show($id) {
         //
-        $data = Pegawai::find($id);
+        $data = Galeri::find($id);
         return response()->json($data);
     }
 
@@ -70,9 +75,9 @@ class PegawaiController extends Controller {
      */
     public function edit($id) {
         //
-        $data['title'] = 'Edit Pegawai';
-        $data['data'] = Pegawai::find($id);
-        return view('backend.pegawai.edit', $data);
+        $data['title'] = 'Edit Galeri';
+        $data['data'] = Galeri::find($id);
+        return view('backend.galeri.edit', $data);
     }
 
     /**
@@ -81,13 +86,14 @@ class PegawaiController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update(PegawaiRequest $request, $id) {
+    public function update(GaleriRequest $request, $id) {
         //
         $input = $request->all();
-        $input['tgl_mulai'] = formatDate($input['tgl_mulai']);
-        $input['tgl_selesai'] = formatDate($input['tgl_selesai']);
-        $pegawai = Pegawai::find($id);
-        if ($pegawai->update($input)) {
+        $galeri = Galeri::find($id);
+        if ($input['status'] == 'Y') {
+            Galeri::where('status', '=', 'Y')->update(['status' => 'N']);
+        }
+        if ($galeri->update($input)) {
             return response()->json(array('success' => TRUE));
         }
     }
@@ -100,8 +106,8 @@ class PegawaiController extends Controller {
      */
     public function destroy($id) {
         //
-        $pegawai = Pegawai::find($id);
-        if ($pegawai->delete()) {
+        $galeri = Galeri::find($id);
+        if ($galeri->delete()) {
             return response()->json(array('success' => TRUE));
         }
     }

@@ -63,7 +63,7 @@
         <div class="horizontal-menu navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="index.html">
+                    <a href="{{setActive('')}}">
                         Dashboard
                     </a>
                 </li>
@@ -107,7 +107,7 @@
                             </a>
                         </li>
                         <li class="{{setActive('admin.pegawai')}}">
-                            <a href="{{route('admin.pengumuman.index')}}">
+                            <a href="{{route('admin.pegawai.index')}}">
                                 Data Kepegawaian
                             </a>
                         </li>
@@ -118,9 +118,14 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="">
-                        UI Lab
+                <li class="{{setActive('admin.polling')}}">
+                    <a href="{{route('admin.polling.index')}}">
+                        Polling
+                    </a>
+                </li>
+                <li class="{{setActive('admin.galeri')}}">
+                    <a href="{{route('admin.galeri.index')}}">
+                        Gallery
                     </a>
                 </li>
                 <li>

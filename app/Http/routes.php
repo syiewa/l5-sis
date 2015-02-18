@@ -28,6 +28,9 @@ Route::group(['prefix' => 'admin'], function() {
     Route::resource('kelas', 'Admin\KelasController');
     Route::resource('kelas/{id}/siswa', 'Admin\SiswaController');
     Route::resource('pegawai', 'Admin\PegawaiController');
+    Route::resource('polling', 'Admin\PollingController');
+    Route::resource('polling/{id}/jawaban', 'Admin\JawabanController');
+    Route::resource('galeri', 'Admin\GaleriController');
 });
 
 Route::group(['prefix' => 'api'], function() {
@@ -53,4 +56,15 @@ Route::group(['prefix' => 'api'], function() {
 
     Route::get('pegawai', 'Admin\PegawaiController@apiPegawai');
     Route::get('pegawai/{id}', 'Admin\PegawaiController@show');
+
+    Route::get('polling', 'Admin\PollingController@apiPolling');
+    Route::get('polling/{id}', 'Admin\PollingController@show');
+    Route::get('pollingdropdown', 'Admin\PollingController@apiCreatePolling');
+
+    Route::get('polling/{id}/jawaban', 'Admin\JawabanController@apiJawaban');
+    Route::get('jawaban/{id}', 'Admin\JawabanController@show');
+
+    Route::get('galeri', 'Admin\GaleriController@apiGaleri');
+    Route::get('galeri/{id}', 'Admin\GaleriController@show');
+    Route::get('galeridropdown', 'Admin\GaleriController@apiCreateGaleri');
 });

@@ -54,10 +54,10 @@ return [
 
 		'mysql' => [
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'db_smanjo',
-			'username'  => 'root',
-			'password'  => '',
+			'host'      => env('MYSQL_DB_HOST', 'localhost'),
+			'database'  => env('MYSQL_DB_DATABASE', 'forge'),
+			'username'  => env('MYSQL_DB_USERNAME', 'forge'),
+			'password'  => env('MYSQL_DB_PASSWORD', ''),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
