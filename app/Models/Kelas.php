@@ -16,6 +16,10 @@ class Kelas extends Model {
         return $this->hasMany('App\Models\Siswa');
     }
 
+    public function absensi() {
+        return $this->hasMany('App\Models\Absensi');
+    }
+
     public function scopeDropdownKelas($query) {
         $data = array();
         $eselon = $query->select(array('id_kelas', 'nama_kelas'))->get();

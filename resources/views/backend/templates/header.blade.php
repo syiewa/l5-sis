@@ -112,7 +112,7 @@
                             </a>
                         </li>
                         <li class="{{setActive('admin.alumni')}}">
-                            <a href="{{route('admin.agenda.index')}}">
+                            <a href="#">
                                 Data Alumni
                             </a>
                         </li>
@@ -128,43 +128,10 @@
                         Gallery
                     </a>
                 </li>
-                <li>
-                    <a href="" class="dropdown-toggle" data-close-others="true" data-hover="dropdown" data-toggle="dropdown">
-                        Pages <i class="fa fa-angle-down"></i>
+                <li class="{{setActive('admin.absensi')}}">
+                    <a href="{{route('admin.absensi.index')}}">
+                        Absensi
                     </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="javascript:void(0)">
-                                User Profile
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pages_invoice.html">
-                                <span class="title">Invoice</span>
-                                <span class="badge badge-new">new</span>
-                            </a>
-                        </li>								
-                        <li>
-                            <a href="javascript:void(0)">
-                                Gallery
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                Timeline
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                FAQs
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                Messages
-                            </a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
         </div>

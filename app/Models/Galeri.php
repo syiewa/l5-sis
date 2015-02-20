@@ -16,4 +16,15 @@ class Galeri extends Model {
         return $this->hasMany('App\Models\Foto');
     }
 
+    public function scopeDropdownGaleri($query) {
+        $data = array();
+        $eselon = $query->select(array('id_album', 'nama_album'))->get();
+        if (count($eselon) > 0) {
+            foreach ($eselon as $ese) {
+                $data[] = array('id' => $ese->id_album, 'label' => $ese->nama_album);
+            }
+        }
+        return $data;
+    }
+
 }

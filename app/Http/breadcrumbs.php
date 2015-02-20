@@ -128,3 +128,27 @@ Breadcrumbs::register('galeriedit', function($breadcrumbs) {
     $breadcrumbs->parent('galeri');
     $breadcrumbs->push('Edit Galeri', route('admin.galeri.edit'), ['icon' => '']);
 });
+Breadcrumbs::register('foto', function($breadcrumbs, $id) {
+    $breadcrumbs->parent('galeri');
+    $breadcrumbs->push('Foto', route('admin.galeri.{id}.foto.index',$id), ['icon' => '']);
+});
+Breadcrumbs::register('fotocreate', function($breadcrumbs, $id) {
+    $breadcrumbs->parent('foto',$id);
+    $breadcrumbs->push('Tambah Foto', url('admin.galeri.{id}.foto.create', $id), ['icon' => '']);
+});
+Breadcrumbs::register('fotoedit', function($breadcrumbs,$id) {
+    $breadcrumbs->parent('foto',$id);
+    $breadcrumbs->push('Edit Foto', route('admin.galeri.{id}.foto.edit', $id), ['icon' => '']);
+});
+Breadcrumbs::register('absensi', function($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Data Absensi', route('admin.absensi.index'), ['icon' => '']);
+});
+Breadcrumbs::register('absensicreate', function($breadcrumbs) {
+    $breadcrumbs->parent('absensi');
+    $breadcrumbs->push('Tambah Absensi', route('admin.absensi.create'), ['icon' => '']);
+});
+Breadcrumbs::register('absensiedit', function($breadcrumbs) {
+    $breadcrumbs->parent('absensi');
+    $breadcrumbs->push('Edit Absensi', route('admin.absensi.edit'), ['icon' => '']);
+});

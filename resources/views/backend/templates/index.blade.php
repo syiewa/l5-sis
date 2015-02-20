@@ -34,7 +34,10 @@
         <![endif]-->
         <!-- end: MAIN CSS -->
         <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-        <link rel="stylesheet" href="{{asset('assets/plugins/fullcalendar/fullcalendar/fullcalendar.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/plugins/colorbox/example2/colorbox.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css')}}">
+        @section('css')
+        @show
         <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
         <link rel="shortcut icon" href="{{asset('favicon.ico')}}" />
     </head>
@@ -62,18 +65,29 @@
         <script src="{{asset('assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
         <script src="{{asset('assets/plugins/ckeditor/ckeditor.js')}}"></script>
         <script src="{{asset('assets/plugins/ckeditor/adapters/jquery.js')}}"></script>
+        <script src="{{asset('assets/plugins/colorbox/jquery.colorbox-min.js')}}"></script>
+        <script src="{{asset('assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js')}}"></script>
+        <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+        <script>
+                    jQuery(document).ready(function() {
+            CKEDITOR.disableAutoInline = true;
+                    $('textarea.ckeditor').ckeditor();
+                    $(".group1").colorbox({
+            rel: 'group1',
+                    transition: "none",
+                    width: "100%",
+                    height: "100%",
+                    retinaImage: true
+            });
+            });        </script>
         <script src='{{asset('assets/js/angular.min.js')}}'></script>
         <script src='{{asset('assets/js/ui-bootstrap-tpls-0.12.0.min.js')}}'></script>
         <script src='{{asset('assets/js/angular-file-upload.min.js')}}'></script>
         <script src='{{asset('assets/js/angular-file-upload-shim.min.js')}}'></script>
         <script src='{{asset('assets/js/admin.js')}}'></script>
-        <script>
-                                            jQuery(document).ready(function() {
-                                    CKEDITOR.disableAutoInline = true;
-                                            $('textarea.ckeditor').ckeditor();
-                                    });
-
-        </script>
+        @section('js')
+            
+        @show
         <!-- end: MAIN JAVASCRIPTS -->
     </body>
     <!-- end: BODY -->

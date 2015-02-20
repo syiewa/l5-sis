@@ -26,7 +26,7 @@ class GaleriController extends Controller {
     }
 
     public function apiCreateGaleri() {
-        $data = Galeri::DropdownPoll();
+        $data = Galeri::DropdownGaleri();
         return response()->json($data);
     }
 

@@ -1,5 +1,7 @@
 @extends('backend/templates/index')
-
+@section('js')
+<script src='{{asset('assets/js/controller/admin-datastatis.js')}}'></script>
+@stop
 @section('content')
 <div class="main-content" ng-controller="datastatisedit">
     <div class="container">

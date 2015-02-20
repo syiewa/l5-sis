@@ -121,6 +121,7 @@ return [
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
         'DaveJamesMiller\Breadcrumbs\ServiceProvider',
+        'Intervention\Image\ImageServiceProvider',
         /*
          * Application Service Providers...
          */
@@ -176,5 +177,6 @@ return [
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View' => 'Illuminate\Support\Facades\View',
         'Breadcrumbs' => 'DaveJamesMiller\Breadcrumbs\Facade',
+        'Image' => 'Intervention\Image\Facades\Image'
     ],
 ];

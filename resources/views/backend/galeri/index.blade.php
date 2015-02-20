@@ -1,5 +1,7 @@
 @extends('backend/templates/index')
-
+@section('js')
+<script src='{{asset('assets/js/controller/admin-galeri.js')}}'></script>
+@stop
 @section('content')
 <div class="main-content" ng-controller="galeri">
     <!-- end: SPANEL CONFIGURATION MODAL FORM -->
@@ -23,9 +25,6 @@
             <div class="col-md-12">
                 <alert ng-repeat="alert in alerts" type="<%alert.type%>" close="closeAlert($index)"><%alert.msg%></alert>
                 <div class="col-sm-2">
-                    <a class="btn btn-green add-row" href="{{route('admin.galeri.create')}}">
-                        Tambah Kelas <i class="fa fa-plus"></i>
-                    </a>
                 </div>
                 <div class="col-sm-7">
                     <fieldset>
@@ -68,7 +67,7 @@
                                     <td><% status['nama_album'] %></td>
                                     <td class="center">
                                         <div class="visible-md visible-lg hidden-sm hidden-xs">
-                                            <a data-original-title="Siswa" data-placement="top" class="btn btn-xs btn-success tooltips" href="{{url('admin/galeri')}}/<% status['id_album']%>/siswa"><i class="fa fa-user"></i> Lihat Siswa</a>
+                                            <a data-original-title="Siswa" data-placement="top" class="btn btn-xs btn-success tooltips" href="{{url('admin/galeri')}}/<% status['id_album']%>/foto"><i class="fa fa-user"></i> Lihat Foto</a>
                                             <a data-original-title="Edit" data-placement="top" class="btn btn-xs btn-teal tooltips" href="{{url('admin/galeri')}}/<% status['id_album']%>/edit"><i class="fa fa-edit"></i></a>
                                             <a data-original-title="Remove" data-placement="top" class="btn btn-xs btn-bricky tooltips" href="#" ng-click="delete(status['id_album'])"><i class="fa fa-times fa fa-white"></i></a>
                                         </div>
@@ -79,8 +78,8 @@
                                                 </a>
                                                 <ul class="dropdown-menu pull-right" role="menu">
                                                     <li role="presentation">
-                                                        <a href="{{url('admin/siswa')}}/<% status['id_album']%>/edit" tabindex="-1" role="menuitem">
-                                                            <i class="fa fa-user"></i> Lihat Siswa
+                                                        <a href="{{url('admin/foto')}}/<% status['id_album']%>/edit" tabindex="-1" role="menuitem">
+                                                            <i class="fa fa-user"></i> Lihat Foto
                                                         </a>
                                                     </li>
                                                     <li role="presentation">

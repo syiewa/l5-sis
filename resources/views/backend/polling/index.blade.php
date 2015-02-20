@@ -1,5 +1,7 @@
 @extends('backend/templates/index')
-
+@section('js')
+<script src='{{asset('assets/js/controller/admin-polling.js')}}'></script>
+@stop
 @section('content')
 <div class="main-content" ng-controller="polling">
     <!-- end: SPANEL CONFIGURATION MODAL FORM -->

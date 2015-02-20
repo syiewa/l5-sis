@@ -31,6 +31,10 @@ Route::group(['prefix' => 'admin'], function() {
     Route::resource('polling', 'Admin\PollingController');
     Route::resource('polling/{id}/jawaban', 'Admin\JawabanController');
     Route::resource('galeri', 'Admin\GaleriController');
+    Route::resource('galeri/{id}/foto', 'Admin\FotoController');
+    Route::resource('absensi', 'Admin\AbsensiController');
+    Route::post('absensi/create',['as'=>'admin.absensi.create','uses'=>'Admin\AbsensiController@create']);
+    Route::post('absensi/show',['as'=>'admin.absensi.show','uses'=>'Admin\AbsensiController@show']);
 });
 
 Route::group(['prefix' => 'api'], function() {
@@ -67,4 +71,10 @@ Route::group(['prefix' => 'api'], function() {
     Route::get('galeri', 'Admin\GaleriController@apiGaleri');
     Route::get('galeri/{id}', 'Admin\GaleriController@show');
     Route::get('galeridropdown', 'Admin\GaleriController@apiCreateGaleri');
+
+    Route::get('galeri/{id}/foto', 'Admin\FotoController@apiFoto');
+    Route::get('foto/{id}', 'Admin\FotoController@show');
+
+    Route::get('absensi', 'Admin\AbsensiController@apiAbsensi');
+    Route::get('absensi/{id}', 'Admin\AbsensiController@show');
 });

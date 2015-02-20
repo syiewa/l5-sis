@@ -1,5 +1,7 @@
 @extends('backend/templates/index')
-
+@section('js')
+<script src='{{asset('assets/js/controller/admin-berita.js')}}'></script>
+@stop
 @section('content')
 <div class="main-content" ng-controller="beritacreate">
     <div class="container">
