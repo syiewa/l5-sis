@@ -11,7 +11,9 @@
   |
  */
 
-Route::get('/', 'Admin\DataStatisController@index');
+Route::get('/', function() {
+    return view('backend.dashboard');
+});
 
 Route::get('home', 'HomeController@index');
 
@@ -21,6 +23,16 @@ Route::controllers([
 ]);
 
 Route::group(['prefix' => 'admin'], function() {
+    Route::get('/', function() {
+        return view('backend.dashboard');
+    });
+    Route::get('/datadinamis', ['as' => 'admin.dashboard.datadinamis', function() {
+    return view('backend.datadinamis');
+}]);
+
+    Route::get('/sekolah', ['as' => 'admin.dashboard.sekolah', function() {
+    return view('backend.sekolah');
+}]);
     Route::resource('datastatis', 'Admin\DataStatisController');
     Route::resource('berita', 'Admin\BeritaController');
     Route::resource('pengumuman', 'Admin\PengumumanController');
@@ -33,8 +45,8 @@ Route::group(['prefix' => 'admin'], function() {
     Route::resource('galeri', 'Admin\GaleriController');
     Route::resource('galeri/{id}/foto', 'Admin\FotoController');
     Route::resource('absensi', 'Admin\AbsensiController');
-    Route::post('absensi/create',['as'=>'admin.absensi.create','uses'=>'Admin\AbsensiController@create']);
-    Route::post('absensi/show',['as'=>'admin.absensi.show','uses'=>'Admin\AbsensiController@show']);
+    Route::post('absensi/create', ['as' => 'admin.absensi.create', 'uses' => 'Admin\AbsensiController@create']);
+    Route::post('absensi/show', ['as' => 'admin.absensi.show', 'uses' => 'Admin\AbsensiController@show']);
 });
 
 Route::group(['prefix' => 'api'], function() {
@@ -76,5 +88,5 @@ Route::group(['prefix' => 'api'], function() {
     Route::get('foto/{id}', 'Admin\FotoController@show');
 
     Route::get('absensi', 'Admin\AbsensiController@apiAbsensi');
-    Route::get('absensi/{id}', 'Admin\AbsensiController@show');
+    Route::get('absensi/{id}', 'Admin\AbsensiController@apiAbsensi');
 });

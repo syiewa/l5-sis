@@ -50,31 +50,31 @@
                                             <td>{{$sis->nama_siswa}}</td>
                                             <td class="center">
                                                 <label class="radio-inline">
-                                                    <input type="radio" value="S" name="absen-{{$sis->id_siswa}}['absen']" class="grey" required>
+                                                    <input type="radio" value="S" name="absen-{{$sis->id_siswa}}[absen]" class="grey" required>
                                                     (S)Sakit
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" value="I" name="absen-{{$sis->id_siswa}}['absen']" class="grey" required>
+                                                    <input type="radio" value="I" name="absen-{{$sis->id_siswa}}[absen]" class="grey" required>
                                                     (I)Ijin
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" value="A" name="absen-{{$sis->id_siswa}}['absen']" class="grey" required>
+                                                    <input type="radio" value="A" name="absen-{{$sis->id_siswa}}[absen]" class="grey" required>
                                                     (A)Alpha
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" value="B" name="absen-{{$sis->id_siswa}}['absen']" class="grey" required>
+                                                    <input type="radio" value="B" name="absen-{{$sis->id_siswa}}[absen]" class="grey" required>
                                                     (B)Bolos
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" value="H" name="absen-{{$sis->id_siswa}}['absen']" class="grey" checked required>
+                                                    <input type="radio" value="H" name="absen-{{$sis->id_siswa}}[absen]" class="grey" checked required>
                                                     (H)Hadir
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" value="D" name="absen-{{$sis->id_siswa}}['absen']" class="grey" required>
+                                                    <input type="radio" value="D" name="absen-{{$sis->id_siswa}}[absen]" class="grey" required>
                                                     (D)Dispen
                                                 </label>
                                                 <label class="radio-inline">
-                                                    <input type="radio" value="SK" name="absen-{{$sis->id_siswa}}['absen']" class="grey" required>
+                                                    <input type="radio" value="SK" name="absen-{{$sis->id_siswa}}[absen]" class="grey" required>
                                                     (SK)Skors
                                                 </label>
                                             </td>

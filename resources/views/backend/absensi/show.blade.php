@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <!-- start: PAGE TITLE & BREADCRUMB -->
-                {!! Breadcrumbs::render('absensicreate'); !!}
+                {!! Breadcrumbs::render('absensishow'); !!}
                 <div class="page-header">
                     <h1>{{$title}}</h1>
                 </div>
@@ -30,29 +30,40 @@
                         <div id="panel_tab2_example1" class="tab-pane active">
                             <alert ng-repeat="alert in alerts" type="<%alert.type%>" close="closeAlert($index)"><% alert.msg %></alert>
                             <form action="{{route('admin.absensi.store')}}" method="post">
-                                <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
-                                <input type="hidden" name="kelas" value="{{$siswa->first()->id_kelas}}" />
+                                <input type="hidden" name="_token" value="{{{ csrf_token()}}}" />
                                 <table id="sample-table-1" class="table table-hover">
                                     <thead>
                                         <tr>
                                             <th>NIS</th>
                                             <th>Nama Siswa</th>
                                             <th class="center">Keterangan (Absen)</th>
+                                            <th class="center">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($siswa as $sis)
-                                        <tr>
-                                            <td>{{$sis->nis}}</td>
-                                            <td>{{$sis->nama_siswa}}</td>
-                                            <td class="center">
-                                               
-                                            </td>
-                                        </tr>
-                                        @endforeach
+                                    @if($siswa)
+                                        <input type="hidden" name="kelas" value="{{$siswa->first()->id_kelas}}" />
+                                        @if(count($siswa->first()->absensi) > 0)
+                                            @foreach($siswa as $sis)
+                                                    <tr>
+                                                        <td>{{$sis->nis}}</td>
+                                                        <td>{{$sis->nama_siswa}}</td>
+                                                        <td class="center">
+                                                            {{$sis->absensi->first()->absen}}
+                                                        </td>
+                                                        <td class="center">
+                                                            <a href="{{route('admin.absensi.edit',$sis->absensi->first()->id_absensi)}}" class="btn btn-blue">Edit Data</a>
+                                                        </td>
+                                                    </tr>
+                                            @endforeach
+                                        @else
+                                                <tr>
+                                                    <td colspan="4" class="center">Tidak Ada Data</td>
+                                                </tr>
+                                        @endif
+                                    @endif
                                     </tbody>
                                 </table>
-                                <input type="submit" class="btn btn-bricky" value="Submit">
                             </form>
                         </div>
                     </div>

@@ -1,4 +1,7 @@
 @extends('backend/templates/index')
+@section('css')
+<link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css')}}">
+@stop
 @section('js')
 <script src='{{asset('assets/js/controller/admin-foto.js')}}'></script>
 @stop

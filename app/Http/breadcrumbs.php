@@ -16,12 +16,16 @@ Breadcrumbs::register('datastatiscreate', function($breadcrumbs) {
     $breadcrumbs->parent('datastatis');
     $breadcrumbs->push('Tambah Data', route('admin.datastatis.create'), ['icon' => '']);
 });
-Breadcrumbs::register('datastatisedit', function($breadcrumbs) {
-    $breadcrumbs->parent('datastatis');
-    $breadcrumbs->push('Edit Data', route('admin.datastatis.edit'), ['icon' => '']);
+Breadcrumbs::register('datadinamis', function($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Data Dinamis', route('admin.dashboard.datadinamis'), ['icon' => '']);
+});
+Breadcrumbs::register('sekolah', function($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Sekolah', route('admin.dashboard.sekolah'), ['icon' => '']);
 });
 Breadcrumbs::register('indexberita', function($breadcrumbs) {
-    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('datadinamis');
     $breadcrumbs->push('Index Berita', route('admin.berita.index'), ['icon' => '']);
 });
 Breadcrumbs::register('indexberitacreate', function($breadcrumbs) {
@@ -33,7 +37,7 @@ Breadcrumbs::register('indexberitaedit', function($breadcrumbs) {
     $breadcrumbs->push('Edit Berita', route('admin.berita.edit'), ['icon' => '']);
 });
 Breadcrumbs::register('pengumuman', function($breadcrumbs) {
-    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('datadinamis');
     $breadcrumbs->push('Pengumuman', route('admin.pengumuman.index'), ['icon' => '']);
 });
 Breadcrumbs::register('pengumumancreate', function($breadcrumbs) {
@@ -45,7 +49,7 @@ Breadcrumbs::register('pengumumanedit', function($breadcrumbs) {
     $breadcrumbs->push('Edit Pengumuman', route('admin.pengumuman.edit'), ['icon' => '']);
 });
 Breadcrumbs::register('agenda', function($breadcrumbs) {
-    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('datadinamis');
     $breadcrumbs->push('Agenda', route('admin.agenda.index'), ['icon' => '']);
 });
 Breadcrumbs::register('agendacreate', function($breadcrumbs) {
@@ -57,7 +61,7 @@ Breadcrumbs::register('agendaedit', function($breadcrumbs) {
     $breadcrumbs->push('Edit Agenda', route('admin.agenda.edit'), ['icon' => '']);
 });
 Breadcrumbs::register('kelas', function($breadcrumbs) {
-    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('sekolah');
     $breadcrumbs->push('Kelas', route('admin.kelas.index'), ['icon' => '']);
 });
 Breadcrumbs::register('kelascreate', function($breadcrumbs) {
@@ -81,7 +85,7 @@ Breadcrumbs::register('siswaedit', function($breadcrumbs,$id) {
     $breadcrumbs->push('Edit Siswa', route('admin.kelas.{id}.siswa.edit', $id), ['icon' => '']);
 });
 Breadcrumbs::register('pegawai', function($breadcrumbs) {
-    $breadcrumbs->parent('home');
+    $breadcrumbs->parent('sekolah');
     $breadcrumbs->push('Data Pegawai', route('admin.pegawai.index'), ['icon' => '']);
 });
 Breadcrumbs::register('pegawaicreate', function($breadcrumbs) {
@@ -148,7 +152,7 @@ Breadcrumbs::register('absensicreate', function($breadcrumbs) {
     $breadcrumbs->parent('absensi');
     $breadcrumbs->push('Tambah Absensi', route('admin.absensi.create'), ['icon' => '']);
 });
-Breadcrumbs::register('absensiedit', function($breadcrumbs) {
+Breadcrumbs::register('absensishow', function($breadcrumbs) {
     $breadcrumbs->parent('absensi');
-    $breadcrumbs->push('Edit Absensi', route('admin.absensi.edit'), ['icon' => '']);
+    $breadcrumbs->push('Lihat Absensi', route('admin.absensi.show'), ['icon' => '']);
 });

@@ -62,8 +62,8 @@
         <!-- start: HORIZONTAL MENU -->
         <div class="horizontal-menu navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li>
-                    <a href="{{setActive('')}}">
+                <li class='{{setActive('')}}'>
+                    <a href="{{url('/admin')}}">
                         Dashboard
                     </a>
                 </li>

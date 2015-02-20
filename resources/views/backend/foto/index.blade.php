@@ -1,4 +1,7 @@
 @extends('backend/templates/index')
+@section('css')
+<link rel="stylesheet" href="{{asset('assets/plugins/colorbox/example2/colorbox.css')}}">
+@stop
 @section('js')
 <script src='{{asset('assets/js/controller/admin-foto.js')}}'></script>
 @stop
@@ -55,4 +58,5 @@
         </pagination>
         <!-- end: BASIC TABLE PANEL -->
     </div>
+</div>
     @stop

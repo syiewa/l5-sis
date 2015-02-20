@@ -22,8 +22,8 @@ class AbsensiController extends Controller {
         return view('backend.absensi.index', $data);
     }
 
-    public function apiAbsensi() {
-        $data = Absensi::all();
+    public function apiAbsensi($id) {
+        $data = Absensi::where('id_absensi','=',$id)->with('kelas','siswa')->get()->first();
         return response()->json($data);
     }
 
@@ -57,17 +57,20 @@ class AbsensiController extends Controller {
         //
         $input = $request->except('_token', 'kelas', 'tanggal', 'bulan', 'tahun');
         $kelas = $request->get('kelas');
-        $absensi = new Absensi();
+        Absensi::where('tanggal', '=', $request->get('tanggal'))
+                ->where('bulan', '=', $request->get('bulan'))
+                ->where('tahun', '=', $request->get('tahun'))->where('id_kelas', '=', $kelas)
+                ->delete();
         foreach ($input as $key => $val) {
-            dd($val);
             $implode = explode('-', $key);
             $siswa = $implode[1];
+            $absensi = new Absensi();
             $absensi->id_siswa = $siswa;
             $absensi->id_kelas = $kelas;
             $absensi->tanggal = $request->get("tanggal");
             $absensi->bulan = $request->get('bulan');
             $absensi->tahun = $request->get('tahun');
-            $absensi->absen = 
+            $absensi->absen = $input[$key]['absen'];
             $absensi->save();
         }
         return redirect(route('admin.absensi.index'));
@@ -113,8 +116,8 @@ class AbsensiController extends Controller {
      */
     public function update(AbsensiRequest $request, $id) {
         //
-        $input = $request->all();
-        $absensi = Absensi::find($id);
+        $input = $request->only('id_siswa','id_kelas','absen','tanggal','bulan','tahun');
+        $absensi = Absensi::find($id);  
         if ($absensi->update($input)) {
             return response()->json(array('success' => TRUE));
         }
