@@ -1,6 +1,6 @@
 @extends('backend/templates/index')
 @section('content')
-<div class="main-content" ng-controller="foto">
+<div class="main-content">
     <!-- end: SPANEL CONFIGURATION MODAL FORM -->
     <div class="container">
         <!-- start: PAGE HEADER -->
@@ -48,7 +48,7 @@
             <div class="col-sm-4">
                 <div class="core-box">
                     <div class="heading">
-                        <i class="clip-database circle-icon circle-bricky"></i>
+                        <i class="clip-users-2 circle-icon circle-bricky"></i>
                         <h2>Manajemen Sekolah</h2>
                     </div>
                     <div class="content">
@@ -64,8 +64,8 @@
             <div class="col-sm-4">
                 <div class="core-box">
                     <div class="heading">
-                        <i class="clip-user-4 circle-icon circle-green"></i>
-                        <h2>Manajemen Data Statis</h2>
+                        <i class="clip-list-5 circle-icon circle-green"></i>
+                        <h2>Manajemen Polling</h2>
                     </div>
                     <div class="content">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
@@ -78,8 +78,8 @@
             <div class="col-sm-4">
                 <div class="core-box">
                     <div class="heading">
-                        <i class="clip-clip circle-icon circle-teal"></i>
-                        <h2>Manajemen Data Dinamis</h2>
+                        <i class="clip-images-2 circle-icon circle-teal"></i>
+                        <h2>Manajemen Galeri</h2>
                     </div>
                     <div class="content">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
@@ -92,8 +92,8 @@
             <div class="col-sm-4">
                 <div class="core-box">
                     <div class="heading">
-                        <i class="clip-database circle-icon circle-bricky"></i>
-                        <h2>Manajemen Sekolah</h2>
+                        <i class="clip-calendar circle-icon circle-bricky"></i>
+                        <h2>Manajemen Absensi</h2>
                     </div>
                     <div class="content">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.

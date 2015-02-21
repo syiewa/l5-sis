@@ -6,15 +6,20 @@ use App\Http\Requests\SiswaRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Siswa;
+use Illuminate\Contracts\Auth\Guard;
 
 class SiswaController extends Controller {
+
+    public function __construct(Guard $auth) {
+        $this->auth = $auth;
+    }
 
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index($kelas_id ,$id = null) {
+    public function index($kelas_id, $id = null) {
         //
         $data['kelas_id'] = $kelas_id;
         $data['title'] = 'Menu Siswa';
@@ -49,7 +54,7 @@ class SiswaController extends Controller {
      *
      * @return Response
      */
-    public function store(SiswaRequest $request,$id = null) {
+    public function store(SiswaRequest $request, $id = null) {
         //
         $input = $request->all();
         $siswa = new Siswa($input);

@@ -6,6 +6,7 @@ use App\Http\Requests\AgendaRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Agenda;
+use Illuminate\Contracts\Auth\Guard;
 
 class AgendaController extends Controller {
 
@@ -14,6 +15,10 @@ class AgendaController extends Controller {
      *
      * @return Response
      */
+    public function __construct(Guard $auth) {
+        $this->auth = $auth;
+    }
+
     public function index() {
         //
         $data['title'] = 'Agenda Sekolah';
@@ -84,7 +89,7 @@ class AgendaController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update(AgendaRequest $request,$id) {
+    public function update(AgendaRequest $request, $id) {
         //
         $input = $request->all();
         $input['tgl_mulai'] = formatDate($input['tgl_mulai']);

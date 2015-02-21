@@ -6,9 +6,13 @@ use App\Http\Requests\KelasRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Kelas;
+use Illuminate\Contracts\Auth\Guard;
 
 class KelasController extends Controller {
 
+    public function __construct(Guard $auth) {
+        $this->auth = $auth;
+    }
     /**
      * Display a listing of the resource.
      *

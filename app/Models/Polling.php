@@ -13,7 +13,7 @@ class Polling extends Model {
     public $timestamps = false;
 
     public function jawaban() {
-        return $this->hasMany('App\Models\jawaban');
+        return $this->hasMany('App\Models\jawaban','id_soal_poll');
     }
 
     public function scopeDropdownPoll($query) {

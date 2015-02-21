@@ -11,10 +11,19 @@
   |
  */
 
-Route::get('/', function() {
-    return view('backend.dashboard');
-});
+Route::get('/', ['as' => 'home', 'uses' => 'FrontController@index']);
+Route::get('/lihatpoll','FrontController@polling');
+Route::get('/berita','FrontController@beritalist');
+Route::get('/berita/{id}','FrontController@berita');
+Route::get('/pengumuman','FrontController@pengumumanlist');
+Route::get('/pengumuman/{id}','FrontController@pengumuman');
+Route::get('/page/{id}', ['as' => 'page.menu', 'uses' => 'FrontController@halaman']);
 
+Route::get('/login', function() {
+    return view('backend.login');
+});
+Route::post('/login', 'LoginController@auth');
+Route::get('/logout', 'LoginController@logout');
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
@@ -22,7 +31,7 @@ Route::controllers([
     'password' => 'Auth\PasswordController',
 ]);
 
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/', function() {
         return view('backend.dashboard');
     });

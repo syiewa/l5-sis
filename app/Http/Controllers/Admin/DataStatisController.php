@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Data;
 use App\Models\Menu;
+use Illuminate\Contracts\Auth\Guard;
 
 class DataStatisController extends Controller {
 
@@ -15,6 +16,10 @@ class DataStatisController extends Controller {
      *
      * @return Response
      */
+    public function __construct(Guard $auth) {
+        $this->auth = $auth;
+    }
+
     public function index() {
         //
         $data['title'] = 'Menu Data Statis';

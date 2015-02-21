@@ -5,10 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\JawabanRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 use App\Models\Jawaban;
+use Illuminate\Contracts\Auth\Guard;
 
 class JawabanController extends Controller {
+
+    public function __construct(Guard $auth) {
+        $this->auth = $auth;
+    }
 
     /**
      * Display a listing of the resource.
@@ -91,7 +95,7 @@ class JawabanController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update(JawabanRequest $request,$id) {
+    public function update(JawabanRequest $request, $id) {
         //
         $input = $request->all();
         $jawaban = Jawaban::find($id);

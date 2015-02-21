@@ -21,7 +21,7 @@
                 <li class="dropdown current-user">
                     <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
                         <img src="assets/images/avatar-1-small.jpg" class="circle-img" alt="">
-                        <span class="username">Peter Clark</span>
+                        <span class="username">{{$user->nama_pegawai}}</span>
                         <i class="clip-chevron-down"></i>
                     </a>
                     <ul class="dropdown-menu">
@@ -48,7 +48,7 @@
                                 &nbsp;Lock Screen </a>
                         </li>
                         <li>
-                            <a href="login_example1.html">
+                            <a href="{{url('logout')}}">
                                 <i class="clip-exit"></i>
                                 &nbsp;Log Out
                             </a>

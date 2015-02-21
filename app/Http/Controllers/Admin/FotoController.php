@@ -7,8 +7,13 @@ use App\Http\Requests\FotoRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Foto;
+use Illuminate\Contracts\Auth\Guard;
 
 class FotoController extends Controller {
+
+    public function __construct(Guard $auth) {
+        $this->auth = $auth;
+    }
 
     /**
      * Display a listing of the resource.
@@ -83,7 +88,7 @@ class FotoController extends Controller {
                 $foto_kecil = Image::make(public_path('upload/besar/' . $foto->foto_besar))->resize(300, 200)->save($kecil . '/' . $foto->foto_kecil);
             }
         }
-                if ($foto->save()) {
+        if ($foto->save()) {
             return response()->json(array('success' => TRUE));
         } else {
             return 1;

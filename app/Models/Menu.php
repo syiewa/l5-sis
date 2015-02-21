@@ -14,6 +14,9 @@ class Menu extends Model {
     public function datas() {
         return $this->hasMany('App\Models\Data', 'data_id');
     }
+    public function child(){
+        return $this->hasMany('App\Models\Menu','id_parent','id');
+    }
 
     public function scopeDropdownMenu($query) {
         $data = array();

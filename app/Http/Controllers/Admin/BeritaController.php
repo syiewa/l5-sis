@@ -6,7 +6,7 @@ use App\Http\Requests\BeritaRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Berita;
-
+use Illuminate\Contracts\Auth\Guard;
 
 class BeritaController extends Controller {
 
@@ -15,6 +15,10 @@ class BeritaController extends Controller {
      *
      * @return Response
      */
+    public function __construct(Guard $auth) {
+        $this->auth = $auth;
+    }
+
     public function index() {
         //
         $data['title'] = 'Menu Data Statis';
@@ -44,7 +48,7 @@ class BeritaController extends Controller {
      */
     public function store(BeritaRequest $request) {
         //
-        $destinationPath = public_path() . '/upload';
+        $destinationPath = public_path('upload/berita');
         $input = $request->except('file');
         $data = json_decode($input['data']);
         if (isset($data->id_berita)) {

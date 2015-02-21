@@ -6,8 +6,13 @@ use App\Http\Requests\PollingRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Polling;
+use Illuminate\Contracts\Auth\Guard;
 
 class PollingController extends Controller {
+
+    public function __construct(Guard $auth) {
+        $this->auth = $auth;
+    }
 
     /**
      * Display a listing of the resource.

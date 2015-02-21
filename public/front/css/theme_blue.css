@@ -1,0 +1,94 @@
+a {
+    color: #006ADF;
+}
+a:focus, a:hover, a:active {
+	color: #007AFF;
+}
+p strong {
+	color: #3276B1;
+}
+.navbar > .container .navbar-brand i, .navbar > .container .navbar-brand:hover i {
+	color: #007AFF;
+}
+.navbar-default .navbar-nav > .active > a:before {
+	color: #007AFF;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li.dropdown.open > a {
+	border-bottom-color: #007AFF;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	border-bottom-color: #007AFF;
+}
+.navbar-nav > li > .dropdown-menu {
+	border-top-color: #007AFF;
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    background-color: #007AFF;
+}
+.mega-menu .mega-menu-content ul.sub-menu .active > a {
+	background-color: #007AFF;
+	color: #FFFFFF;
+}
+.btn-main-color {
+    background-color: #007AFF;
+    border-color: #006ADF;
+    color: #FFFFFF;
+}
+.btn-main-color:hover, .btn-main-color:focus, .btn-main-color:active, .btn-main-color.active {
+	background-color: #006ADF;
+	border-color: #006ADF;
+	color: #ffffff;
+}
+.circle-icon.circle-main-color {
+	background-color: #007AFF;
+	border-color: #007AFF;
+	color: #FFFFFF;
+}
+.slide_subtitle {
+	background-color: #007AFF;
+	color: #FFFFFF;
+}
+.progress-bar.main-color {
+    background-color: #006ADF !important;
+}
+.accordion-teal .panel-heading .accordion-toggle {
+	color: #007AFF;
+}
+.accordion-teal .panel-heading .accordion-toggle > .icon-arrow:before {
+    background-color: #007AFF;
+    color: #FFFFFF;
+}
+.sb_toggle {
+	border-color: rgba(0, 0, 0, 0) #007AFF rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+#scroll-top {
+	background-color: #007AFF;
+	border: 1px solid #007AFF;
+	color: #EEEEEE;
+}
+#scroll-top:hover {
+	background-color: #FCFCFC;
+	border: 1px solid #E1E1E1;
+	color: #007AFF;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: #007AFF;
+    border-color: #006ADF;
+    color: #FFFFFF;
+}
+div.post-media h4 {
+    color: #0B80FF;
+}
+.portfolio-page ul.nav li a:hover, .portfolio-page ul.nav li.active a {
+    background: #007AFF;
+    color: #FFFFFF;
+}
+.feature-box .feature-icon {
+	color: #007AFF;
+}
+.colored-top-bar #topbar {
+	background: #007AFF;
+	color: #FFFFFF;
+	border-bottom: 1px solid #007AFF;
+}

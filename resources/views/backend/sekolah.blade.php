@@ -21,12 +21,12 @@
                 <div class="core-box">
                     <div class="heading">
                         <i class="clip-user-4 circle-icon circle-green"></i>
-                        <h2>Manajemen Data Statis</h2>
+                        <h2>Manajemen Siswa</h2>
                     </div>
                     <div class="content">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
                     </div>
-                    <a class="view-more" href="{{route('admin.datastatis.index')}}">
+                    <a class="view-more" href="{{route('admin.siswa.index')}}">
                         View More <i class="clip-arrow-right-2"></i>
                     </a>
                 </div>
@@ -35,12 +35,12 @@
                 <div class="core-box">
                     <div class="heading">
                         <i class="clip-clip circle-icon circle-teal"></i>
-                        <h2>Manajemen Data Dinamis</h2>
+                        <h2>Manajemen Kepegawaian</h2>
                     </div>
                     <div class="content">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
                     </div>
-                    <a class="view-more" href="{{route('admin.dashboard.datadinamis')}}">
+                    <a class="view-more" href="{{route('admin.kepegawaian.index')}}">
                         View More <i class="clip-arrow-right-2"></i>
                     </a>
                 </div>
@@ -49,56 +49,12 @@
                 <div class="core-box">
                     <div class="heading">
                         <i class="clip-database circle-icon circle-bricky"></i>
-                        <h2>Manajemen Sekolah</h2>
+                        <h2>Manajemen Alumni</h2>
                     </div>
                     <div class="content">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
                     </div>
-                    <a class="view-more" href="{{route('admin.dashboard.sekolah')}}">
-                        View More <i class="clip-arrow-right-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="core-box">
-                    <div class="heading">
-                        <i class="clip-user-4 circle-icon circle-green"></i>
-                        <h2>Manajemen Data Statis</h2>
-                    </div>
-                    <div class="content">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                    </div>
-                    <a class="view-more" href="{{route('admin.polling.index')}}">
-                        View More <i class="clip-arrow-right-2"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="core-box">
-                    <div class="heading">
-                        <i class="clip-clip circle-icon circle-teal"></i>
-                        <h2>Manajemen Data Dinamis</h2>
-                    </div>
-                    <div class="content">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                    </div>
-                    <a class="view-more" href="{{route('admin.galeri.index')}}">
-                        View More <i class="clip-arrow-right-2"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="core-box">
-                    <div class="heading">
-                        <i class="clip-database circle-icon circle-bricky"></i>
-                        <h2>Manajemen Sekolah</h2>
-                    </div>
-                    <div class="content">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                    </div>
-                    <a class="view-more" href="{{route('admin.absensi.index')}}">
+                    <a class="view-more" href="#">
                         View More <i class="clip-arrow-right-2"></i>
                     </a>
                 </div>

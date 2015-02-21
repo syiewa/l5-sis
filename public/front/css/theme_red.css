@@ -1,0 +1,89 @@
+a {
+    color: #C93318;
+}
+a:focus, a:hover, a:active {
+	color: #DB3A1B;
+}
+p strong {
+	color: #BA2F16;
+}
+.navbar > .container .navbar-brand i, .navbar > .container .navbar-brand:hover i {
+	color: #DB3A1B;
+}
+.navbar-default .navbar-nav > .active > a:before {
+	color: #DB3A1B;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li.dropdown.open > a {
+	border-bottom-color: #DB3A1B;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	border-bottom-color: #DB3A1B;
+}
+.navbar-nav > li > .dropdown-menu {
+	border-top-color: #DB3A1B;
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    background-color: #DB3A1B;
+}
+.btn-main-color {
+    background-color: #DB3A1B;
+    border-color: #C93318;
+    color: #FFFFFF;
+}
+.btn-main-color:hover, .btn-main-color:focus, .btn-main-color:active, .btn-main-color.active {
+	background-color: #C93318;
+	border-color: #C93318;
+	color: #ffffff;
+}
+.circle-icon.circle-main-color {
+	background-color: #DB3A1B;
+	border-color: #DB3A1B;
+	color: #FFFFFF;
+}
+.slide_subtitle {
+	background-color: #DB3A1B;
+	color: #FFFFFF;
+}
+.progress-bar.main-color {
+    background-color: #C93318 !important;
+}
+.accordion-teal .panel-heading .accordion-toggle {
+	color: #DB3A1B;
+}
+.accordion-teal .panel-heading .accordion-toggle > .icon-arrow:before {
+    background-color: #DB3A1B;
+    color: #FFFFFF;
+}
+.sb_toggle {
+	border-color: rgba(0, 0, 0, 0) #DB3A1B rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+#scroll-top {
+	background-color: #DB3A1B;
+	border: 1px solid #DB3A1B;
+	color: #EEEEEE;
+}
+#scroll-top:hover {
+	background-color: #FCFCFC;
+	border: 1px solid #E1E1E1;
+	color: #DB3A1B !important;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background-color: #DB3A1B;
+    border-color: #C93318;
+    color: #FFFFFF;
+}
+div.post-media h4 {
+    color: #DB3A1B;
+}
+.portfolio-page ul.nav li a:hover, .portfolio-page ul.nav li.active a {
+    background: #DB3A1B;
+    color: #FFFFFF;
+}
+.feature-box .feature-icon {
+	color: #DB3A1B;
+}
+.colored-top-bar #topbar {
+	background: #DB3A1B;
+	color: #FFFFFF;
+	border-bottom: 1px solid #DB3A1B;
+}

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Absensi;
 use App\Models\Siswa;
+use Illuminate\Contracts\Auth\Guard;
 
 class AbsensiController extends Controller {
 
@@ -16,6 +17,10 @@ class AbsensiController extends Controller {
      *
      * @return Response
      */
+    public function __construct(Guard $auth) {
+        $this->auth = $auth;
+    }
+
     public function index() {
         //
         $data['title'] = 'Menu Absensi';
@@ -23,7 +28,7 @@ class AbsensiController extends Controller {
     }
 
     public function apiAbsensi($id) {
-        $data = Absensi::where('id_absensi','=',$id)->with('kelas','siswa')->get()->first();
+        $data = Absensi::where('id_absensi', '=', $id)->with('kelas', 'siswa')->get()->first();
         return response()->json($data);
     }
 
@@ -116,8 +121,8 @@ class AbsensiController extends Controller {
      */
     public function update(AbsensiRequest $request, $id) {
         //
-        $input = $request->only('id_siswa','id_kelas','absen','tanggal','bulan','tahun');
-        $absensi = Absensi::find($id);  
+        $input = $request->only('id_siswa', 'id_kelas', 'absen', 'tanggal', 'bulan', 'tahun');
+        $absensi = Absensi::find($id);
         if ($absensi->update($input)) {
             return response()->json(array('success' => TRUE));
         }

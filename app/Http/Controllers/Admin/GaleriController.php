@@ -6,8 +6,13 @@ use App\Http\Requests\GaleriRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Galeri;
+use Illuminate\Contracts\Auth\Guard;
 
 class GaleriController extends Controller {
+
+    public function __construct(Guard $auth) {
+        $this->auth = $auth;
+    }
 
     /**
      * Display a listing of the resource.
@@ -21,7 +26,7 @@ class GaleriController extends Controller {
     }
 
     public function apiGaleri() {
-        $data = Galeri::orderBy('id_album','desc')->get();
+        $data = Galeri::orderBy('id_album', 'desc')->get();
         return response()->json($data);
     }
 

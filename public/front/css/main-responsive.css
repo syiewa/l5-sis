@@ -1,0 +1,201 @@
+/* ---------------------------------------------------------------------- */
+/*	From Medium Devices Up To Larger Devices
+ /* ---------------------------------------------------------------------- */
+@media (min-width: 992px) {
+	body {
+		padding-top: 129px;
+	}
+	.navbar-default {
+		top: 0;
+	}
+	.navbar-default.space-top {
+		top: 40px;
+	}
+	.dropdown-menu {
+		box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+		min-width: 208px;
+	}
+	.dropdown-menu li a {
+		float: left;
+		font-size: 12px;
+		height: auto;
+		line-height: 23px;
+		max-width: none;
+		min-height: 23px;
+		padding: 8px 15px;
+		text-align: left;
+		text-decoration: none;
+		width: 100%;
+		color: #888888;
+	}
+}
+
+/* ---------------------------------------------------------------------- */
+/*	From Small Devices Up To Medium Devices
+ /* ---------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 991px) {
+	body {
+		padding-top: 119px !important;
+	}
+	.navbar-default {
+		top: 0;
+		position: absolute;
+	}
+	.navbar-default.space-top {
+		top: 40px;
+	}
+}
+/* ---------------------------------------------------------------------- */
+/*	Up To Medium Devices
+ /* ---------------------------------------------------------------------- */
+@media (max-width: 991px) {
+	.navbar-default {
+		line-height: normal !important;
+		background: #fff;
+	}
+	.navbar-brand {
+		padding-top: 5px !important;
+	}
+	.navbar-brand, .navbar-nav > li > a {
+		line-height: 20px !important;
+		height: auto !important;
+	}
+	.navbar-default .navbar-nav > .active > a:before {
+		content: " ";
+	}
+	.navbar-collapse .nav {
+		float: left !important;
+		clear: both;
+		margin-left: -15px;
+		margin-top: 10px;
+	}
+	header .nav li > a, header .nav li:hover > a, header .nav li.active > a, header .nav li.active:hover > a {
+		border: medium none !important;
+		padding-top: 10px !important;
+		padding-bottom: 10px !important;
+	}
+	.navbar > .container .navbar-brand {
+		margin-top: 10px;
+	}
+	.core-box {
+		padding-bottom: 10px;
+		padding-top: 10px;
+		text-align: center;
+	}
+	.core-box .heading {
+
+		margin-bottom: 0;
+	}
+	.core-box .heading .circle-icon {
+		float: none !important;
+		text-align: center;
+	}
+	.core-box .heading h2 {
+		padding-left: 0;
+	}
+	.core-box .view-more {
+		float: none;
+	}
+
+}
+/* ---------------------------------------------------------------------- */
+/*	Up To Medium Devices
+ /* ---------------------------------------------------------------------- */
+@media (min-width: 768px) {
+	.mega-menu {
+		position: static !important;
+	}
+	.mega-menu .dropdown-menu {
+		left: 0 !important;
+		right: 0 !important;
+		width: 100% !important;
+	}
+	.navbar-collapse.in {
+    	overflow-y: visible !Important;
+	}
+}
+/* ---------------------------------------------------------------------- */
+/*	Extra Small Devices Only
+ /* ---------------------------------------------------------------------- */
+@media (max-width: 767px) {
+	body {
+		padding-top: 50px !important;
+	}
+	.navbar-default {
+		position: absolute;
+	}
+	#slidingbar-area {
+		display: none;
+	}
+	#topbar {
+		display: none;
+	}
+	.navbar-default {
+		top: 0 !important;
+		height: auto !important;
+		float: none !important;
+	}
+	.navbar-collapse .nav {
+		float: none !important;
+	}
+	.navbar-default .navbar-nav li > a, .navbar-default .navbar-nav li > a:hover, .navbar-default .navbar-nav li > a:focus {
+		border-top-color: #E1E1E1 !important;
+		border-top-width: 1px !important;
+		border-top-style: solid !important;
+		line-height: 20px !important;
+		height: auto !important;
+		margin: 0;
+	}
+	.navbar-default .navbar-nav li > a:hover, .navbar-default .navbar-nav li > a:focus {
+		background-color: #007AFF !important;
+		color: #FFFFFF !important;
+	}
+	.navbar-nav, .dropdown-menu {
+		margin-top: -1px !important;
+		padding-top: 0;
+		margin-bottom: 0 !important;
+	}
+	.navbar-toggle {
+		background: #007AFF;
+		border: medium none;
+		border-radius: 0;
+		margin-top: 8px;
+		padding: 10px;
+	}
+	.navbar-toggle .icon-bar {
+		background-color: #FFFFFF !important;
+	}
+	.navbar-default .navbar-nav .menu-search > a:hover, .navbar-default .navbar-nav .menu-search > a:focus {
+		background: none !important;
+		color: #007AFF !important;
+	}
+	.search-box {
+		top: 3px;
+		right: 3px;
+		bottom: auto;
+		margin: 0 !important;
+		border: none !important;
+		box-shadow: none;
+		background: none;
+	}
+	.search-box .arrow {
+		display: none;
+	}	
+	.search-box .popover-content {
+   		padding: 0 !important;
+	}
+	
+	.grid-container {
+		display: block;
+	}
+	/* Tabs Left*/
+	.tabs-left .nav-tabs li.active a, .tabs-left .nav-tabs li.active a:hover, .tabs-left .nav-tabs li.active a:focus {
+		border-right-color: #dddddd;
+	}
+	.tabs-left .nav-tabs {
+		float: none;
+	}
+	.tabs-left .tab-content {
+		border-top: none;
+	}
+}

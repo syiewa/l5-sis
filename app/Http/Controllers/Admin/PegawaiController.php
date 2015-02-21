@@ -6,6 +6,7 @@ use App\Http\Requests\PegawaiRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pegawai;
+use Illuminate\Support\Facades\DB;
 
 class PegawaiController extends Controller {
 
@@ -84,8 +85,6 @@ class PegawaiController extends Controller {
     public function update(PegawaiRequest $request, $id) {
         //
         $input = $request->all();
-        $input['tgl_mulai'] = formatDate($input['tgl_mulai']);
-        $input['tgl_selesai'] = formatDate($input['tgl_selesai']);
         $pegawai = Pegawai::find($id);
         if ($pegawai->update($input)) {
             return response()->json(array('success' => TRUE));

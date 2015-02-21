@@ -49,7 +49,7 @@
                                 <tr ng-repeat="status in data| filter:paginate">
                                     <td><% status['nip'] %></td>
                                     <td><% status['nama_pegawai'] %></td>
-                                    <td><% status['jabatan'] %></td>
+                                    <td><% status['status'] %></td>
                                     <td class="center">
                                         <div class="visible-md visible-lg hidden-sm hidden-xs">
                                             <a data-original-title="Edit" data-placement="top" class="btn btn-xs btn-teal tooltips" href="{{url('admin/pegawai')}}/<% status['id_kepegawaian']%>/edit"><i class="fa fa-edit"></i></a>
