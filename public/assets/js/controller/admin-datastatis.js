@@ -9,11 +9,11 @@ angular.module('admin').controller('datastatis', function($scope, $http, $filter
     })
     $scope.delete = function(id) {
         if (confirm("Anda yakin untuk menghapus data?") === true) {
-            $http.delete(baseURL.url('admin/datastatis') + id).success(function(data) {
+            $http.delete(baseURL.url('admin/datastatis/' + id)).success(function(data) {
                 if (data.success) {
                     $http.get(baseURL.url('api/datastatis')).success(function(data) {
                         $scope.data = data;
-                        $scope.alerts.push({type: 'success', msg: data.msg});
+                        $scope.alerts.push({type: 'success', msg: 'Data Berhasil Dihapus'});
                         $timeout(function() {
                             $scope.alerts = [];
                         }, 5000);
@@ -39,14 +39,16 @@ angular.module('admin').controller('datastatiscreate', function($scope, $http, $
             if (data.success) {
                 window.location.replace(baseURL.url('admin/datastatis'));
             }
-        }).error(function(e) {
-            var x;
-            for (x in e) {
-                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+        }).error(function(e, status) {
+            if (status === 422) {
+                var x;
+                for (x in e) {
+                    $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+                }
+                $timeout(function() {
+                    $scope.alerts = [];
+                }, 5000);
             }
-            $timeout(function() {
-                $scope.alerts = [];
-            }, 5000);
         });
     }
 });
@@ -59,6 +61,7 @@ angular.module('admin').controller('datastatisedit', function($scope, $http, $fi
     };
     $http.get(baseURL.url('api/menu')).success(function(data) {
         $scope.menu = data;
+        console.log(data);
     });
     $scope.submit = function(id) {
         $scope.data['content'] = CKEDITOR.instances.editor1.getData();
@@ -68,14 +71,16 @@ angular.module('admin').controller('datastatisedit', function($scope, $http, $fi
                     window.location.replace(baseURL.url());
                 }, 3000);
             }
-        }).error(function(e) {
-            var x;
-            for (x in e) {
-                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+        }).error(function(e, status) {
+            if (status === 422) {
+                var x;
+                for (x in e) {
+                    $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+                }
+                $timeout(function() {
+                    $scope.alerts = [];
+                }, 5000);
             }
-            $timeout(function() {
-                $scope.alerts = [];
-            }, 5000);
         });
         ;
     }

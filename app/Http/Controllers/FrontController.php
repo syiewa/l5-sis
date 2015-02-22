@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Cookie\CookieJar;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -27,6 +28,15 @@ class FrontController extends Controller {
         return view('front.home', $this->data);
     }
 
+    public function tambahpoll(CookieJar $cookieJar, Request $request) {
+        $input = $request->except('_token');
+        $update = Models\Jawaban::where('id_soal_poll', $input['id_soal_poll'])->where('jawaban', $input['jawaban'])->first();
+        $update->counter = $update->counter + 1;
+        $update->update();
+        $cookieJar->queue(cookie('polling', 'sudah', 45000));
+        return redirect()->to('lihatpoll');
+    }
+
     public function polling() {
         $this->data['polling'] = Models\Polling::with('jawaban')->where('status', 'Y')->first();
         $this->data['total_data'] = $this->data['polling']->jawaban->sum('counter') / 100;
@@ -35,6 +45,7 @@ class FrontController extends Controller {
 
     public function halaman($id) {
         $this->data['page'] = Models\Data::with('menu')->where('data_id', $id)->first();
+        $this->data['title'] = $this->data['page']->menu->title;
         return view('front.post', $this->data);
     }
 
@@ -55,9 +66,36 @@ class FrontController extends Controller {
         $this->data['pengumumanlist'] = Models\Pengumuman::orderBy('tanggal', 'desc')->paginate(5);
         return view('front.pengumumanlist', $this->data);
     }
-    
-    public function pengumuman($id){
-        
+
+    public function pengumuman($id) {
+        $this->data['title'] = 'Pengumuman';
+        $this->data['pengumumanlist'] = Models\Pengumuman::find($id);
+        return view('front.pengumuman', $this->data);
+    }
+
+    public function agendalist() {
+        $this->data['title'] = 'Agenda';
+        $this->data['agendalist'] = Models\Agenda::orderBy('tgl_posting', 'desc')->paginate(5);
+        return view('front.agendalist', $this->data);
+    }
+
+    public function agenda($id) {
+        $this->data['title'] = 'Agenda';
+        $this->data['agendalist'] = Models\Agenda::find($id);
+        return view('front.agenda', $this->data);
+    }
+
+    public function album() {
+        $this->data['title'] = 'Album Sekolah';
+        $this->data['album'] = Models\Galeri::all();
+        return view('front.album', $this->data);
+    }
+
+    public function foto($id) {
+        $this->data['title'] = 'Album Sekolah';
+        $album = Models\Galeri::find($id);
+        $this->data['foto'] = $album->foto;
+        return view('front.foto', $this->data);
     }
 
     /**

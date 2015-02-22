@@ -21,7 +21,7 @@ class BeritaController extends Controller {
 
     public function index() {
         //
-        $data['title'] = 'Menu Data Statis';
+        $data['title'] = 'Menu Berita';
         return view('backend.berita.index', $data);
     }
 
@@ -47,10 +47,11 @@ class BeritaController extends Controller {
      * @return Response
      */
     public function store(BeritaRequest $request) {
-        //
         $destinationPath = public_path('upload/berita');
-        $input = $request->except('file');
-        $data = json_decode($input['data']);
+        $data = $request->except('file');
+        if ($request->has('data')) {
+            $data = json_decode($request->get('data'));
+        }
         if (isset($data->id_berita)) {
             $berita = Berita::find($data->id_berita);
             if ($request->hasFile('file')) {
@@ -72,6 +73,7 @@ class BeritaController extends Controller {
         }
         $berita->judul_berita = $data->judul_berita;
         $berita->isi = $data->isi;
+        $berita->author = $this->auth->user()->nama_pegawai;
         if ($berita->save()) {
             return response()->json(array('success' => TRUE));
         };
@@ -110,6 +112,8 @@ class BeritaController extends Controller {
      */
     public function update(BeritaRequest $request, $id) {
         //
+        $input = $request->all();
+        $input['author'] = $this->auth->user()->nama_pegawai;
         $berita = Berita::find($id);
         if ($berita->update($request->all())) {
             return response()->json(array('success' => TRUE, 'msg' => 'Data Berhasil Dihapus'));

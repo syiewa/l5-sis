@@ -13,7 +13,7 @@ class Galeri extends Model {
     public $timestamps = false;
 
     public function foto() {
-        return $this->hasMany('App\Models\Foto');
+        return $this->hasMany('App\Models\Foto','id_album');
     }
 
     public function scopeDropdownGaleri($query) {

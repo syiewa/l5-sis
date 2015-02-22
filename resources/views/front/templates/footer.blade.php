@@ -80,7 +80,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-1">
-                    <a class="logo" href="index.html">
+                    <a class="logo" href="{{url()}}">
                         SMAN1
                     </a>
                 </div>
@@ -98,12 +98,12 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{url('galeri')}}">
                                     Galeri
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{url('agenda')}}">
                                     Agenda
                                 </a>
                             </li>

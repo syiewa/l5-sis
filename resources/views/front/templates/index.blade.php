@@ -103,10 +103,12 @@
         <!-- end: MAIN JAVASCRIPTS -->
         <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
         <script src="{{asset('front/plugins/flex-slider/jquery.flexslider.js')}}"></script>
+        <script src="{{asset('front/plugins/mixitup/src/jquery.mixitup.js')}}"></script>
         <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
         <script>
 jQuery(document).ready(function() {
     Main.init();
+    $('#Grid').mixitup();
 });
         </script>
     </body>

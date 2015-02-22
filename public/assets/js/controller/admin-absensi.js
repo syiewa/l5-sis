@@ -92,14 +92,16 @@ angular.module('admin').controller('absensiedit', function($scope, $http, $filte
                     window.location.replace(baseURL.url('admin/absensi'));
                 }, 3000);
             }
-        }).error(function(e) {
-            var x;
-            for (x in e) {
-                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+        }).error(function(e,status) {
+            if (status === 422) {
+                var x;
+                for (x in e) {
+                    $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+                }
+                $timeout(function() {
+                    $scope.alerts = [];
+                }, 5000);
             }
-            $timeout(function() {
-                $scope.alerts = [];
-            }, 5000);
         });
     }
 });

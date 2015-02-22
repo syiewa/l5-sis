@@ -38,17 +38,17 @@
 
                     @endforeach
                     @endif
-                    <li class="menu-search">
-                        <!-- start: SEARCH BUTTON -->
+<!--                    <li class="menu-search">
+                         start: SEARCH BUTTON 
                         <a href="#" data-placement="bottom" data-toggle="popover">
                             <i class="clip-search-3"></i>
                         </a>
-                        <!-- end: SEARCH BUTTON -->
-                        <!-- start: SEARCH POPOVER -->
+                         end: SEARCH BUTTON 
+                         start: SEARCH POPOVER 
                         <div class="popover bottom search-box">
                             <div class="arrow"></div>
                             <div class="popover-content">
-                                <!-- start: SEARCH FORM -->
+                                 start: SEARCH FORM 
                                 <form class="" id="searchform" action="#">
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Search">
@@ -58,11 +58,11 @@
                                             </button> </span>
                                     </div>
                                 </form>
-                                <!-- end: SEARCH FORM -->
+                                 end: SEARCH FORM 
                             </div>
                         </div>
-                        <!-- end: SEARCH POPOVER -->
-                    </li>
+                         end: SEARCH POPOVER 
+                    </li>-->
                 </ul>
             </div>
         </div>

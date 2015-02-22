@@ -52,14 +52,16 @@ angular.module('admin').controller('kelascreate', function($scope, $http, $filte
             if (data.success) {
                 window.location.replace(baseURL.url('admin/kelas'));
             }
-        }).error(function(e) {
-            var x;
-            for (x in e) {
-                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+        }).error(function(e,status) {
+            if (status === 422) {
+                var x;
+                for (x in e) {
+                    $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+                }
+                $timeout(function() {
+                    $scope.alerts = [];
+                }, 5000);
             }
-            $timeout(function() {
-                $scope.alerts = [];
-            }, 5000);
         });
     }
 });
@@ -80,14 +82,16 @@ angular.module('admin').controller('kelasedit', function($scope, $http, $filter,
                     window.location.replace(baseURL.url('admin/kelas'));
                 }, 3000);
             }
-        }).error(function(e) {
-            var x;
-            for (x in e) {
-                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+        }).error(function(e,status) {
+            if (status === 422) {
+                var x;
+                for (x in e) {
+                    $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+                }
+                $timeout(function() {
+                    $scope.alerts = [];
+                }, 5000);
             }
-            $timeout(function() {
-                $scope.alerts = [];
-            }, 5000);
         });
     }
 });

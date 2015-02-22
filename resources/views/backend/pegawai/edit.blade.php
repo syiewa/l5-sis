@@ -29,7 +29,7 @@
                     <div class="tab-content">
                         <div id="panel_tab2_example1" class="tab-pane active">
                             <alert ng-repeat="alert in alerts" type="<%alert.type%>" close="closeAlert($index)"><%alert.msg%></alert>
-                            <form class="form-horizontal" role="form" name="pegawaiForm" ng-submit="submit(data.id_kepegawaian)" enctype="multipart/form-data">
+                            <form class="form-horizontal" role="form" name="pegawaiForm" ng-submit="submit()" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="form-field-1"> NIP </label>
                                     <div class="col-sm-9">

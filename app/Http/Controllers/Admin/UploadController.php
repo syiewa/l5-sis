@@ -2,31 +2,31 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\PengumumanRequest;
+use App\Models\Upload;
+use App\Http\Requests\UploadRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Pengumuman;
 use Illuminate\Contracts\Auth\Guard;
 
-class PengumumanController extends Controller {
-
-    public function __construct(Guard $auth) {
-        $this->auth = $auth;
-    }
+class UploadController extends Controller {
 
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index() {
-        //
-        $data['title'] = 'Menu Pengumuman';
-        return view('backend.pengumuman.index', $data);
+    public function __construct(Guard $auth) {
+        $this->auth = $auth;
     }
 
-    public function apiPengumuman() {
-        $data = Pengumuman::orderBy('tanggal', 'desc')->get();
+    public function index() {
+        //
+        $data['title'] = 'Menu Upload';
+        return view('backend.upload.index', $data);
+    }
+
+    public function apiUpload() {
+        $data = Upload::all();
         return response()->json($data);
     }
 
@@ -37,8 +37,8 @@ class PengumumanController extends Controller {
      */
     public function create() {
         //
-        $data['title'] = 'Tambah Pengumuman';
-        return View('backend.pengumuman.create', $data);
+        $data['title'] = 'Tambah Upload';
+        return View('backend.upload.create', $data);
     }
 
     /**
@@ -46,15 +46,21 @@ class PengumumanController extends Controller {
      *
      * @return Response
      */
-    public function store(PengumumanRequest $request) {
+    public function store(UploadRequest $request) {
         //
-        $input = $request->all();
-        $pengumuman = new Pengumuman($input);
-        $pengumuman->tanggal = date('Y-m-d');
-        $pengumuman->penulis = $this->auth->user()->nama_pegawai;
-        if ($pengumuman->save()) {
-            return response()->json(array('success' => TRUE));
-        };
+        $path = public_path('upload/file');
+        $input = $request->except('file');
+        $upload = new Upload();
+        if ($request->hasFile('file')) {
+            $upload->judul_file = $input['data'];
+            $upload->tgl_posting = date('Y-m-d');
+            $upload->author = $this->auth->user()->nama_pegawai;
+            $upload->nama_file = $request->file('file')->getClientOriginalName();
+            $request->file('file')->move($path, $upload->nama_file);
+            if ($upload->save()) {
+                return response()->json(array('success' => TRUE));
+            };
+        }
     }
 
     /**
@@ -65,7 +71,7 @@ class PengumumanController extends Controller {
      */
     public function show($id) {
         //
-        $data = Pengumuman::find($id);
+        $data = Upload::find($id);
         return response()->json($data);
     }
 
@@ -77,9 +83,9 @@ class PengumumanController extends Controller {
      */
     public function edit($id) {
         //
-        $data['title'] = 'Edit Pengumuman';
-        $data['data'] = Pengumuman::find($id);
-        return view('backend.pengumuman.edit', $data);
+        $data['title'] = 'Edit Upload';
+        $data['data'] = Upload::find($id);
+        return view('backend.upload.edit', $data);
     }
 
     /**
@@ -88,12 +94,12 @@ class PengumumanController extends Controller {
      * @param  int  $id
      * @return Response
      */
-    public function update(PengumumanRequest $request, $id) {
+    public function update(UploadRequest $request, $id) {
         //
         $input = $request->all();
         $input['penulis'] = $this->auth->user()->nama_pegawai;
-        $pengumuman = Pengumuman::find($id);
-        if ($pengumuman->update($input)) {
+        $upload = Upload::find($id);
+        if ($upload->update($input)) {
             return response()->json(array('success' => TRUE));
         }
     }
@@ -106,7 +112,7 @@ class PengumumanController extends Controller {
      */
     public function destroy($id) {
         //
-        $data = Pengumuman::find($id);
+        $data = Upload::find($id);
         if ($data->delete()) {
             return response()->json(array('success' => TRUE, 'msg' => 'Data Berhasil Dihapus'));
         }

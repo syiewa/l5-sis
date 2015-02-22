@@ -77,7 +77,7 @@ angular.module('admin').controller('pegawaiedit', function($scope, $http, $filte
     $http.get(baseURL.url('api/pegawai/') + id).success(function(data) {
         $scope.data = data;
     })
-    $scope.submit = function(id) {
+    $scope.submit = function() {
         $http.put(baseURL.url('admin/pegawai/') + id, $scope.data).success(function(data) {
             if (data.success) {
                 $timeout(function() {
@@ -85,7 +85,7 @@ angular.module('admin').controller('pegawaiedit', function($scope, $http, $filte
                 }, 3000);
             }
         }).error(function(e, status) {
-            if (status == 442) {
+            if (status === 422) {
                 var x;
                 for (x in e) {
                     $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});

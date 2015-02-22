@@ -31,6 +31,7 @@
                 <p>
                     {!!$beritalist->isi!!}
                 </p>
+            </div>
         </article>
     </div>
 </div>

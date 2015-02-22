@@ -10,23 +10,30 @@
         </p>
         <hr>
         <h4>Polling</h4>
-        <p>{{$polling->soal_poll}} <br />
-        <form>
+        <p>{{$polling->soal_poll}} <br /></p>
+        @if(Request::cookie('polling') != 'sudah')
+        <form action="{{url('tambahpoll')}}" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token()}}">
+            <input type="hidden" name="id_soal_poll" value="{{ $polling->id_soal_poll}}">
             @foreach($polling->jawaban as $jawaban)
 
             <div class="radio">
                 <label>
-                    <input type="radio" name="jawaban[]" id="optionsRadios1" value="$jawaban->jawaban">
+                    <input type="radio" name="jawaban" id="optionsRadios1" value="{{$jawaban->jawaban}}" required>
                     {{$jawaban->jawaban}}
                 </label>
             </div>
             @endforeach
             <div class="form-group center">
-                <button class="btn btn-default btn-squared" type="button" type="submit"> Pilih </button>
+                <button class="btn btn-default btn-squared" type="submit"> Pilih </button>
                 <a class="btn btn-warning btn-squared" type="button" href="{{url('lihatpoll')}}"> Lihat Polling </a>
             </div>
         </form>
+        @else
+        <p>
+        <a class="btn btn-warning btn-squared" type="button" href="{{url('lihatpoll')}}"> Lihat Polling </a>
         </p>
+        @endif
         <div class="tabs">
             <ul class="nav nav-tabs">
                 <li class="active">
@@ -44,7 +51,7 @@
                         @foreach($pengumuman as $umum)
                         <li>
                             <div class="post-info">
-                                <a href="#">
+                                <a href="{{url('pengumuman',$umum->id_pengumuman)}}">
                                     {{$umum->judul_pengumuman}}
                                 </a>
                                 <div class="post-meta">
@@ -73,7 +80,7 @@
                         </li>
                         @endforeach
                     </ul>
-                    <a href="#" class="btn btn-blue btn-block">
+                    <a href="{{url('agenda')}}" class="btn btn-blue btn-block">
                         Lihat Semua Agenda <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 </div>

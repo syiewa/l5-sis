@@ -12,11 +12,16 @@
  */
 
 Route::get('/', ['as' => 'home', 'uses' => 'FrontController@index']);
-Route::get('/lihatpoll','FrontController@polling');
-Route::get('/berita','FrontController@beritalist');
-Route::get('/berita/{id}','FrontController@berita');
-Route::get('/pengumuman','FrontController@pengumumanlist');
-Route::get('/pengumuman/{id}','FrontController@pengumuman');
+Route::get('/lihatpoll', 'FrontController@polling');
+Route::post('/tambahpoll', 'FrontController@tambahpoll');
+Route::get('/berita', 'FrontController@beritalist');
+Route::get('/berita/{id}', 'FrontController@berita');
+Route::get('/pengumuman', 'FrontController@pengumumanlist');
+Route::get('/pengumuman/{id}', 'FrontController@pengumuman');
+Route::get('/agenda', 'FrontController@agendalist');
+Route::get('/agenda/{id}', 'FrontController@agenda');
+Route::get('/galeri', 'FrontController@album');
+Route::get('/galeri/{id}', 'FrontController@foto');
 Route::get('/page/{id}', ['as' => 'page.menu', 'uses' => 'FrontController@halaman']);
 
 Route::get('/login', function() {
@@ -54,6 +59,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::resource('galeri', 'Admin\GaleriController');
     Route::resource('galeri/{id}/foto', 'Admin\FotoController');
     Route::resource('absensi', 'Admin\AbsensiController');
+    Route::resource('upload', 'Admin\UploadController');
     Route::post('absensi/create', ['as' => 'admin.absensi.create', 'uses' => 'Admin\AbsensiController@create']);
     Route::post('absensi/show', ['as' => 'admin.absensi.show', 'uses' => 'Admin\AbsensiController@show']);
 });
@@ -98,4 +104,7 @@ Route::group(['prefix' => 'api'], function() {
 
     Route::get('absensi', 'Admin\AbsensiController@apiAbsensi');
     Route::get('absensi/{id}', 'Admin\AbsensiController@apiAbsensi');
+
+    Route::get('upload', 'Admin\UploadController@apiUpload');
+    Route::get('upload/{id}', 'Admin\UploadController@apiUpload');
 });

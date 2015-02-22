@@ -21,6 +21,11 @@ class BeritaRequest extends Request {
      * @return array
      */
     public function rules() {
+        if (Request::has('data')) {
+            return[
+                'data' => 'required'
+            ];
+        }
         return [
             'judul_berita' => 'required',
             'isi' => 'required',
@@ -29,7 +34,8 @@ class BeritaRequest extends Request {
 
     public function messages() {
         return [
-            'judul_berita.required' => 'Judul Pengumuman Diperlukan!',
+            'judul_berita.required' => 'Judul Berita Diperlukan!',
+            'data.required' => 'Field Isi & Judul diperlukan',
             'isi.required' => 'Isi Diperlukan!',
         ];
     }

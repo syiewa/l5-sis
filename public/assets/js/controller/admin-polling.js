@@ -53,14 +53,16 @@ angular.module('admin').controller('pollingcreate', function($scope, $http, $fil
             if (data.success) {
                 window.location.replace(baseURL.url('admin/polling'));
             }
-        }).error(function(e) {
-            var x;
-            for (x in e) {
-                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+        }).error(function(e,status) {
+            if (status === 422) {
+                var x;
+                for (x in e) {
+                    $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+                }
+                $timeout(function() {
+                    $scope.alerts = [];
+                }, 5000);
             }
-            $timeout(function() {
-                $scope.alerts = [];
-            }, 5000);
         });
     }
 });
@@ -82,14 +84,16 @@ angular.module('admin').controller('pollingedit', function($scope, $http, $filte
                     window.location.replace(baseURL.url('admin/polling'));
                 }, 3000);
             }
-        }).error(function(e) {
-            var x;
-            for (x in e) {
-                $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+        }).error(function(e,status) {
+            if (status === 422) {
+                var x;
+                for (x in e) {
+                    $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+                }
+                $timeout(function() {
+                    $scope.alerts = [];
+                }, 5000);
             }
-            $timeout(function() {
-                $scope.alerts = [];
-            }, 5000);
         });
     }
 });

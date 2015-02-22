@@ -16,6 +16,10 @@ Breadcrumbs::register('datastatiscreate', function($breadcrumbs) {
     $breadcrumbs->parent('datastatis');
     $breadcrumbs->push('Tambah Data', route('admin.datastatis.create'), ['icon' => '']);
 });
+Breadcrumbs::register('datastatisedit', function($breadcrumbs) {
+    $breadcrumbs->parent('datastatis');
+    $breadcrumbs->push('Edit Data', route('admin.datastatis.edit'), ['icon' => '']);
+});
 Breadcrumbs::register('datadinamis', function($breadcrumbs) {
     $breadcrumbs->parent('home');
     $breadcrumbs->push('Data Dinamis', route('admin.dashboard.datadinamis'), ['icon' => '']);
@@ -155,4 +159,16 @@ Breadcrumbs::register('absensicreate', function($breadcrumbs) {
 Breadcrumbs::register('absensishow', function($breadcrumbs) {
     $breadcrumbs->parent('absensi');
     $breadcrumbs->push('Lihat Absensi', route('admin.absensi.show'), ['icon' => '']);
+});
+Breadcrumbs::register('upload', function($breadcrumbs) {
+    $breadcrumbs->parent('home');
+    $breadcrumbs->push('Data Upload', route('admin.upload.index'), ['icon' => '']);
+});
+Breadcrumbs::register('uploadcreate', function($breadcrumbs) {
+    $breadcrumbs->parent('upload');
+    $breadcrumbs->push('Tambah Upload', route('admin.upload.create'), ['icon' => '']);
+});
+Breadcrumbs::register('uploadshow', function($breadcrumbs) {
+    $breadcrumbs->parent('upload');
+    $breadcrumbs->push('Lihat Upload', route('admin.upload.show'), ['icon' => '']);
 });
