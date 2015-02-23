@@ -435,10 +435,10 @@ var Main = function() {
 			var slider = $(this);
 			var defaults = {
 				animation: "slide",
-				animationLoop: false,
+				animationLoop: true,
 				controlNav: true,
 				directionNav: false,
-				slideshow: false,
+				slideshow: true,
 				prevText: "",
 				nextText: ""
 			};

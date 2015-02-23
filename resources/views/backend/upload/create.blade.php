@@ -24,7 +24,7 @@
                     <ul class="nav nav-tabs tab-bricky" id="myTab">
                         <li class="active">
                             <a data-toggle="tab" href="#panel_tab2_example1">
-                                <i class="green fa fa-home"></i> Data Statis
+                                <i class="green fa fa-home"></i> {{$title}}
                             </a>
                         </li>
                     </ul>
@@ -33,13 +33,13 @@
                             <alert ng-repeat="alert in alerts" type="<%alert.type%>" close="closeAlert($index)"><% alert.msg %></alert>
                             <form class="form-horizontal" role="form" name="beritaForm" ng-submit="submit()" enctype="multipart/form-data">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label" for="form-field-1"> Judul Pengumuman </label>
+                                    <label class="col-sm-2 control-label" for="form-field-1"> Judul Upload </label>
                                     <div class="col-sm-9">
-                                        <input type='text' class='col-sm-10 form-control' name='judul_upload' ng-model='data.judul_upload'/>
+                                        <input type='text' class='col-sm-10 form-control' name='judul_upload' ng-model='data.judul_file'/>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label" for="form-field-1"> Isi </label>
+                                    <label class="col-sm-2 control-label" for="form-field-1"> File </label>
                                     <div class="col-sm-9">
                                         <div class="fileupload fileupload-new" data-provides="fileupload">
                                             <div class="input-group">

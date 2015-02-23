@@ -9,7 +9,7 @@
 </section>
 @endsection
 @section('content')
-@if($page)
+@if(count($page))
 <div class="col-md-9">
     <div class="blog-posts post-page">
         <article>

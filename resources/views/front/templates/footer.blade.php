@@ -108,7 +108,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{url('download')}}">
                                     Download
                                 </a>
                             </li>

@@ -21,12 +21,13 @@ Route::get('/pengumuman/{id}', 'FrontController@pengumuman');
 Route::get('/agenda', 'FrontController@agendalist');
 Route::get('/agenda/{id}', 'FrontController@agenda');
 Route::get('/galeri', 'FrontController@album');
+Route::get('/download', 'FrontController@download');
 Route::get('/galeri/{id}', 'FrontController@foto');
 Route::get('/page/{id}', ['as' => 'page.menu', 'uses' => 'FrontController@halaman']);
 
-Route::get('/login', function() {
-    return view('backend.login');
-});
+Route::get('/login', ['middleware' => 'guest', function() {
+return view('backend.login');
+}]);
 Route::post('/login', 'LoginController@auth');
 Route::get('/logout', 'LoginController@logout');
 Route::get('home', 'HomeController@index');
@@ -60,8 +61,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::resource('galeri/{id}/foto', 'Admin\FotoController');
     Route::resource('absensi', 'Admin\AbsensiController');
     Route::resource('upload', 'Admin\UploadController');
+    Route::post('upload/update', 'Admin\UploadController@updateFile');
     Route::post('absensi/create', ['as' => 'admin.absensi.create', 'uses' => 'Admin\AbsensiController@create']);
     Route::post('absensi/show', ['as' => 'admin.absensi.show', 'uses' => 'Admin\AbsensiController@show']);
+});
+
+Route::group(['prefix' => 'guru'], function() {
+    Route::get('/', function() {
+        return view('guru.templates.index');
+    });
 });
 
 Route::group(['prefix' => 'api'], function() {

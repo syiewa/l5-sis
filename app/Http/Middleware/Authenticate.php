@@ -32,7 +32,7 @@ class Authenticate {
      * @return mixed
      */
     public function handle($request, Closure $next) {
-        if ($this->auth->guest()) {
+        if ($this->auth->guest() || $this->auth->user()->status != 'admin') {
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {

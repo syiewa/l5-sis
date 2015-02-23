@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <!-- start: PAGE TITLE & BREADCRUMB -->
-{!! Breadcrumbs::render('upload'); !!}
+                {!! Breadcrumbs::render('upload'); !!}
                 <div class="page-header">
                     <h1>
                         {{$title}} <br />
@@ -42,6 +42,7 @@
                                     <th>Judul File</th>
                                     <th>Tanggal</th>
                                     <th>Penulis</th>
+                                    <th class="center">Download Link</th>
                                     <th class="hidden-xs center">Aksi Data</th>
                                     <th></th>
                                 </tr>
@@ -51,10 +52,11 @@
                                     <td><% status['judul_file'] %></td>
                                     <td><% status['tgl_posting'] %></td>
                                     <td><% status['author'] %></td>
+                                    <td class='center'><a href="{{asset('upload/file')}}/<% status['nama_file'] %>">[Download]</a></td>
                                     <td class="center">
                                         <div class="visible-md visible-lg hidden-sm hidden-xs">
-                                            <a data-original-title="Edit" data-placement="top" class="btn btn-xs btn-teal tooltips" href="{{url('admin/upload')}}/<% status['id_upload']%>/edit"><i class="fa fa-edit"></i></a>
-                                            <a data-original-title="Remove" data-placement="top" class="btn btn-xs btn-bricky tooltips" href="#" ng-click="delete(status['id_upload'])"><i class="fa fa-times fa fa-white"></i></a>
+                                            <a data-original-title="Edit" data-placement="top" class="btn btn-xs btn-teal tooltips" href="{{url('admin/upload')}}/<% status['id_download']%>/edit"><i class="fa fa-edit"></i></a>
+                                            <a data-original-title="Remove" data-placement="top" class="btn btn-xs btn-bricky tooltips" href="#" ng-click="delete(status['id_download'])"><i class="fa fa-times fa fa-white"></i></a>
                                         </div>
                                         <div class="visible-xs visible-sm hidden-md hidden-lg">
                                             <div class="btn-group">
@@ -63,12 +65,12 @@
                                                 </a>
                                                 <ul class="dropdown-menu pull-right" role="menu">
                                                     <li role="presentation">
-                                                        <a href="{{url('admin/upload')}}/<% status['id_data']%>/edit" tabindex="-1" role="menuitem">
+                                                        <a href="{{url('admin/upload')}}/<% status['id_download']%>/edit" tabindex="-1" role="menuitem">
                                                             <i class="fa fa-edit"></i> Edit
                                                         </a>
                                                     </li>
                                                     <li role="presentation">
-                                                        <a href="#" tabindex="-1" role="menuitem" ng-click="delete(status['id_upload'])">
+                                                        <a href="#" tabindex="-1" role="menuitem" ng-click="delete(status['id_download'])">
                                                             <i class="fa fa-times"></i> Remove 
                                                         </a>
                                                     </li>

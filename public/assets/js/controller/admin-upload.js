@@ -59,11 +59,21 @@ angular.module('admin').controller('uploadcreate', function($scope, $http, $filt
                         window.location.replace(baseURL.url('admin/upload'));
                     }, 3000);
                 }
+            }).error(function(e, status) {
+                if (status === 422) {
+                    var x;
+                    for (x in e) {
+                        $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+                    }
+                    $timeout(function() {
+                        $scope.alerts = [];
+                    }, 5000);
+                }
             });
         } else {
-            $http.post(baseURL.url('admin/upload/'), $scope.data).success(function(data) {
+            $http.post(baseURL.url('admin/upload'), $scope.data).success(function(data) {
                 if (data.success) {
-                    window.location.replace(baseURL.url('admin/upload/'));
+                    window.location.replace(baseURL.url('admin/upload'));
                 }
             }).error(function(e, status) {
                 if (status === 422) {
@@ -80,7 +90,7 @@ angular.module('admin').controller('uploadcreate', function($scope, $http, $filt
     }
 });
 
-angular.module('admin').controller('uploadedit', function($scope, $http, $filter, $timeout, baseURL) {
+angular.module('admin').controller('uploadedit', function($scope, $http, $filter, $timeout,$upload, baseURL) {
     $scope.data = {};
     $scope.alerts = [];
     $scope.closeAlert = function(index) {
@@ -89,25 +99,48 @@ angular.module('admin').controller('uploadedit', function($scope, $http, $filter
     var id = $filter('_uriseg')(4);
     $http.get(baseURL.url('api/upload/') + id).success(function(data) {
         $scope.data = data;
-    })
-    $scope.submit = function(id) {
-        $scope.data['isi'] = CKEDITOR.instances.editor1.getData();
-        $http.put(baseURL.url('admin/upload/') + id, $scope.data).success(function(data) {
-            if (data.success) {
-                $timeout(function() {
-                    window.location.replace(baseURL.url('admin/upload'));
-                }, 3000);
-            }
-        }).error(function(e, status) {
-            if (status === 422) {
-                var x;
-                for (x in e) {
-                    $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+        $scope.data['judul_file'] = data.judul_file;
+    });
+    $scope.submit = function() {
+        if ($scope.data.file) {
+            $upload.upload({
+                url: baseURL.url('admin/upload/update'),
+                method: 'POST',
+                file: $scope.data.file,
+                data: $scope.data
+            }).success(function(data) {
+                if (data.success) {
+                    $timeout(function() {
+                        window.location.replace(baseURL.url('admin/upload'));
+                    }, 3000);
                 }
-                $timeout(function() {
-                    $scope.alerts = [];
-                }, 5000);
-            }
-        });
+            }).error(function(e, status) {
+                if (status === 422) {
+                    var x;
+                    for (x in e) {
+                        $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+                    }
+                    $timeout(function() {
+                        $scope.alerts = [];
+                    }, 5000);
+                }
+            });
+        } else {
+            $http.put(baseURL.url('admin/upload/'+id), $scope.data).success(function(data) {
+                if (data.success) {
+                    window.location.replace(baseURL.url('admin/upload'));
+                }
+            }).error(function(e, status) {
+                if (status === 422) {
+                    var x;
+                    for (x in e) {
+                        $scope.alerts.push({'type': "danger", 'msg': (e[x][0])});
+                    }
+                    $timeout(function() {
+                        $scope.alerts = [];
+                    }, 5000);
+                }
+            });
+        }
     }
 });

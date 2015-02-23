@@ -168,7 +168,7 @@ Breadcrumbs::register('uploadcreate', function($breadcrumbs) {
     $breadcrumbs->parent('upload');
     $breadcrumbs->push('Tambah Upload', route('admin.upload.create'), ['icon' => '']);
 });
-Breadcrumbs::register('uploadshow', function($breadcrumbs) {
+Breadcrumbs::register('uploadedit', function($breadcrumbs) {
     $breadcrumbs->parent('upload');
-    $breadcrumbs->push('Lihat Upload', route('admin.upload.show'), ['icon' => '']);
+    $breadcrumbs->push('Lihat Upload', route('admin.upload.edit'), ['icon' => '']);
 });

@@ -45,7 +45,7 @@ class FrontController extends Controller {
 
     public function halaman($id) {
         $this->data['page'] = Models\Data::with('menu')->where('data_id', $id)->first();
-        $this->data['title'] = $this->data['page']->menu->title;
+        $this->data['title'] = $this->data['page'] ? $this->data['page']->menu->title : 'Page Tidak Ditekemukan';
         return view('front.post', $this->data);
     }
 
@@ -98,62 +98,10 @@ class FrontController extends Controller {
         return view('front.foto', $this->data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create() {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @return Response
-     */
-    public function store() {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id) {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function edit($id) {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function update($id) {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id) {
-        //
+    public function download() {
+        $this->data['title'] = 'Download File';
+        $this->data['download'] = Models\Upload::orderBy('tgl_posting')->paginate(10);
+        return view('front.download', $this->data);
     }
 
 }

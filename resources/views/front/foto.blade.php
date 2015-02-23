@@ -16,7 +16,7 @@
                 @foreach($foto as $galeri)
                 <li class="col-md-3 col-xs-9 mix category_1" data-cat="1">
                     <div class="portfolio-item img-thumbnail">
-                        <a class="thumb-info" href="{{url('upload/besar/'.$galeri->foto_besar)}}">
+                        <a class="thumb-info group1" href="{{url('upload/besar/'.$galeri->foto_besar)}}">
                             <img src="{{url('upload/kecil/'.$galeri->foto_kecil)}}" class="img-responsive" alt="">
                             <span class="thumb-info-title"> <span class="thumb-info-type">{{$galeri->foto_kecil}}</span> </span>
                             <span class="image-overlay"> <i class="fa fa-mail-forward circle-icon circle-main-color"></i> </span>

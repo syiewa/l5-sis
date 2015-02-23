@@ -14,9 +14,15 @@ angular.module('admin').controller('login', function($scope, $http, $filter, $ti
         $http.post('login', $scope.data).success(function(e) {
             if (e.success) {
                 $scope.alerts.push({'type': "success", 'msg': e.msg});
-                $timeout(function() {
-                    window.location.replace(baseURL.url('admin'));
-                }, 2000);
+                if (e.user.status == 'admin') {
+                    $timeout(function() {
+                        window.location.replace(baseURL.url('admin'));
+                    }, 2000);
+                } else {
+                    $timeout(function() {
+                        window.location.replace(baseURL.url(''));
+                    }, 2000);
+                }
             } else {
                 $scope.alerts.push({'type': "danger", 'msg': e.msg});
                 $timeout(function() {

@@ -29,6 +29,7 @@
         <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
         <link rel="stylesheet" href="{{asset('front/plugins/bootstrap-social-buttons/social-buttons-3.css')}}">
         <link rel="stylesheet" href="{{asset('front/plugins/flex-slider/flexslider.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/plugins/colorbox/example2/colorbox.css')}}">
         <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
         <!-- start: HTML5SHIV FOR IE8 -->
         <!--[if lt IE 9]>
@@ -45,30 +46,6 @@
         <div class="main-container">
             @section('bread')
             @show
-<!--            <section class="page-top">
-                <div class="container">
-                    <div class="col-md-4 col-sm-4">
-                        <h1>Blog Page</h1>
-                    </div>
-                    <div class="col-md-8 col-sm-8">
-                        <ul class="pull-right breadcrumb">
-                            <li>
-                                <a href="index.html">
-                                    Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Features
-                                </a>
-                            </li>
-                            <li class="active">
-                                Blog Page
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>-->
             <section class="wrapper">
                 <div class="container">
                     <div class='row'>
@@ -99,6 +76,7 @@
         <script src="{{asset('front/plugins/jquery.appear/jquery.appear.js')}}"></script>
         <script src="{{asset('front/plugins/blockUI/jquery.blockUI.js')}}"></script>
         <script src="{{asset('front/plugins/jquery-cookie/jquery.cookie.js')}}"></script>
+        <script src="{{asset('assets/plugins/colorbox/jquery.colorbox-min.js')}}"></script>
         <script src="{{asset('front/js/main.js')}}"></script>
         <!-- end: MAIN JAVASCRIPTS -->
         <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
@@ -109,6 +87,13 @@
 jQuery(document).ready(function() {
     Main.init();
     $('#Grid').mixitup();
+    $(".group1").colorbox({
+        rel: 'group1',
+        transition: "none",
+        width: "100%",
+        height: "100%",
+        retinaImage: true
+    });
 });
         </script>
     </body>
