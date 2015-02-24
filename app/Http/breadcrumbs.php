@@ -11,6 +11,39 @@ Breadcrumbs::register('home', function($breadcrumbs) {
 Breadcrumbs::register('homeguru', function($breadcrumbs) {
     $breadcrumbs->push('Home', '/guru', ['icon' => 'clip-home-3']);
 });
+Breadcrumbs::register('gurupegawaiedit', function($breadcrumbs) {
+    $breadcrumbs->parent('homeguru');
+    $breadcrumbs->push('Edit Pegawai', route('guru.pegawai.edit'), ['icon' => '']);
+});
+Breadcrumbs::register('guruabsensi', function($breadcrumbs) {
+    $breadcrumbs->parent('homeguru');
+    $breadcrumbs->push('Absensi', route('guru.absensi.index'), ['icon' => '']);
+});
+Breadcrumbs::register('guruabsensicreate', function($breadcrumbs) {
+    $breadcrumbs->parent('guruabsensi');
+    $breadcrumbs->push('Tambah Absensi', route('guru.absensi.create'), ['icon' => '']);
+});
+Breadcrumbs::register('guruabsensishow', function($breadcrumbs) {
+    $breadcrumbs->parent('guruabsensi');
+    $breadcrumbs->push('Lihat Absensi', route('guru.absensi.show'), ['icon' => '']);
+});
+Breadcrumbs::register('guruabsensiedit', function($breadcrumbs) {
+    $breadcrumbs->parent('guruabsensi');
+    $breadcrumbs->push('Edit Absensi', route('guru.absensi.edit'), ['icon' => '']);
+});
+
+Breadcrumbs::register('guruupload', function($breadcrumbs) {
+    $breadcrumbs->parent('homeguru');
+    $breadcrumbs->push('Upload', route('guru.upload.index'), ['icon' => '']);
+});
+Breadcrumbs::register('guruuploadcreate', function($breadcrumbs) {
+    $breadcrumbs->parent('guruupload');
+    $breadcrumbs->push('Tambah Upload', route('guru.upload.create'), ['icon' => '']);
+});
+Breadcrumbs::register('guruuploadedit', function($breadcrumbs) {
+    $breadcrumbs->parent('guruupload');
+    $breadcrumbs->push('Edit Upload', route('guru.upload.edit'), ['icon' => '']);
+});
 Breadcrumbs::register('datastatis', function($breadcrumbs) {
     $breadcrumbs->parent('home');
     $breadcrumbs->push('Data Statis', route('admin.datastatis.index'), ['icon' => '']);

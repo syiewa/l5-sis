@@ -8,7 +8,7 @@
 @section('content')
 <div class="row">
     <div class="col-sm-12">
-        {!! Breadcrumbs::render('uploadcreate'); !!}
+        {!! Breadcrumbs::render('guruuploadcreate'); !!}
         <div class="page-header">
             <h1>{{$title}}</h1>
         </div>

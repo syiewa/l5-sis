@@ -9,7 +9,7 @@
 <!-- start: PAGE HEADER -->
 <div class="row">
     <div class="col-sm-12">
-        {!! Breadcrumbs::render('uploadedit'); !!}
+        {!! Breadcrumbs::render('guruuploadedit'); !!}
         <div class="page-header">
             <h1>{{$title}}</h1>
         </div>

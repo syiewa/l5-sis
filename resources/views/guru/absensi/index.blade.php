@@ -5,7 +5,7 @@
 @section('content')
 <div class="row">
     <div class="col-sm-12">
-        {!! Breadcrumbs::render('indexberita'); !!}
+        {!! Breadcrumbs::render('guruabsensi'); !!}
         <div class="page-header">
             <h1>
                 {{$title}} <br />

@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-sm-12">
         <!-- start: PAGE TITLE & BREADCRUMB -->
-        {!! Breadcrumbs::render('upload'); !!}
+        {!! Breadcrumbs::render('guruupload'); !!}
         <div class="page-header">
             <h1>
                 {{$title}} <br />

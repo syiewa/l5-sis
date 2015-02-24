@@ -54,9 +54,9 @@
         @show
         <!-- start: MAIN JAVASCRIPTS -->
         <!--[if lt IE 9]>
-        <script src="{{asset('assets/plugins/respond.min.js')}}"></script>
-        <script src="{{asset('assets/plugins/excanvas.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('assets/plugins/jQuery-lib/1.10.2/jquery.min.js')}}"></script>
+        <script src="{{asset('front/plugins/respond.min.js')}}"></script>
+        <script src="{{asset('front/plugins/excanvas.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('front/plugins/jQuery-lib/1.10.2/jquery.min.js')}}"></script>
         <![endif]-->
         <!--[if gte IE 9]><!-->
         <script src="{{asset('assets/plugins/jQuery-lib/2.0.3/jquery.min.js')}}"></script>
