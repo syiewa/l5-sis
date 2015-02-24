@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Cookie\CookieJar;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models;
@@ -44,9 +43,36 @@ class FrontController extends Controller {
     }
 
     public function halaman($id) {
+        switch ($id) {
+            case 3.4: return $this->dataguru();
+            case 3.5: return $this->datapegawai();
+            case 4.1: return $this->datasiswa();
+        }
         $this->data['page'] = Models\Data::with('menu')->where('data_id', $id)->first();
         $this->data['title'] = $this->data['page'] ? $this->data['page']->menu->title : 'Page Tidak Ditekemukan';
         return view('front.post', $this->data);
+    }
+
+    public function datasiswa() {
+        $this->data['title'] = 'Data Siswa';
+        return view('front.datasiswa', $this->data);
+    }
+    
+    public function ambilsiswa($id){
+        $siswa = Models\Siswa::where('id_kelas',$id)->get();
+        return response()->json($siswa);
+    }
+
+    public function dataguru() {
+        $this->data['guru'] = Models\Pegawai::where('status', 'guru')->paginate(15);
+        $this->data['title'] = 'Data Guru';
+        return view('front.dataguru', $this->data);
+    }
+
+    public function datapegawai() {
+        $this->data['guru'] = Models\Pegawai::where('status', 'pegawai')->paginate(15);
+        $this->data['title'] = 'Data Pegawai';
+        return view('front.datapegawai', $this->data);
     }
 
     public function beritalist() {

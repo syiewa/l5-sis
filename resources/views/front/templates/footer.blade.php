@@ -45,7 +45,7 @@
                             <p>
                                 <i class="fa fa-envelope"></i><strong>Email:</strong>
                                 <a href=" info@sman1-wongsorejo.com">
-                                     info@sman1-wongsorejo.com
+                                    info@sman1-wongsorejo.com
                                 </a>
                             </p>
                         </li>
@@ -113,9 +113,15 @@
                                 </a>
                             </li>
                             <li>
+                                @if(!Auth::check())
                                 <a href="{{url('login')}}">
                                     Login
                                 </a>
+                                @else
+                                <a href="{{url('logout')}}">
+                                    Logout
+                                </a>
+                                @endif
                             </li>
                         </ul>
                     </nav>

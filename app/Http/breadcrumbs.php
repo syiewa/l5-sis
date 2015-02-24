@@ -6,7 +6,10 @@
  * and open the template in the editor.
  */
 Breadcrumbs::register('home', function($breadcrumbs) {
-    $breadcrumbs->push('Home', '/', ['icon' => 'clip-home-3']);
+    $breadcrumbs->push('Home', '/admin', ['icon' => 'clip-home-3']);
+});
+Breadcrumbs::register('homeguru', function($breadcrumbs) {
+    $breadcrumbs->push('Home', '/guru', ['icon' => 'clip-home-3']);
 });
 Breadcrumbs::register('datastatis', function($breadcrumbs) {
     $breadcrumbs->parent('home');
@@ -51,6 +54,18 @@ Breadcrumbs::register('pengumumancreate', function($breadcrumbs) {
 Breadcrumbs::register('pengumumanedit', function($breadcrumbs) {
     $breadcrumbs->parent('pengumuman');
     $breadcrumbs->push('Edit Pengumuman', route('admin.pengumuman.edit'), ['icon' => '']);
+});
+Breadcrumbs::register('gurupengumuman', function($breadcrumbs) {
+    $breadcrumbs->parent('homeguru');
+    $breadcrumbs->push('Pengumuman', route('guru.pengumuman.index'), ['icon' => '']);
+});
+Breadcrumbs::register('gurupengumumancreate', function($breadcrumbs) {
+    $breadcrumbs->parent('gurupengumuman');
+    $breadcrumbs->push('Tambah Pengumuman', route('guru.pengumuman.create'), ['icon' => '']);
+});
+Breadcrumbs::register('gurupengumumanedit', function($breadcrumbs) {
+    $breadcrumbs->parent('gurupengumuman');
+    $breadcrumbs->push('Edit Pengumuman', route('guru.pengumuman.edit'), ['icon' => '']);
 });
 Breadcrumbs::register('agenda', function($breadcrumbs) {
     $breadcrumbs->parent('datadinamis');

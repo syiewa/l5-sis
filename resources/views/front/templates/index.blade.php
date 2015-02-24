@@ -96,5 +96,8 @@ jQuery(document).ready(function() {
     });
 });
         </script>
+        @section('js')
+
+        @show
     </body>
 </html>

@@ -68,8 +68,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
 Route::group(['prefix' => 'guru'], function() {
     Route::get('/', function() {
-        return view('guru.templates.index');
+        return view('guru.dashboard');
     });
+    Route::resource('pengumuman', 'Admin\PengumumanController');
 });
 
 Route::group(['prefix' => 'api'], function() {
@@ -115,4 +116,6 @@ Route::group(['prefix' => 'api'], function() {
 
     Route::get('upload', 'Admin\UploadController@apiUpload');
     Route::get('upload/{id}', 'Admin\UploadController@apiUpload');
+    
+    Route::get('ambilsiswa/{id}','FrontController@ambilsiswa');
 });

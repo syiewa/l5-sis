@@ -22,7 +22,10 @@ class PengumumanController extends Controller {
     public function index() {
         //
         $data['title'] = 'Menu Pengumuman';
-        return view('backend.pengumuman.index', $data);
+        if ($this->auth->user()->status == 'admin') {
+            return view('backend.pengumuman.index', $data);
+        }
+        return view('guru.pengumuman.index', $data);
     }
 
     public function apiPengumuman() {
@@ -38,7 +41,10 @@ class PengumumanController extends Controller {
     public function create() {
         //
         $data['title'] = 'Tambah Pengumuman';
-        return View('backend.pengumuman.create', $data);
+        if ($this->auth->user()->status == 'admin') {
+            return View('backend.pengumuman.create', $data);
+        }
+        return view('guru.pengumuman.create', $data);
     }
 
     /**
@@ -79,7 +85,10 @@ class PengumumanController extends Controller {
         //
         $data['title'] = 'Edit Pengumuman';
         $data['data'] = Pengumuman::find($id);
-        return view('backend.pengumuman.edit', $data);
+        if ($this->auth->user()->status == 'admin') {
+            return view('backend.pengumuman.edit', $data);
+        }
+        return view('guru.pengumuman.edit', $data);
     }
 
     /**

@@ -669,41 +669,7 @@ var Main = function() {
 		});
 	};
 	//function to load user settings
-	var runCustomSetting = function() {
-		if($.cookie("clip-setting")) {
-			var loadSetting = jQuery.parseJSON($.cookie("clip-setting"));
-			if(loadSetting.layoutBoxed) {
-
-				$('body').addClass('layout-boxed');
-				$('#style_selector select[name="layout"]').find('option[value="boxed"]').attr('selected', 'true');
-			};
-			if(loadSetting.headerDefault) {
-				$('body').addClass('header-default');
-				$('#style_selector select[name="header"]').find('option[value="default"]').attr('selected', 'true');
-			};
-			if(!loadSetting.footerDefault) {
-				$('body').addClass('footer-fixed');
-				$('#style_selector select[name="footer"]').find('option[value="fixed"]').attr('selected', 'true');
-			};
-			if($('#style_selector').length) {
-				if(loadSetting.useLess) {
-
-					$('.color-base').val(loadSetting.baseColor).next('.dropdown').find('i').css('background-color', loadSetting.baseColor);
-					$('.color-text').val(loadSetting.textColor).next('.dropdown').find('i').css('background-color', loadSetting.textColor);
-					$('.color-badge').val(loadSetting.badgeColor).next('.dropdown').find('i').css('background-color', loadSetting.badgeColor);
-					runActivateLess();
-				} else {
-					$('.color-base').val('#FFFFFF').next('.dropdown').find('i').css('background-color', '#FFFFFF');
-					$('.color-text').val('#555555').next('.dropdown').find('i').css('background-color', '#555555');
-					$('.color-badge').val('#007AFF').next('.dropdown').find('i').css('background-color', '#007AFF');
-					$('#skin_color').attr('href', loadSetting.skinClass);
-				};
-			};
-			$('body').addClass(loadSetting.bgStyle);
-		} else {
-			runDefaultSetting();
-		};
-	};
+	
 	//function to clear user settings
 	var runClearSetting = function() {
 		$('.clear_style').on('click', function() {
@@ -752,7 +718,6 @@ var Main = function() {
 			runCustomCheck();
 			runColorPalette();
 			runSaveSetting();
-			runCustomSetting();
 			runClearSetting();
 			runQuickSideBar();
 		}
