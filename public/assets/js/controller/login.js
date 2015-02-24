@@ -20,7 +20,7 @@ angular.module('admin').controller('login', function($scope, $http, $filter, $ti
                     }, 2000);
                 } else {
                     $timeout(function() {
-                        window.location.replace(baseURL.url(''));
+                        window.location.replace(baseURL.url('guru'));
                     }, 2000);
                 }
             } else {

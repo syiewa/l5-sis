@@ -6,6 +6,7 @@ use Illuminate\Cookie\CookieJar;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models;
+use Illuminate\Support\Facades\DB;
 
 class FrontController extends Controller {
 
@@ -47,19 +48,31 @@ class FrontController extends Controller {
             case 3.4: return $this->dataguru();
             case 3.5: return $this->datapegawai();
             case 4.1: return $this->datasiswa();
+            case 5.1: return $this->absensi();
         }
         $this->data['page'] = Models\Data::with('menu')->where('data_id', $id)->first();
         $this->data['title'] = $this->data['page'] ? $this->data['page']->menu->title : 'Page Tidak Ditekemukan';
         return view('front.post', $this->data);
     }
 
+    public function absensi() {
+        $this->data['title'] = 'Absensi';
+        return view('front.absensi', $this->data);
+    }
+
+    public function showabsensi(Request $request) {
+        $input = $request->all();
+        $siswa = Models\Absensi::getAbsen($input['kelas'],$input['bulan'],$input['tahun']);
+        return response()->json($siswa);
+    }
+
     public function datasiswa() {
         $this->data['title'] = 'Data Siswa';
         return view('front.datasiswa', $this->data);
     }
-    
-    public function ambilsiswa($id){
-        $siswa = Models\Siswa::where('id_kelas',$id)->get();
+
+    public function ambilsiswa($id) {
+        $siswa = Models\Siswa::where('id_kelas', $id)->get();
         return response()->json($siswa);
     }
 

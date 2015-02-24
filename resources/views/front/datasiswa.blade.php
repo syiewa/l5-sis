@@ -29,11 +29,12 @@
                     <div class="col-sm-5">
                         <button class="btn btn-blue" type="submit">Submit</button>
                     </div>
+                </form>
             </div> 
         </div>
         <div class='row' ng-show='show'>
             <br/>
-            <table id="sample-table-1" class="table table-bordered table-hover">
+            <table id="sample-table-1" class="table table-bordered table-hover table-striped">
                 <thead>
                     <tr>
                         <th>No</th>

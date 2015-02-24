@@ -22,12 +22,19 @@ class UploadController extends Controller {
     public function index() {
         //
         $data['title'] = 'Menu Upload';
-        return view('backend.upload.index', $data);
+        if ($this->auth->user()->status == 'admin') {
+            return view('backend.upload.index', $data);
+        }
+        return view('guru.upload.index', $data);
     }
 
     public function apiUpload($id = null) {
-
-        $data = $id ? Upload::find($id) : Upload::all();
+        if ($this->auth->user()->status == 'admin') {
+            $data = $id ? Upload::find($id) : Upload::all();
+        } else {
+            $penulis = $this->auth->user()->nama_pegawai;
+            $data = Upload::where('author', $penulis)->get();
+        }
         return response()->json($data);
     }
 
@@ -39,7 +46,10 @@ class UploadController extends Controller {
     public function create() {
         //
         $data['title'] = 'Tambah Upload';
-        return View('backend.upload.create', $data);
+        if ($this->auth->user()->status == 'admin') {
+            return View('backend.upload.create', $data);
+        }
+        return View('guru.upload.create', $data);
     }
 
     /**
@@ -100,8 +110,10 @@ class UploadController extends Controller {
     public function edit($id) {
         //
         $data['title'] = 'Edit Upload';
-        $data['data'] = Upload::find($id);
-        return view('backend.upload.edit', $data);
+        if ($this->auth->user()->status == 'admin') {
+            return view('backend.upload.edit', $data);
+        }
+        return view('guru.upload.edit', $data);
     }
 
     /**

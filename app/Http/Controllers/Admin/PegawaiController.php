@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pegawai;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Contracts\Auth\Guard;
 
 class PegawaiController extends Controller {
 
@@ -15,6 +16,10 @@ class PegawaiController extends Controller {
      *
      * @return Response
      */
+    public function __construct(Guard $auth) {
+        $this->auth = $auth;
+    }
+
     public function index() {
         //
         $data['title'] = 'Data Pegawai';
@@ -73,7 +78,10 @@ class PegawaiController extends Controller {
         //
         $data['title'] = 'Edit Pegawai';
         $data['data'] = Pegawai::find($id);
-        return view('backend.pegawai.edit', $data);
+        if ($this->auth->user()->status == 'admin') {
+            return view('backend.pegawai.edit', $data);
+        }
+        return view('guru.pegawai.edit', $data);
     }
 
     /**

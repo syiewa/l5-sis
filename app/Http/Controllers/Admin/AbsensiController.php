@@ -24,7 +24,10 @@ class AbsensiController extends Controller {
     public function index() {
         //
         $data['title'] = 'Menu Absensi';
-        return view('backend.absensi.index', $data);
+        if ($this->auth->user()->status == 'admin') {
+            return view('backend.absensi.index', $data);
+        }
+        return view('guru.absensi.index', $data);
     }
 
     public function apiAbsensi($id) {
@@ -50,7 +53,10 @@ class AbsensiController extends Controller {
         $data['fulltanggal'] = date('d F Y', strtotime($data['tanggal'] . '-' . $data['bulan'] . '-' . $data['tahun']));
         $data['siswa'] = Siswa::with('kelas')->where('id_kelas', '=', $request->get('kelas'))->orderBy('nis')->get();
         $data['title'] = 'Tambah Absensi';
-        return View('backend.absensi.create', $data);
+        if ($this->auth->user()->status == 'admin') {
+            return View('backend.absensi.create', $data);
+        }
+        return View('guru.absensi.create', $data);
     }
 
     /**
@@ -78,7 +84,10 @@ class AbsensiController extends Controller {
             $absensi->absen = $input[$key]['absen'];
             $absensi->save();
         }
-        return redirect(route('admin.absensi.index'));
+        if ($this->auth->user()->status == 'admin') {
+            return redirect(route('admin.absensi.index'));
+        }
+        return redirect(route('guru.absensi.index'));
     }
 
     /**
@@ -97,7 +106,10 @@ class AbsensiController extends Controller {
                         ->where('bulan', '=', $input['bulan'])
                         ->where('tahun', '=', $input['tahun']);
             }])->where('id_kelas', '=', $input['kelas'])->get();
-        return View('backend.absensi.show', $data);
+        if ($this->auth->user()->status == 'admin') {
+            return View('backend.absensi.show', $data);
+        }
+        return View('guru.absensi.show', $data);
     }
 
     /**
@@ -110,7 +122,10 @@ class AbsensiController extends Controller {
         //
         $data['title'] = 'Edit Absensi';
         $data['data'] = Absensi::find($id);
-        return view('backend.absensi.edit', $data);
+        if ($this->auth->user()->status == 'admin') {
+            return view('backend.absensi.edit', $data);
+        }
+        return View('guru.absensi.edit', $data);
     }
 
     /**

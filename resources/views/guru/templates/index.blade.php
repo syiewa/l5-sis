@@ -7,7 +7,7 @@
     <!--<![endif]-->
     <!-- start: HEAD -->
     <head>
-        <title>Clip-One - Responsive Admin Template</title>
+        <title>Halaman Guru</title>
         <!-- start: META -->
         <meta charset="utf-8" />
         <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
@@ -25,6 +25,8 @@
         <link rel="stylesheet" href="{{asset('assets/css/main-responsive.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/theme_light.css')}}" type="text/css" id="skin_color">
         <link rel="stylesheet" href="{{asset('assets/css/print.css')}}" type="text/css" media="print"/>
+        @section('css')
+        @show
         <!--[if IE 7]>
         <link rel="stylesheet" href="{{asset('assets/plugins/font-awesome/css/font-awesome-ie7.min.css')}}">
         <![endif]-->
@@ -70,6 +72,7 @@
         <!--<![endif]-->
         <script src="{{asset('assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
         <script src="{{asset('assets/plugins/ckeditor/ckeditor.js')}}"></script>
+        <script src="{{asset('assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js')}}"></script>
         <script src='{{asset('assets/js/angular.min.js')}}'></script>
         <script src='{{asset('assets/js/ui-bootstrap-tpls-0.12.0.min.js')}}'></script>
         <script src='{{asset('assets/js/angular-file-upload.min.js')}}'></script>

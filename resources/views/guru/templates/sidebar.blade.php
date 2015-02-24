@@ -14,17 +14,17 @@
             </a>
         </li>
         <li class='{{setActive('upload')}}'>
-            <a href="{{url('')}}"><i class="clip-home-3"></i>
+            <a href="{{route('guru.upload.index')}}"><i class="clip-home-3"></i>
                 <span class="title"> Upload Berkas/File </span><span class="selected"></span>
             </a>
         </li>
         <li class='{{setActive('absensi')}}'>
-            <a href="{{url('')}}"><i class="clip-home-3"></i>
+            <a href="{{route('guru.absensi.index')}}"><i class="clip-home-3"></i>
                 <span class="title"> Input Absensi </span><span class="selected"></span>
             </a>
         </li>
-        <li class='{{setActive('password')}}'>
-            <a href="{{url('')}}"><i class="clip-home-3"></i>
+        <li class='{{setActive('pegawai')}}'>
+            <a href="{{route('guru.pegawai.edit',Auth::user()->id_kepegawaian)}}"><i class="clip-home-3"></i>
                 <span class="title"> Ganti Password </span><span class="selected"></span>
             </a>
         </li>

@@ -29,7 +29,12 @@ class PengumumanController extends Controller {
     }
 
     public function apiPengumuman() {
-        $data = Pengumuman::orderBy('tanggal', 'desc')->get();
+        if ($this->auth->user()->status == 'guru') {
+            $penulis = $this->auth->user()->nama_pegawai;
+            $data = Pengumuman::orderBy('tanggal', 'desc')->where('penulis', $penulis)->get();
+        } else {
+            $data = Pengumuman::orderBy('tanggal', 'desc')->get();
+        }
         return response()->json($data);
     }
 

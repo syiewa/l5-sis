@@ -25,7 +25,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="{{route('admin.pegawai.edit')}}">
+                            <a href="{{route('guru.pegawai.edit',$user->id_kepegawaian)}}">
                                 <i class="clip-user-2"></i>
                                 &nbsp;My Profile
                             </a>

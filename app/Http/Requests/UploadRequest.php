@@ -21,8 +21,8 @@ class UploadRequest extends Request {
      * @return array
      */
     public function rules() {
-        if (Request::has('data')) {
-            return [
+        if (Request::hasFile('file')) {
+            return [ 
                 'data' => 'required',
                 'file' => 'required'
             ];

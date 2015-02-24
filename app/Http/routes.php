@@ -71,6 +71,12 @@ Route::group(['prefix' => 'guru'], function() {
         return view('guru.dashboard');
     });
     Route::resource('pengumuman', 'Admin\PengumumanController');
+    Route::resource('upload', 'Admin\UploadController');
+    Route::resource('absensi', 'Admin\AbsensiController');
+    Route::get('pegawai/{id}', ['as' => 'guru.pegawai.edit', 'uses' => 'Admin\PegawaiController@edit']);
+    Route::put('pegawai/{id}', ['as' => 'guru.pegawai.update', 'uses' => 'Admin\PegawaiController@update']);
+    Route::post('absensi/create', ['as' => 'guru.absensi.create', 'uses' => 'Admin\AbsensiController@create']);
+    Route::post('absensi/show', ['as' => 'guru.absensi.show', 'uses' => 'Admin\AbsensiController@show']);
 });
 
 Route::group(['prefix' => 'api'], function() {
@@ -116,6 +122,7 @@ Route::group(['prefix' => 'api'], function() {
 
     Route::get('upload', 'Admin\UploadController@apiUpload');
     Route::get('upload/{id}', 'Admin\UploadController@apiUpload');
-    
-    Route::get('ambilsiswa/{id}','FrontController@ambilsiswa');
+
+    Route::get('ambilsiswa/{id}', 'FrontController@ambilsiswa');
+    Route::post('showabsensi', 'FrontController@showabsensi');
 });
