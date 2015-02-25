@@ -67,6 +67,7 @@
         <script src="{{asset('assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js')}}"></script>
         <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
         <script>
+            var base_url = "{{url()}}";
                     jQuery(document).ready(function() {
             CKEDITOR.disableAutoInline = true;
                     $('textarea.ckeditor').ckeditor();

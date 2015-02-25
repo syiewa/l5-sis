@@ -1,4 +1,7 @@
 @extends('backend/templates/index')
+@section('css')
+<link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css')}}">
+@stop
 @section('js')
 <script src='{{asset('assets/js/controller/admin-berita.js')}}'></script>
 @stop
@@ -28,8 +31,8 @@
                     </ul>
                     <div class="tab-content">
                         <div id="panel_tab2_example1" class="tab-pane active">
-                        <alert ng-repeat="alert in alerts" type="<%alert.type%>" close="closeAlert($index)"><% alert.msg %></alert>
-                             <form class="form-horizontal" role="form" name="beritaForm" ng-submit="submit()" enctype="multipart/form-data">
+                            <alert ng-repeat="alert in alerts" type="<%alert.type%>" close="closeAlert($index)"><% alert.msg %></alert>
+                            <form class="form-horizontal" role="form" name="beritaForm" ng-submit="submit()" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="form-field-1"> Judul Berita </label>
                                     <div class="col-sm-9">
@@ -45,9 +48,23 @@
                                 <div class='form-group'>
                                     <label class="col-sm-2 control-label" for="form-field-1"> Gambar </label>
                                     <div class="col-sm-9">
-                                        <span class="btn btn-file btn-light-grey"><i class="fa fa-folder-open-o"></i> <span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span>
-                                            <input type="file" name="file" accept="image/*" ng-file-select="" ng-model="data.foto">
-                                        </span>
+                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA?text=no+image" alt=""/>
+                                            </div>
+                                            <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                            <div>
+                                                <span class="btn btn-light-grey btn-file"><span class="fileupload-new"><i class="fa fa-picture-o"></i> Select image</span><span class="fileupload-exists"><i class="fa fa-picture-o"></i> Change</span>
+                                                    <input type="file" name="file" accept="image/*" ng-file-select="" ng-model="data.foto">
+                                                </span>
+                                                <a href="#" class="btn fileupload-exists btn-light-grey" data-dismiss="fileupload">
+                                                    <i class="fa fa-times"></i> Remove
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="alert alert-warning">
+                                            <span class="label label-warning">NOTE!</span>
+                                            <span> Image preview only works in IE10+, FF3.6+, Chrome6.0+ and Opera11.1+. In older browsers and Safari, the filename is shown instead. </span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="form-group">

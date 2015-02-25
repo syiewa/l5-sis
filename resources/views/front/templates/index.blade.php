@@ -23,11 +23,9 @@
         <link rel="stylesheet" href="{{asset('front/fonts/style.css')}}">
         <link rel="stylesheet" href="{{asset('front/plugins/animate.css/animate.min.css')}}">
         <link rel="stylesheet" href="{{asset('front/css/main.css')}}">
-        <link rel="stylesheet" href="{{asset('front/css/main-responsive.css')}}')}}">
         <link rel="stylesheet" href="{{asset('front/css/theme_blue.css')}}" type="text/css" id="skin_color">
         <!-- end: MAIN CSS -->
         <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
-        <link rel="stylesheet" href="{{asset('front/plugins/bootstrap-social-buttons/social-buttons-3.css')}}">
         <link rel="stylesheet" href="{{asset('front/plugins/flex-slider/flexslider.css')}}">
         <link rel="stylesheet" href="{{asset('assets/plugins/colorbox/example2/colorbox.css')}}">
         <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->

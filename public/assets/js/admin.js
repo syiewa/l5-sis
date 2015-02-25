@@ -2,10 +2,10 @@ var app = angular.module('admin', ['ui.bootstrap', 'angularFileUpload'], functio
     $interpolateProvider.startSymbol('<%');
     $interpolateProvider.endSymbol('%>');
 });
-app.factory('baseURL', function() {
+app.factory('baseURL', function($location) {
     return {
         url: function(url) {
-            return 'http://laravel.dev/' + url;
+            return base_url + '/' + url;
         }
     };
 });
