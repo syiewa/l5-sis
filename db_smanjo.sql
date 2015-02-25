@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.2.4
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Waktu pembuatan: 07. Oktober 2011 jam 10:53
--- Versi Server: 5.1.41
--- Versi PHP: 5.3.1
+-- Generation Time: Feb 25, 2015 at 02:13 AM
+-- Server version: 5.5.24-log
+-- PHP Version: 5.4.16
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -22,7 +23,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_absensi`
+-- Table structure for table `tbl_absensi`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_absensi` (
@@ -34,10 +35,10 @@ CREATE TABLE IF NOT EXISTS `tbl_absensi` (
   `bulan` int(2) NOT NULL,
   `tahun` int(4) NOT NULL,
   PRIMARY KEY (`id_absensi`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=394 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=691 ;
 
 --
--- Dumping data untuk tabel `tbl_absensi`
+-- Dumping data for table `tbl_absensi`
 --
 
 INSERT INTO `tbl_absensi` (`id_absensi`, `id_siswa`, `id_kelas`, `absen`, `tanggal`, `bulan`, `tahun`) VALUES
@@ -394,12 +395,179 @@ INSERT INTO `tbl_absensi` (`id_absensi`, `id_siswa`, `id_kelas`, `absen`, `tangg
 (390, 554, 16, 'SK', 1, 3, 2011),
 (391, 555, 16, 'SK', 1, 3, 2011),
 (392, 556, 16, 'SK', 1, 3, 2011),
-(393, 557, 16, 'SK', 1, 3, 2011);
+(393, 557, 16, 'SK', 1, 3, 2011),
+(567, 3, 1, 'H', 21, 2, 2015),
+(566, 2, 1, 'H', 21, 2, 2015),
+(565, 1, 1, 'H', 21, 2, 2015),
+(564, 42, 1, 'S', 20, 2, 2015),
+(563, 41, 1, 'H', 20, 2, 2015),
+(562, 40, 1, 'H', 20, 2, 2015),
+(561, 39, 1, 'H', 20, 2, 2015),
+(560, 38, 1, 'H', 20, 2, 2015),
+(559, 37, 1, 'H', 20, 2, 2015),
+(558, 36, 1, 'H', 20, 2, 2015),
+(557, 35, 1, 'H', 20, 2, 2015),
+(556, 34, 1, 'H', 20, 2, 2015),
+(555, 33, 1, 'H', 20, 2, 2015),
+(554, 32, 1, 'H', 20, 2, 2015),
+(553, 31, 1, 'H', 20, 2, 2015),
+(552, 30, 1, 'H', 20, 2, 2015),
+(551, 29, 1, 'H', 20, 2, 2015),
+(550, 28, 1, 'H', 20, 2, 2015),
+(549, 27, 1, 'H', 20, 2, 2015),
+(548, 26, 1, 'H', 20, 2, 2015),
+(547, 25, 1, 'H', 20, 2, 2015),
+(546, 24, 1, 'H', 20, 2, 2015),
+(545, 23, 1, 'H', 20, 2, 2015),
+(544, 22, 1, 'H', 20, 2, 2015),
+(543, 21, 1, 'H', 20, 2, 2015),
+(542, 20, 1, 'H', 20, 2, 2015),
+(541, 19, 1, 'H', 20, 2, 2015),
+(540, 18, 1, 'H', 20, 2, 2015),
+(539, 17, 1, 'H', 20, 2, 2015),
+(538, 16, 1, 'H', 20, 2, 2015),
+(537, 15, 1, 'H', 20, 2, 2015),
+(536, 14, 1, 'H', 20, 2, 2015),
+(535, 13, 1, 'H', 20, 2, 2015),
+(534, 12, 1, 'H', 20, 2, 2015),
+(533, 11, 1, 'H', 20, 2, 2015),
+(532, 10, 1, 'H', 20, 2, 2015),
+(531, 9, 1, 'H', 20, 2, 2015),
+(530, 8, 1, 'H', 20, 2, 2015),
+(529, 7, 1, 'H', 20, 2, 2015),
+(528, 6, 1, 'H', 20, 2, 2015),
+(527, 5, 1, 'H', 20, 2, 2015),
+(526, 4, 1, 'H', 20, 2, 2015),
+(525, 3, 1, 'H', 20, 2, 2015),
+(524, 2, 1, 'H', 20, 2, 2015),
+(607, 1, 1, 'I', 24, 2, 2015),
+(568, 4, 1, 'H', 21, 2, 2015),
+(569, 5, 1, 'H', 21, 2, 2015),
+(570, 6, 1, 'H', 21, 2, 2015),
+(571, 7, 1, 'H', 21, 2, 2015),
+(572, 8, 1, 'H', 21, 2, 2015),
+(573, 9, 1, 'H', 21, 2, 2015),
+(574, 10, 1, 'H', 21, 2, 2015),
+(575, 11, 1, 'H', 21, 2, 2015),
+(576, 12, 1, 'H', 21, 2, 2015),
+(577, 13, 1, 'H', 21, 2, 2015),
+(578, 14, 1, 'H', 21, 2, 2015),
+(579, 15, 1, 'H', 21, 2, 2015),
+(580, 16, 1, 'H', 21, 2, 2015),
+(581, 17, 1, 'H', 21, 2, 2015),
+(582, 18, 1, 'H', 21, 2, 2015),
+(583, 19, 1, 'H', 21, 2, 2015),
+(584, 20, 1, 'H', 21, 2, 2015),
+(585, 21, 1, 'H', 21, 2, 2015),
+(586, 22, 1, 'H', 21, 2, 2015),
+(587, 23, 1, 'H', 21, 2, 2015),
+(588, 24, 1, 'H', 21, 2, 2015),
+(589, 25, 1, 'H', 21, 2, 2015),
+(590, 26, 1, 'H', 21, 2, 2015),
+(591, 27, 1, 'H', 21, 2, 2015),
+(592, 28, 1, 'H', 21, 2, 2015),
+(593, 29, 1, 'H', 21, 2, 2015),
+(594, 30, 1, 'H', 21, 2, 2015),
+(595, 31, 1, 'H', 21, 2, 2015),
+(596, 32, 1, 'H', 21, 2, 2015),
+(597, 33, 1, 'H', 21, 2, 2015),
+(598, 34, 1, 'H', 21, 2, 2015),
+(599, 35, 1, 'H', 21, 2, 2015),
+(600, 36, 1, 'H', 21, 2, 2015),
+(601, 37, 1, 'H', 21, 2, 2015),
+(602, 38, 1, 'H', 21, 2, 2015),
+(603, 39, 1, 'H', 21, 2, 2015),
+(604, 40, 1, 'H', 21, 2, 2015),
+(605, 41, 1, 'H', 21, 2, 2015),
+(606, 42, 1, 'H', 21, 2, 2015),
+(608, 2, 1, 'H', 24, 2, 2015),
+(609, 3, 1, 'H', 24, 2, 2015),
+(610, 4, 1, 'H', 24, 2, 2015),
+(611, 5, 1, 'H', 24, 2, 2015),
+(612, 6, 1, 'H', 24, 2, 2015),
+(613, 7, 1, 'H', 24, 2, 2015),
+(614, 8, 1, 'H', 24, 2, 2015),
+(615, 9, 1, 'H', 24, 2, 2015),
+(616, 10, 1, 'H', 24, 2, 2015),
+(617, 11, 1, 'H', 24, 2, 2015),
+(618, 12, 1, 'H', 24, 2, 2015),
+(619, 13, 1, 'H', 24, 2, 2015),
+(620, 14, 1, 'H', 24, 2, 2015),
+(621, 15, 1, 'H', 24, 2, 2015),
+(622, 16, 1, 'H', 24, 2, 2015),
+(623, 17, 1, 'H', 24, 2, 2015),
+(624, 18, 1, 'H', 24, 2, 2015),
+(625, 19, 1, 'H', 24, 2, 2015),
+(626, 20, 1, 'H', 24, 2, 2015),
+(627, 21, 1, 'H', 24, 2, 2015),
+(628, 22, 1, 'H', 24, 2, 2015),
+(629, 23, 1, 'H', 24, 2, 2015),
+(630, 24, 1, 'H', 24, 2, 2015),
+(631, 25, 1, 'H', 24, 2, 2015),
+(632, 26, 1, 'H', 24, 2, 2015),
+(633, 27, 1, 'H', 24, 2, 2015),
+(634, 28, 1, 'H', 24, 2, 2015),
+(635, 29, 1, 'H', 24, 2, 2015),
+(636, 30, 1, 'H', 24, 2, 2015),
+(637, 31, 1, 'H', 24, 2, 2015),
+(638, 32, 1, 'H', 24, 2, 2015),
+(639, 33, 1, 'H', 24, 2, 2015),
+(640, 34, 1, 'H', 24, 2, 2015),
+(641, 35, 1, 'H', 24, 2, 2015),
+(642, 36, 1, 'H', 24, 2, 2015),
+(643, 37, 1, 'H', 24, 2, 2015),
+(644, 38, 1, 'H', 24, 2, 2015),
+(645, 39, 1, 'H', 24, 2, 2015),
+(646, 40, 1, 'H', 24, 2, 2015),
+(647, 41, 1, 'H', 24, 2, 2015),
+(648, 42, 1, 'H', 24, 2, 2015),
+(649, 1, 1, 'I', 25, 2, 2015),
+(650, 2, 1, 'H', 25, 2, 2015),
+(651, 3, 1, 'H', 25, 2, 2015),
+(652, 4, 1, 'H', 25, 2, 2015),
+(653, 5, 1, 'H', 25, 2, 2015),
+(654, 6, 1, 'H', 25, 2, 2015),
+(655, 7, 1, 'H', 25, 2, 2015),
+(656, 8, 1, 'H', 25, 2, 2015),
+(657, 9, 1, 'H', 25, 2, 2015),
+(658, 10, 1, 'H', 25, 2, 2015),
+(659, 11, 1, 'H', 25, 2, 2015),
+(660, 12, 1, 'H', 25, 2, 2015),
+(661, 13, 1, 'H', 25, 2, 2015),
+(662, 14, 1, 'H', 25, 2, 2015),
+(663, 15, 1, 'H', 25, 2, 2015),
+(664, 16, 1, 'H', 25, 2, 2015),
+(665, 17, 1, 'H', 25, 2, 2015),
+(666, 18, 1, 'H', 25, 2, 2015),
+(667, 19, 1, 'H', 25, 2, 2015),
+(668, 20, 1, 'H', 25, 2, 2015),
+(669, 21, 1, 'H', 25, 2, 2015),
+(670, 22, 1, 'H', 25, 2, 2015),
+(671, 23, 1, 'H', 25, 2, 2015),
+(672, 24, 1, 'H', 25, 2, 2015),
+(673, 25, 1, 'H', 25, 2, 2015),
+(674, 26, 1, 'H', 25, 2, 2015),
+(675, 27, 1, 'H', 25, 2, 2015),
+(676, 28, 1, 'H', 25, 2, 2015),
+(677, 29, 1, 'H', 25, 2, 2015),
+(678, 30, 1, 'H', 25, 2, 2015),
+(679, 31, 1, 'H', 25, 2, 2015),
+(680, 32, 1, 'H', 25, 2, 2015),
+(681, 33, 1, 'H', 25, 2, 2015),
+(682, 34, 1, 'H', 25, 2, 2015),
+(683, 35, 1, 'H', 25, 2, 2015),
+(684, 36, 1, 'H', 25, 2, 2015),
+(685, 37, 1, 'H', 25, 2, 2015),
+(686, 38, 1, 'H', 25, 2, 2015),
+(687, 39, 1, 'H', 25, 2, 2015),
+(688, 40, 1, 'H', 25, 2, 2015),
+(689, 41, 1, 'H', 25, 2, 2015),
+(690, 42, 1, 'H', 25, 2, 2015);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_agenda`
+-- Table structure for table `tbl_agenda`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_agenda` (
@@ -413,31 +581,32 @@ CREATE TABLE IF NOT EXISTS `tbl_agenda` (
   `jam` varchar(50) NOT NULL,
   `keterangan` tinytext NOT NULL,
   PRIMARY KEY (`id_agenda`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
--- Dumping data untuk tabel `tbl_agenda`
+-- Dumping data for table `tbl_agenda`
 --
 
 INSERT INTO `tbl_agenda` (`id_agenda`, `tema_agenda`, `isi`, `tgl_mulai`, `tgl_selesai`, `tgl_posting`, `tempat`, `jam`, `keterangan`) VALUES
 (1, 'Penerimaan Raport Semester Ganjil Tahun Ajaran 2010-2011', 'Berakhirnya semester ganjil tahun pelajaran 2010-2011, ditandai dengan pembagian laporan hasil belajar.', '2010-12-23', '2010-12-23', '2010-12-22', 'SMA Negeri 1 Wongsorejo', '07.30 WIB - 12.00 WIB', 'Untuk kelas XI dan XII, pembagian raport dimulai pukul 07.30 WIB. Sedangkan untuk kelas X pada pukul 09.00 WIB. Raport diambil oleh orang tua/wali murid masing-masing.'),
 (2, 'Peluncuran Website Resmi SMA Negeri 1 Wongsorejo', 'Peluncuran website resmi dari SMA Negeri 1 Wongsorejo, sebagai media informasi dan akademik online untuk pelayanan pendidikan yang lebih baik kepada siswa, orangtua, dan masyarakat pada umumnya semakin meningkat.', '2010-12-23', '2010-12-24', '2010-12-22', 'SMA Negeri 1 Wongsorejo', '07.30 WIB - 12.00 WIB', '-'),
-(3, 'Penyembelihan Hewan Kurban Idul Adha 2010', 'Idul Adha yang biasa disebut lebaran haji atapun lebaran kurban sangat identik dengan penyembelihan hewan kurban. SMA Negeri 1 Wongsorejo tahun ini juga melakukan penyembelihan hewan kurban. Yang rencananya akan dihadiri oleh guru-guru, siswa dan pengurus OSIS.', '2010-11-17', '2010-11-17', '2010-11-15', 'SMA Negeri 1 Wongsorejo', '07.30 WIB - 14.00 WIB', 'Dihadiri oleh guru-guru, siswa dan pengurus OSIS.s');
+(3, 'Penyembelihan Hewan Kurban Idul Adha 2010', 'Idul Adha yang biasa disebut lebaran haji atapun lebaran kurban sangat identik dengan penyembelihan hewan kurban. SMA Negeri 1 Wongsorejo tahun ini juga melakukan penyembelihan hewan kurban. Yang rencananya akan dihadiri oleh guru-guru, siswa dan pengurus OSIS.', '2010-11-17', '2010-11-17', '2010-11-15', 'SMA Negeri 1 Wongsorejo', '07.30 WIB - 14.00 WIB', 'Dihadiri oleh guru-guru, siswa dan pengurus OSIS.s'),
+(7, 'Perkemahan Sabtu Minggu', '<p>Perkemahan Sabtu Minggu</p>\n', '2015-02-17', '2015-02-22', '2015-02-17', 'Sekolah', '17:00', '<p>Perkemahan Sabtu Minggu</p>\n');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_album_galeri`
+-- Table structure for table `tbl_album_galeri`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_album_galeri` (
   `id_album` int(10) NOT NULL AUTO_INCREMENT,
   `nama_album` varchar(100) NOT NULL,
   PRIMARY KEY (`id_album`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
--- Dumping data untuk tabel `tbl_album_galeri`
+-- Dumping data for table `tbl_album_galeri`
 --
 
 INSERT INTO `tbl_album_galeri` (`id_album`, `nama_album`) VALUES
@@ -449,7 +618,7 @@ INSERT INTO `tbl_album_galeri` (`id_album`, `nama_album`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_berita`
+-- Table structure for table `tbl_berita`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_berita` (
@@ -462,10 +631,10 @@ CREATE TABLE IF NOT EXISTS `tbl_berita` (
   `author` varchar(20) NOT NULL,
   `counter` int(3) NOT NULL,
   PRIMARY KEY (`id_berita`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=43 ;
 
 --
--- Dumping data untuk tabel `tbl_berita`
+-- Dumping data for table `tbl_berita`
 --
 
 INSERT INTO `tbl_berita` (`id_berita`, `judul_berita`, `isi`, `gambar`, `tanggal`, `waktu`, `author`, `counter`) VALUES
@@ -484,12 +653,13 @@ INSERT INTO `tbl_berita` (`id_berita`, `judul_berita`, `isi`, `gambar`, `tanggal
 (23, '2011, Lembaga Pemerintah Sudah Harus Cicipi Open Source', 'Jakarta - Pemerintah kian memantapkan langkah untuk bermigrasi ke penggunaan software Open Source. Tahun 2011 dijadikan target titik baliknya. Pada saat itu, seluruh institusi pemerintah diharapkan sudah harus be legal, terutama berbasis Open Source.\r\n\r\nDemikian dikatakan Kemal Prihatman, Asisten Deputi Urusan Pengembangan dan Pemanfaatan TI Ristek dalam jumpa pers yang berlangsung di gedung BPPT, Jakarta, Kamis (5/6/2009).\r\n\r\nMenurutnya, target ini merupakan bagian dari isi surat edaran dari Menteri Pemberdayaan Aparatur Negara pada 5 April lalu yang isinya mewajibkan seluruh lembaga pemerintah untuk menggunakan software legal di seluruh jajarannya.\r\n\r\n"Namun kami dari Ristek dengan alasan efisiensi anggaran jelas menyarankan be legal dengan Open Source. Tak hanya sistem operasinya, tapi juga aplikasi pendukung lainnya," tegasnya.\r\n\r\nKemal memprediksi, jumlah komputer yang digunakan seluruh institusi pemerintah di seluruh Indonesia mencapai 800 ribu unit. Nah dari jumlah tersebut, ia tak berani memastikan bahwa seluruhnya sudah legal menggunakan software proprietary. "Mungkin sistem operasinya sudah legal tapi aplikasi yang lainnya belum," imbuhnya.\r\n\r\nRistek sendiri bersama dengan Asosiasi Open Source Indonesia (AOSI) pada tahun 2009 ini menargetkan akan membantu setidaknya 10 lembaga pemerintah untuk melakukan migrasi ke Open Source.\r\n\r\n"Kami lakukan secara bertahap, saat ini kita sedang membantu Depdiknas dan Kementerian PAN," tandasnya.', 'linux-tux.jpg', '2010-07-31', '01:37:28', '', 44),
 (24, 'Unggah Video di YouTube Kini 15 Menit  ', 'Jakarta - Mengunggah video di YouTube akan semakin mengasyikkan. YouTube kini memperpanjang surasi video yang diunggah dari sepuluh menit menjadi 15 menit.\r\n\r\nDalam postingan blognya, Joshua Siegel selaku product manager unggah dan pengaturan video YouTube menyebutkan, perpanjangan durasi video sudah lama menjadi permintaan sebagian besar pengguna YouTube.\r\n\r\nLangkah ini pun diambil YouTube karena yakin teknologi ''Content ID'' pada situsnya dapat bekerja baik. Content ID merupakan teknologi yang secara otomatis menghapus pelanggaran hak cipta oleh penyaringan secara digital melalui arsip di situs tersebut.\r\n\r\n"Karena keberhasilan upaya teknologi yang sedang berlangsung, kami bisa meningkatkan batas durasi unggah video," tulis Siegel seperti dilansir eWeek, dan dikutip detikINET, Jumat (30/7/2010). \r\n\r\nYouTube, menurut Siegel, terutama mengalamatkan penambahan durasi ini pada kemampuan situsnya untuk melindungi hak cipta dari setiap video yang diunggah. ', 'youtube.jpg', '2010-07-31', '01:40:18', '', 14),
 (25, 'Hadir di Indonesia, Xbox 360 Slim Dibanderol Rp 3,4 Juta  ', 'Jakarta - Jika di negara asalnya paket Xbox 360 slim beserta Kinect dibanderol pada kisaran harga USD 299 (sekitar Rp 2,7 juta), maka gamer di Indonesia harus merogoh kocek lebih dalam. Pasalnya, harga konsol berserta kendali berbasis kamera tersebut bakal melambung ketika sampainya di Tanah Air.\r\n\r\nBerdasarkan pengamatan detikINET, Jumat (30/7/2010), di pusat perbelanjaan konsol game di kawasan Mangga 2 Mall, beberapa toko sudah ada yang mulai menjajakan Xbox 360 slim berwarna hitam dengan kapasitas hardisk 250GB.\r\n\r\n"Di sini kami menjual Xbox 360 Slim seharga Rp 3,4. Itu hanya konsolnya saja belum termasuk Kinect dan game," ujar Merry, salah satu pemilik toko game yang telah menjual konsol tersebut.\r\n\r\nMeski dibanderol pada kisaran harga yang lebih mahal dari rilis resmi, namun Mery mengakui konsol teranyar besutan Microsoft tersebut tetap laris dan banyak diminati.\r\n\r\n"Kami baru mendatangkan 10 unit Xbox 360 slim langsung dari Amerika, dan semuanya sudah habis terjual," tambah Merry.\r\n\r\nXbox 360 slim memang merupakan salah satu konsol game yang paling dinanti saat ini. Kabarnya, konsol tersebut memiliki beberapa perbaikan dari seri terdahulu seperti dengan hadirnya Wi-Fi, kapasitas hardisk yang lebih besar, atau pun daya tahan terhadap panas yang diklaim lebih baik.', 'xbox-slim.jpg', '2010-07-31', '01:44:10', '', 5),
-(26, 'Xbox 360 Slim Belum Bisa Mainkan Game Bajakan  ', 'Jakarta - Selain membenahi beberapa kekurangan pada seri terdahulu, Microsoft juga mengubah Xbox 360 Slim menjadi lebih ''aman''. Kabarnya, konsol yang dibanderol Rp 3,4 Juta ini belum bisa memainkan game bajakan.\r\n\r\nHal tersebut diutarakan salah satu penjual konsol game yang menjajakan Xbox 360 Slim, "Kalau dibandingkan sama Xbox 360, selain spesifikanya yang beda Xbox 360 Slim juga belum bisa memainkan game bajakan," ujarnya.\r\n\r\nPun demikian, konsol tersebut masih tetap diminati oleh para gamer Tanah Air. Bahkan yang lebih mengherankan, kebanyakan para pembeli Xbox 360 Slim merupakan para gamer yang justru sudah memiliki Xbox 360.\r\n\r\n"Biasanya yang beli Xbox 360 Slim itu, justru orang yang sudah punya Xbox 360," ujar Merry, salah satu penjual konsol game di kawasan Mangga 2 Mall, kepada detikINET, Jumat (30/7/2010).\r\n\r\nMeryy juga memperkirakan hal tersebut dikarenakan para gamer Xbox 360 ingin memainkan game mereka secara online.\r\n\r\n"Mereka beli biasanya hanya untuk memainkan game secara online, kan kalau online pakai konsol yang sudah di-patch bisa langsung di-banned oleh Microsoft," tambah penjual yang akrab disapa Ci'' Meryy ini.\r\n\r\nBisa dibilang, besarnya pengguna Xbox 360 di Indonesia bisa jadi karena konsol tersebut bisa memainkan game bajakan. Tidak seperti PlayStation 3 yang hingga kini masih kebal dari tangan jahil para pembajak. Lalu apakah hal ini bakal menyurutkan penjualan Xbox 360 Slim?\r\n\r\n"Kalau dibilang bakal sepi pembeli sepertinya tidak, gamer di Indonesia juga banyak loh yang mau membeli game original. Dan kalau masalah memainkan game bajakan di Xbox 360 Slim, sepertinya hanya masalah waktu," pungkas Merry.\r\n', 'xbox-slim-non-bajak.jpg', '2010-07-31', '01:49:18', '', 20);
+(26, 'Xbox 360 Slim Belum Bisa Mainkan Game Bajakan  ', 'Jakarta - Selain membenahi beberapa kekurangan pada seri terdahulu, Microsoft juga mengubah Xbox 360 Slim menjadi lebih ''aman''. Kabarnya, konsol yang dibanderol Rp 3,4 Juta ini belum bisa memainkan game bajakan.\r\n\r\nHal tersebut diutarakan salah satu penjual konsol game yang menjajakan Xbox 360 Slim, "Kalau dibandingkan sama Xbox 360, selain spesifikanya yang beda Xbox 360 Slim juga belum bisa memainkan game bajakan," ujarnya.\r\n\r\nPun demikian, konsol tersebut masih tetap diminati oleh para gamer Tanah Air. Bahkan yang lebih mengherankan, kebanyakan para pembeli Xbox 360 Slim merupakan para gamer yang justru sudah memiliki Xbox 360.\r\n\r\n"Biasanya yang beli Xbox 360 Slim itu, justru orang yang sudah punya Xbox 360," ujar Merry, salah satu penjual konsol game di kawasan Mangga 2 Mall, kepada detikINET, Jumat (30/7/2010).\r\n\r\nMeryy juga memperkirakan hal tersebut dikarenakan para gamer Xbox 360 ingin memainkan game mereka secara online.\r\n\r\n"Mereka beli biasanya hanya untuk memainkan game secara online, kan kalau online pakai konsol yang sudah di-patch bisa langsung di-banned oleh Microsoft," tambah penjual yang akrab disapa Ci'' Meryy ini.\r\n\r\nBisa dibilang, besarnya pengguna Xbox 360 di Indonesia bisa jadi karena konsol tersebut bisa memainkan game bajakan. Tidak seperti PlayStation 3 yang hingga kini masih kebal dari tangan jahil para pembajak. Lalu apakah hal ini bakal menyurutkan penjualan Xbox 360 Slim?\r\n\r\n"Kalau dibilang bakal sepi pembeli sepertinya tidak, gamer di Indonesia juga banyak loh yang mau membeli game original. Dan kalau masalah memainkan game bajakan di Xbox 360 Slim, sepertinya hanya masalah waktu," pungkas Merry.\r\n', 'xbox-slim-non-bajak.jpg', '2010-07-31', '01:49:18', '', 20),
+(42, 'test 12345678', '<p>12345</p>\n', 'mulai lapar.jpg', '2015-02-25', '08:50:11', 'Gede Suma Wijaya', 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_data`
+-- Table structure for table `tbl_data`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_data` (
@@ -497,18 +667,17 @@ CREATE TABLE IF NOT EXISTS `tbl_data` (
   `content` text NOT NULL,
   `data_id` varchar(10) NOT NULL,
   PRIMARY KEY (`id_data`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
 
 --
--- Dumping data untuk tabel `tbl_data`
+-- Dumping data for table `tbl_data`
 --
 
 INSERT INTO `tbl_data` (`id_data`, `content`, `data_id`) VALUES
 (1, '<p><span style="font-size: small;"><strong>Visi Sekolah</strong></span><br /><br /> Dalam merumuskan visi, pihak-pihak yang terkait (stakeholders) melakukan musyawarah sehingga visi tersebut benar-benar mewakili aspirasi semua pihak yang terkait. Harapannya, semua pihak yang terkait dalam kegiatan pembelajaran (guru, karyawan, peserta didik dan wali murid) benar-benar menyadari visi tersebut untuk selanjutnya memegang komitmen terhadap visi yang telah disampaikan bersama. Adapun visi SMA Negeri 1 Wongsorejo adalah  "disenangi, mandiri, berprestasi dan mantap dalam IMTAQ"<br /><br /> <span style="font-size: small;"><strong>Misi Sekolah</strong></span><br /><br /> Untuk mencapai visi sebagai sekolah yang disenangi, mandiri dan berprestasi serta mantap dalam IMTAQ, maka perlu dilakukan suatu misi berupa kegiatan  jangka panjang dengan arah yang jelas dan sistematis. Berikut misi SMA Negeri</p>\n<ol>\n<li>Menyiapkan generasi yang unggul dalam bidang imtek dan iptek</li>\n<li>Menumbuhkan penghayatan terhadap ajaran agama sehingga terbangun insane yang cerdas, cendekia, berbudi pekerti yang luhur dan berakhlak mulia.</li>\n<li>Membentuk sumber daya manusia yang aktif, kreatif, inovatif dan berprestasi sesuai dengan perkembangan zaman</li>\n<li>Membangun citra sekolah sebagai mitra terpercaya</li>\n<li>Melaksanakan pembelajaran yang efektif</li>\n<li>Menyediakan sarana dan prasarana yang diperlukan dalam kegiatan belajar siswa untuk mendukung pengembangan potensi pesrta didik agar berkembang secara optimal</li>\n<li>Memberikan jaminan pelayanan yang prima dalam berbagai hal untuk mendukung proses belajar dan bekerja yang harmonis dan selaras</li>\n</ol>', '1.2'),
 (2, '<b>Tujuan</b><br><br>\r\nTujuan SMA Negeri 1 Wongsorejo dijabarkan berdasarkan tujuan umum pendidikan, visi dan misi sekolah. Berdasarkan tiga hal tersebut, dapat dijabarkan tujuan dari SMA Negeri 1 Wongsorejo adalah <br><br>\r\n<ol>\r\n<li>Terdepan, Terbaik, dan Terpercaya dalam hal ketakwaan terhadap Tuhan Yang Maha Esa</li>\r\n<li>Terdepan, Terbaik dan Terpercaya dalam pengembangan potensi, kecerdasan dan minat </li>\r\n<li>Terdepan, Terbaik dan Terpercaya dalam perolehan Nilai UAN </li>\r\n<li>Terdepan, Terbaik dan Terpercaya dalam persaingan masuk jenjang Perguruan Tinggi dan Dunia Kerja</li>\r\n<li>Terdepan, Terbaik dan Terpercaya dalam membekali peserta didik agar memiliki keterampilan teknologi informasi dan komunikasi serta mampu mengembangkan diri secara mandiri.</li>\r\n<li>Terdepan, Terbaik dan Terpercaya dalam persaingan secara global</li>\r\n<li>Terdepan, Terbaik dan Terpercaya dalam pelayanan</li>\r\n</ol>\r\n\r\n', '1.4'),
-(3, '168', 'counter'),
 (4, '<table width="460" border="0" cellpadding="0" cellspacing="0">\r\n  <!--DWLayoutTable-->\r\n  <tr>\r\n    <td width="80" height="25" align="left" valign="middle">Ketua </td>\r\n    <td width="15" align="center" valign="middle">:</td>\r\n    <td colspan="3" align="left" valign="middle">Drs. Istu Handono</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" align="left" valign="middle">Wakil Ketua </td>\r\n    <td align="center" valign="middle">:</td>\r\n    <td width="181" align="left" valign="middle">Sukardi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>\r\n  <td colspan="2" valign="middle">(Wakasek Kesiswaan)</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" align="left" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="left" valign="middle">Dra. Ni Wayan  Sedariasih </td>\r\n    <td colspan="2" valign="middle">(Wakasek Kurikulum)</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" align="left" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="left" valign="middle">Drs. Kuntohadi </td>\r\n    <td colspan="2" valign="middle">(Wakasek Humas)</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" align="left" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="left" valign="middle">Drs. Priyo Suyitno</td>\r\n    <td colspan="2" valign="middle">(Wakasek Sapra)</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" align="left" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="left" valign="middle">Drs. Katiman&nbsp;&nbsp; </td>\r\n    <td colspan="2" valign="middle">(Pembina OSIS)</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" align="left" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="left" valign="middle">Sri Purwanti</td>\r\n    <td colspan="2" valign="middle">(Ass. Kurikulum</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" align="left" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="left" valign="middle">Drs. Ahmad&nbsp;&nbsp;&nbsp; </td>\r\n    <td colspan="2" valign="middle">(Ass. Sarpra)</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" align="left" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="left" valign="middle">Drs. Edy Purdiyanto</td>\r\n    <td colspan="2" valign="middle">(Ass. Humas)</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" align="left" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="left" valign="middle">Drs. Edy Suparnadi</td>\r\n    <td colspan="2" valign="middle">(Litbang)</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" align="left" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="left" valign="middle">Nandi Suhaili&nbsp; </td>\r\n    <td colspan="2" valign="middle">(Bendahara OSIS)</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" align="left" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="center" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td align="left" valign="middle">Widi Nugrahani</td>\r\n    <td colspan="2" valign="middle">(Bendahara UKS)</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" align="left" valign="middle">Anggota</td>\r\n    <td align="center" valign="middle">:</td>\r\n    <td align="left" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n    <td colspan="2" valign="middle"><!--DWLayoutEmptyCell-->&nbsp;</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" colspan="4" align="left" valign="middle">Ketaqwaan Terhadap  Tuhan Yang Maha Esa</td>\r\n    <td width="130" valign="middle">Drs. Kuntohadi</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" colspan="4" align="left" valign="middle">Kehidupan Berbangsa  dan Bernegara&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>\r\n    <td valign="middle">Drs. Priyo Suyitno</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" colspan="4" align="left" valign="middle">Kepribadian dan Budi  Pekerti Luhur </td>\r\n    <td valign="middle">Supriyadi</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" colspan="4" align="left" valign="middle">Berorganisasi  Pendidikan Politik dan Kepemimpinan</td>\r\n    <td valign="middle">Drs. Edy Purdiyanto</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" colspan="4" align="left" valign="middle">Keterampilan dan  Kewiraswastaan</td>\r\n    <td valign="middle">Mujiati, S.Pd</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" colspan="4" align="left" valign="middle">Persepsi, Apresiasi  dan Kreasi Seni</td>\r\n    <td valign="middle">Sri Purwanti, S.Kar</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" colspan="4" align="left" valign="middle">Kesegaran Jasmani dan  Daya Kreasi&nbsp; </td>\r\n    <td valign="middle">Asnawi, S.Pd</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="25" colspan="4" align="left" valign="middle">Pendidikan  Pendahuluan Bela Negara</td>\r\n    <td valign="middle">Drs. Abdus Syakur</td>\r\n  </tr>\r\n  <tr>\r\n    <td height="1"></td>\r\n    <td></td>\r\n    <td></td>\r\n    <td width="54"></td>\r\n    <td></td>\r\n  </tr>\r\n</table>', '3.1'),
-(5, '<p>Puji syukur kami panjatkan ke hadirat Tuhan Yang Maha Esa atas karunia dan hidayah-Nya, sehingga kita semua dapat membaktikan segala hal yang kita miliki untuk kemajuan dunia pendidikan. Apapun bentuk dan sumbangsih yang kita berikan, jika dilandasi niat yang tulus tanpa memandang imbalan apapun akan menghasilkan mahakarya yang agung untuk bekal kita dan generasi setelah kita.<br />Pendidikan adalah harga mati untuk menjadi pondasi bangsa dan negara dalam menghadapi perkembangan zaman. Hal ini seiring dengan penguasaan teknologi untuk dimanfaatkan sebaik mungkin, sehingga menciptakan iklim kondusif dalam ranah keilmuan. Dengan konsep yang kontekstual dan efektif, kami mengejewantahkan nilai-nilai pendidikan yang tertuang dalam visi misi SMA Negeri 1 Wongsorejo, sebagai panduan hukum dalam menjabarkan tujuan hakiki pendidikan.<br /><br /> Dalam sebuah sistem ketata kelolaan Sekolah Berbasis Manajemen, kami berusaha terus meningkatkan kinerja dan profesionalisme  demi terwujudnya pelayanan prima dalam cakupan Lembaga Pendidikan terutama di SMA Negeri 1 Wongsorejo ini. Kami sudah mulai menerapkan sistem Teknologi Komputerisasi agar transparansi pengelolaan pendidikan terjaga optimalisasinya.<br />Sebuah sistem akan bermanfaat dan berdaya guna tinggi jika didukung dan direalisasikan oleh semua komponen yang berkompeten di SMA Negeri 1 Wongsorejo baik sistem manajerial, akademik, pelayanan publik, prestasi,moralitas dan semua hal yang berinteraksi di dalamnya. Alhamdulilah peningkatan tersebut dapat dilihat dari data-data kepegawaian dan karya-karya nyata yang telah dihasilkan walaupun masih ada kelemahan yang terus kami treatment dengan menyeimbangkan hasil kinerja dan prize yang diberikan. Mudah-mudahan semua yang kita berikan untuk kemajuan dan keajegan nilai-nilai pendidikan dapat terus meningkat.<br /><br /> Secara pribadi saya mohon maaf, jika pemenuhan tuntutan dan kinerja yang saya lakukan masih ada kelemahan. Oleh karena itu, bantuan dan kerjasama dari berbagai pihak untuk optimalisasi mutu dan kualitas pendidikan sangat saya harapkan. Mudah-mudahan dalam tiap langkah dan nafas kita menciptakan nilai jual yang tinggi bagi keilmuan dan nilai hakiki di hadapan Tuhan Yang Maha Esa. <br />Demikian sambutan ini saya sampaikan, ditutup dengan pesan moral dan keilmuan bagi kita semua.</p>\n<p><br /><br /> Kepala SMA Negeri 1 Wongsorejoo<br /><br /><br /><br /> <span style="text-decoration: underline;"><strong>Drs. Istu Handono</strong></span></p>', '1.1'),
+(5, '<p>Puji syukur kami panjatkan ke hadirat Tuhan Yang Maha Esa atas karunia dan hidayah-Nya, sehingga kita semua dapat membaktikan segala hal yang kita miliki untuk kemajuan dunia pendidikan. Apapun bentuk dan sumbangsih yang kita berikan, jika dilandasi niat yang tulus tanpa memandang imbalan apapun akan menghasilkan mahakarya yang agung untuk bekal kita dan generasi setelah kita.<br />\nPendidikan adalah harga mati untuk menjadi pondasi bangsa dan negara dalam menghadapi perkembangan zaman. Hal ini seiring dengan penguasaan teknologi untuk dimanfaatkan sebaik mungkin, sehingga menciptakan iklim kondusif dalam ranah keilmuan. Dengan konsep yang kontekstual dan efektif, kami mengejewantahkan nilai-nilai pendidikan yang tertuang dalam visi misi SMA Negeri 1 Wongsorejo, sebagai panduan hukum dalam menjabarkan tujuan hakiki pendidikan.<br />\n<br />\nDalam sebuah sistem ketata kelolaan Sekolah Berbasis Manajemen, kami berusaha terus meningkatkan kinerja dan profesionalisme demi terwujudnya pelayanan prima dalam cakupan Lembaga Pendidikan terutama di SMA Negeri 1 Wongsorejo ini. Kami sudah mulai menerapkan sistem Teknologi Komputerisasi agar transparansi pengelolaan pendidikan terjaga optimalisasinya.<br />\nSebuah sistem akan bermanfaat dan berdaya guna tinggi jika didukung dan direalisasikan oleh semua komponen yang berkompeten di SMA Negeri 1 Wongsorejo baik sistem manajerial, akademik, pelayanan publik, prestasi,moralitas dan semua hal yang berinteraksi di dalamnya. Alhamdulilah peningkatan tersebut dapat dilihat dari data-data kepegawaian dan karya-karya nyata yang telah dihasilkan walaupun masih ada kelemahan yang terus kami treatment dengan menyeimbangkan hasil kinerja dan prize yang diberikan. Mudah-mudahan semua yang kita berikan untuk kemajuan dan keajegan nilai-nilai pendidikan dapat terus meningkat.<br />\n<br />\nSecara pribadi saya mohon maaf, jika pemenuhan tuntutan dan kinerja yang saya lakukan masih ada kelemahan. Oleh karena itu, bantuan dan kerjasama dari berbagai pihak untuk optimalisasi mutu dan kualitas pendidikan sangat saya harapkan. Mudah-mudahan dalam tiap langkah dan nafas kita menciptakan nilai jual yang tinggi bagi keilmuan dan nilai hakiki di hadapan Tuhan Yang Maha Esa.<br />\nDemikian sambutan ini saya sampaikan, ditutup dengan pesan moral dan keilmuan bagi kita semua.</p>\n\n<p><br />\n<br />\nKepala SMA Negeri 1 Wongsorejoo<br />\n<br />\n<br />\n<br />\n<strong>Drs. Istu Handono</strong></p>\n', '1.1'),
 (6, 'Belum ada konten..!!!<br>\r\nSilakan anda kunjungi halaman ini beberapa saat lagi', '1.3'),
 (7, 'Belum ada konten..!!!<br>\r\nSilakan anda kunjungi halaman ini beberapa saat lagi', '1.5'),
 (8, 'Belum ada konten..!!!<br>\r\nSilakan anda kunjungi halaman ini beberapa saat lagi', '2.1'),
@@ -533,7 +702,7 @@ INSERT INTO `tbl_data` (`id_data`, `content`, `data_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_download`
+-- Table structure for table `tbl_download`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_download` (
@@ -543,22 +712,24 @@ CREATE TABLE IF NOT EXISTS `tbl_download` (
   `tgl_posting` date NOT NULL,
   `author` varchar(20) COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`id_download`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=18 ;
 
 --
--- Dumping data untuk tabel `tbl_download`
+-- Dumping data for table `tbl_download`
 --
 
 INSERT INTO `tbl_download` (`id_download`, `judul_file`, `nama_file`, `tgl_posting`, `author`) VALUES
 (1, 'Absensi Siswa 2010-2011', '787226257Absen_2010_-_2011_edit.xls', '2010-12-29', 'wayansedariasih'),
 (11, 'Absensi Siswa Tahun Ajaran 2010-2011', '918529572Distribusi_2010_-_2011_B._Yayik.xls', '2010-12-29', 'istu'),
 (12, 'Absensi Siswa 2010-2011', '675735311hasil_survei.xls', '2010-12-29', 'istu'),
-(13, 'E-Book 11 Langkah Memahami C#', '858906959demo.zip', '2011-02-24', 'de_lumbung');
+(13, 'E-Book 11 Langkah Memahami C#', '858906959demo.zip', '2011-02-24', 'de_lumbung'),
+(14, 'test123', '5y60r.jpg', '2015-02-23', 'Gede Suma Wijaya'),
+(15, 'telo', '10358826055y60r.jpg', '2015-02-23', 'istu');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_galeri`
+-- Table structure for table `tbl_galeri`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_galeri` (
@@ -570,7 +741,7 @@ CREATE TABLE IF NOT EXISTS `tbl_galeri` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
--- Dumping data untuk tabel `tbl_galeri`
+-- Dumping data for table `tbl_galeri`
 --
 
 INSERT INTO `tbl_galeri` (`id_foto`, `id_album`, `foto_kecil`, `foto_besar`) VALUES
@@ -600,7 +771,7 @@ INSERT INTO `tbl_galeri` (`id_foto`, `id_album`, `foto_kecil`, `foto_besar`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_gambar`
+-- Table structure for table `tbl_gambar`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_gambar` (
@@ -615,7 +786,7 @@ CREATE TABLE IF NOT EXISTS `tbl_gambar` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
--- Dumping data untuk tabel `tbl_gambar`
+-- Dumping data for table `tbl_gambar`
 --
 
 INSERT INTO `tbl_gambar` (`id_file`, `title`, `image_description`, `image_url`, `file_type`, `image_size`, `uploaded_date`) VALUES
@@ -624,7 +795,7 @@ INSERT INTO `tbl_gambar` (`id_file`, `title`, `image_description`, `image_url`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_jawabanpoll`
+-- Table structure for table `tbl_jawabanpoll`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_jawabanpoll` (
@@ -633,22 +804,22 @@ CREATE TABLE IF NOT EXISTS `tbl_jawabanpoll` (
   `jawaban` varchar(100) COLLATE latin1_general_ci NOT NULL,
   `counter` int(5) NOT NULL,
   PRIMARY KEY (`id_jawaban_poll`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=9 ;
 
 --
--- Dumping data untuk tabel `tbl_jawabanpoll`
+-- Dumping data for table `tbl_jawabanpoll`
 --
 
 INSERT INTO `tbl_jawabanpoll` (`id_jawaban_poll`, `id_soal_poll`, `jawaban`, `counter`) VALUES
 (1, 1, 'Kurang', 10),
-(2, 1, 'Cukup', 7),
+(2, 1, 'Cukup', 8),
 (3, 1, 'Sangat Bagus', 10),
 (4, 1, 'Tidak Tahu', 14);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_kelas`
+-- Table structure for table `tbl_kelas`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_kelas` (
@@ -656,10 +827,10 @@ CREATE TABLE IF NOT EXISTS `tbl_kelas` (
   `nama_kelas` varchar(10) NOT NULL,
   `tahun_ajaran` varchar(15) NOT NULL,
   PRIMARY KEY (`id_kelas`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
--- Dumping data untuk tabel `tbl_kelas`
+-- Dumping data for table `tbl_kelas`
 --
 
 INSERT INTO `tbl_kelas` (`id_kelas`, `nama_kelas`, `tahun_ajaran`) VALUES
@@ -677,12 +848,13 @@ INSERT INTO `tbl_kelas` (`id_kelas`, `nama_kelas`, `tahun_ajaran`) VALUES
 (13, 'XII IPA.2', '2010/2011'),
 (14, 'XII IPA.3', '2010/2011'),
 (15, 'XII IPS.1', '2010/2011'),
-(16, 'XII IPS.2', '2010/2011');
+(16, 'XII IPS.2', '2010/2011'),
+(19, 'kampet', 'kampret');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_kepegawaian`
+-- Table structure for table `tbl_kepegawaian`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_kepegawaian` (
@@ -695,64 +867,67 @@ CREATE TABLE IF NOT EXISTS `tbl_kepegawaian` (
   `status` varchar(50) NOT NULL,
   `username` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `password` varchar(100) NOT NULL,
+  `remember_token` varchar(100) NOT NULL,
   PRIMARY KEY (`id_kepegawaian`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=47 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
 
 --
--- Dumping data untuk tabel `tbl_kepegawaian`
+-- Dumping data for table `tbl_kepegawaian`
 --
 
-INSERT INTO `tbl_kepegawaian` (`id_kepegawaian`, `nip`, `nama_pegawai`, `kelahiran`, `matpel`, `jk`, `status`, `username`, `password`) VALUES
-(1, '196412291989031011', 'Drs. Istu Handono', 'Malang, 29 Desember 1964', 'PPKN', 'L', 'guru', 'istu', '8f60cd42aa91b5fb1600d0bc09341f16'),
-(2, '195704151985031017', 'Drs. Edi Suparnadi', 'Pamekasan, 15 April 1957', 'Ekonomi, Akuntansi', 'L', 'guru', 'edisuparnadi', '84ba28186ecdc8169a9e618ee10c6689'),
-(3, '195910111983081003', 'Drs. Kuntohadi, M.Pd.I', 'Banyuwangi, 10 November 1959', 'Pend. Agama Islam', 'L', 'guru', 'kuntohadi', '145f7d3f9a14c17da71f58269a559f51'),
-(4, '196604031997032002', 'Sri Purwanti', 'Klaten, 03 April 1966', 'Seni Tari', 'P', 'guru', 'sripurwanti', 'd99669c69d2010136c4f2939ec12e016'),
-(5, '19660525199512002', 'Fransisco Maya, S.Pd', 'Timor-Timur, 25 Mei 1966', 'PKn', 'P', 'guru', 'fransiscomaya', '3bbc2b1bb1fed3b95589cde0a97ce390'),
-(6, '197110111998021001', 'Agus Suprantiyono, S.Pd', 'Pati, 11 Oktober 1971', 'Fisika', 'L', 'guru', 'agussuprantiyono', 'f590b48dd6c45eec8f0969a7a291b5ef'),
-(7, '196502091999032001', 'Ni Wayan Sedariasih', 'Tabanan, 09 Februari 1965', 'Sejarah, Sosiologi', 'P', 'guru', 'wayansedariasih', '90a2d00785194295f5dba7acac7517f5'),
-(8, '196705091998021002', 'Abdus Syakur', 'Bondowoso, 09 Mei 1967', 'Matematika', 'L', 'guru', 'abdussyakur', '397e6c0b0abaded911d0376c493e0d62'),
-(9, '196509022000031003', 'Samsul, S.Pd', 'Banyuwangi, 02 September 1965', 'Geografi', 'L', 'guru', 'samsul', '6ddcd35687be9a4415e4416a6dd6829e'),
-(10, '196606122000032006', 'Husnul Hotimah', 'Banyuwangi, 12 Juni 1966', 'Matematika', 'P', 'guru', 'husnulhotimah', '0bb3a76b2e36715f76f769362fff6196'),
-(11, '197009202003122006', 'Mujiati, S.Pd', 'Banyuwangi, 20 September 1970', 'Sosiologi / Kewarganegaraan', 'P', 'guru', 'mujiati', '6f644f6d12df3a3ef6938668a48130ec'),
-(12, '197909012003122008', 'Umi Lestari, S.Pd', 'Banyuwangi, 01 September 1979', 'Bahasa Inggris', 'P', 'guru', 'umilestari', '1e398be40df082937f345008f9904570'),
-(13, '197511162005012011', 'Sulityowati, S.Pd', 'Banyuwangi, 16 November 1975', 'Bahasa Inggris', 'P', 'guru', 'sulityowati', 'c7a31c51818f708d292867d128ca7f07'),
-(14, '196606162006041016', 'Sukardi, S.Pd', 'Banyuwangi, 16 Juni 1966', 'Matematika', 'L', 'guru', 'sukardi', 'f4789943ee2c7f47492dea41ef8289e6'),
-(15, '196806102007011033', 'Katiman, S.Pd', 'Banyuwangi, 10 Juni 1968', 'Sejarah / Mulok', 'L', 'guru', 'katiman', 'ca4e33770790fb7cee92227b2ba26292'),
-(16, '197506112007012006', 'Nandi Suhaili, S.Pd', 'Banyuwangi, 11 Juni 1975', 'Kimia', 'L', 'guru', 'nandisuhaili', '733e65748f8b2bcbf1cf45513fdc86da'),
-(17, '197308022007012006', 'Widi Nugrahani, S.Pd', 'Banyuwangi, 02 Agustus 1973', 'Bahasa Indonesia', 'P', 'guru', 'widinugrahani', '239dfedc4c79fe58a372b27ca247f92a'),
-(18, '196409172007011016', 'Drs. Edy Purdiyanto', 'Malang, 17 September 1964', 'Biologi / Fisika', 'L', 'guru', '', ''),
-(19, '196309052007011007', 'Drs. Priyo Suyitno', 'Banyuwangi, 05 September 1963', 'Sejarah', 'L', 'guru', '', ''),
-(20, '196408252007011007', 'Untung Selamet, S.Pd', 'Karang Sari, 25 Agustus 1964', 'Bahasa Indonesia', 'L', 'guru', '', ''),
-(21, '197309192007011013', 'Drs. Zhudi Hermawan', 'Banyuwangi, 19 September 1973', 'Penjaskes', 'L', 'guru', '', ''),
-(22, '510234143', 'Dra. Eny Sulistyowati', 'Banyuwangi, 06 November 1963', 'BK', 'P', 'guru', '', ''),
-(23, '510234277', 'Drs. Ahmad', 'Banyuwangi, 11 Juli 1967', 'Matematika', 'L', 'guru', '', ''),
-(24, '510234292', 'Supriyadi, S.Pd', 'Banyuwangi, 15 Juli 1975', 'Bahasa Inggris', 'L', 'guru', '', ''),
-(25, '510234305', 'Dra. Yayik Prakesti', 'Banyuwangi, 25 Mei 1965', 'Biologi', 'P', 'guru', '', ''),
-(26, '510234455', 'Drs. Imam Tajuddin', 'Banyuwangi, 16 Juni 1968', 'BK / Bahasa Asing', 'L', 'guru', '', ''),
-(27, '510234455', 'Asnawi, S.Pd', 'Banyuwangi, 05 Maret 1963', 'Penjaskes', 'L', 'guru', '', ''),
-(28, '-', 'Holifatun Nur Ania', 'Banyuwangi, 08 Januari 1979', 'Mulok', 'P', 'guru', '', ''),
-(29, '-', 'Priyo Utomo', 'Banyuwangi, 05 Mei 1971', 'Bahasa Indonesia', 'L', 'guru', '', ''),
-(30, '-', 'Yuli Astutik', 'Banyuwangi, 11 Mei 1980', 'Akuntansi', 'P', 'guru', '', ''),
-(31, '-', 'Etik Kus Endang', 'Banyuwangi, 15 Desember 1978', '-', 'P', 'guru', '', ''),
-(32, '-', 'Emi Wati', 'Banyuwangi, 23 Oktober 1968', '-', 'P', 'guru', '', ''),
-(33, '-', 'Dian Novita', 'Banyuwangi, 30 November 1984', 'Kimia', 'P', 'guru', '', ''),
-(34, '-', 'Yuli Setiyawati', 'Banyuwangi, 15 Juli 1965', '-', 'P', 'guru', '', ''),
-(35, '-', 'Etik Lis Andiyani', '-', 'Bahasa Jepang', 'P', 'guru', '', ''),
-(36, '195904011989021003', 'Aries Bintang Pranyoto', 'Banyuwangi, 01 April 1959', '-', 'L', 'pegawai', '', ''),
-(37, '196701112000032003', 'Fitria Indahati', 'Banyuwangi, 11 Januari 1967', '-', 'P', 'pegawai', '', ''),
-(38, '196610141998021004', 'Sudarto', 'Banyuwangi, 14 Oktober 1966', '-', 'L', 'pegawai', '', ''),
-(39, '-', 'Suryadi', 'Banyuwangi, 23 Desember 1975', '-', 'L', 'pegawai', '', ''),
-(40, '-', 'Salam Wahyudi Umar Said', 'Banyuwangi, 12 Agustus 1969', '-', 'L', 'pegawai', '', ''),
-(41, '-', 'Yuliana Aisyah Fitri', 'Banyuwangi, 28 Juli 1985', '-', 'P', 'pegawai', '', ''),
-(42, '-', 'Kusniah', 'Banyuwangi, 08 Mei 1988', '-', 'P', 'pegawai', '', ''),
-(43, '-', 'Moh. Yusuf', 'Banyuwangi, 20 September 1967', '-', 'L', 'pegawai', '', ''),
-(44, '-', 'Ahmad Fauzi', 'Banyuwangi, 12 Agustus 1990', '-', 'L', 'pegawai', '', ''),
-(45, '-', 'Gede Suma Wijaya', 'Denpasar, 4 Februari 1991', '-', 'L', 'admin', 'de_lumbung', '751c3e22ea4ed888c7c5edd64a005deb');
+INSERT INTO `tbl_kepegawaian` (`id_kepegawaian`, `nip`, `nama_pegawai`, `kelahiran`, `matpel`, `jk`, `status`, `username`, `password`, `remember_token`) VALUES
+(1, '196412291989031011', 'Drs. Istu Handono', 'Malang, 29 Desember 1964', 'PPKN', 'L', 'guru', 'istu', '8f60cd42aa91b5fb1600d0bc09341f16', ''),
+(2, '195704151985031017', 'Drs. Edi Suparnadi', 'Pamekasan, 15 April 1957', 'Ekonomi, Akuntansi', 'L', 'guru', 'edisuparnadi', '$2y$10$dm8Xt50A7GgcZkp9coVQZ.LlTr0PkpCgXPpTEpNq6AMeZyLBUe9yW', 'IisQlo82qSyJ2OS9UrNxjrg8klLpE1btrRJHaK9SRVhCXr5pAkHZqtLTzBv5'),
+(3, '195910111983081003', 'Drs. Kuntohadi, M.Pd.I', 'Banyuwangi, 10 November 1959', 'Pend. Agama Islam', 'L', 'guru', 'kuntohadi', '145f7d3f9a14c17da71f58269a559f51', ''),
+(4, '196604031997032002', 'Sri Purwanti', 'Klaten, 03 April 1966', 'Seni Tari', 'P', 'guru', 'sripurwanti', 'd99669c69d2010136c4f2939ec12e016', ''),
+(5, '19660525199512002', 'Fransisco Maya, S.Pd', 'Timor-Timur, 25 Mei 1966', 'PKn', 'P', 'guru', 'fransiscomaya', '3bbc2b1bb1fed3b95589cde0a97ce390', ''),
+(6, '197110111998021001', 'Agus Suprantiyono, S.Pd', 'Pati, 11 Oktober 1971', 'Fisika', 'L', 'guru', 'agussuprantiyono', 'f590b48dd6c45eec8f0969a7a291b5ef', ''),
+(7, '196502091999032001', 'Ni Wayan Sedariasih', 'Tabanan, 09 Februari 1965', 'Sejarah, Sosiologi', 'P', 'guru', 'wayansedariasih', '90a2d00785194295f5dba7acac7517f5', ''),
+(8, '196705091998021002', 'Abdus Syakur', 'Bondowoso, 09 Mei 1967', 'Matematika', 'L', 'guru', 'abdussyakur', '397e6c0b0abaded911d0376c493e0d62', ''),
+(9, '196509022000031003', 'Samsul, S.Pd', 'Banyuwangi, 02 September 1965', 'Geografi', 'L', 'guru', 'samsul', '6ddcd35687be9a4415e4416a6dd6829e', ''),
+(10, '196606122000032006', 'Husnul Hotimah', 'Banyuwangi, 12 Juni 1966', 'Matematika', 'P', 'guru', 'husnulhotimah', '0bb3a76b2e36715f76f769362fff6196', ''),
+(11, '197009202003122006', 'Mujiati, S.Pd', 'Banyuwangi, 20 September 1970', 'Sosiologi / Kewarganegaraan', 'P', 'guru', 'mujiati', '6f644f6d12df3a3ef6938668a48130ec', ''),
+(12, '197909012003122008', 'Umi Lestari, S.Pd', 'Banyuwangi, 01 September 1979', 'Bahasa Inggris', 'P', 'guru', 'umilestari', '1e398be40df082937f345008f9904570', ''),
+(13, '197511162005012011', 'Sulityowati, S.Pd', 'Banyuwangi, 16 November 1975', 'Bahasa Inggris', 'P', 'guru', 'sulityowati', 'c7a31c51818f708d292867d128ca7f07', ''),
+(14, '196606162006041016', 'Sukardi, S.Pd', 'Banyuwangi, 16 Juni 1966', 'Matematika', 'L', 'guru', 'sukardi', 'f4789943ee2c7f47492dea41ef8289e6', ''),
+(15, '196806102007011033', 'Katiman, S.Pd', 'Banyuwangi, 10 Juni 1968', 'Sejarah / Mulok', 'L', 'guru', 'katiman', 'ca4e33770790fb7cee92227b2ba26292', ''),
+(16, '197506112007012006', 'Nandi Suhaili, S.Pd', 'Banyuwangi, 11 Juni 1975', 'Kimia', 'L', 'guru', 'nandisuhaili', '733e65748f8b2bcbf1cf45513fdc86da', ''),
+(17, '197308022007012006', 'Widi Nugrahani, S.Pd', 'Banyuwangi, 02 Agustus 1973', 'Bahasa Indonesia', 'P', 'guru', 'widinugrahani', '239dfedc4c79fe58a372b27ca247f92a', ''),
+(18, '196409172007011016', 'Drs. Edy Purdiyanto', 'Malang, 17 September 1964', 'Biologi / Fisika', 'L', 'guru', '', '', ''),
+(19, '196309052007011007', 'Drs. Priyo Suyitno', 'Banyuwangi, 05 September 1963', 'Sejarah', 'L', 'guru', '', '', ''),
+(20, '196408252007011007', 'Untung Selamet, S.Pd', 'Karang Sari, 25 Agustus 1964', 'Bahasa Indonesia', 'L', 'guru', '', '', ''),
+(21, '197309192007011013', 'Drs. Zhudi Hermawan', 'Banyuwangi, 19 September 1973', 'Penjaskes', 'L', 'guru', '', '', ''),
+(22, '510234143', 'Dra. Eny Sulistyowati', 'Banyuwangi, 06 November 1963', 'BK', 'P', 'guru', '', '', ''),
+(23, '510234277', 'Drs. Ahmad', 'Banyuwangi, 11 Juli 1967', 'Matematika', 'L', 'guru', '', '', ''),
+(24, '510234292', 'Supriyadi, S.Pd', 'Banyuwangi, 15 Juli 1975', 'Bahasa Inggris', 'L', 'guru', '', '', ''),
+(25, '510234305', 'Dra. Yayik Prakesti', 'Banyuwangi, 25 Mei 1965', 'Biologi', 'P', 'guru', '', '', ''),
+(26, '510234455', 'Drs. Imam Tajuddin', 'Banyuwangi, 16 Juni 1968', 'BK / Bahasa Asing', 'L', 'guru', '', '', ''),
+(27, '510234455', 'Asnawi, S.Pd', 'Banyuwangi, 05 Maret 1963', 'Penjaskes', 'L', 'guru', '', '', ''),
+(28, '-', 'Holifatun Nur Ania', 'Banyuwangi, 08 Januari 1979', 'Mulok', 'P', 'guru', '', '', ''),
+(29, '-', 'Priyo Utomo', 'Banyuwangi, 05 Mei 1971', 'Bahasa Indonesia', 'L', 'guru', '', '', ''),
+(30, '-', 'Yuli Astutik', 'Banyuwangi, 11 Mei 1980', 'Akuntansi', 'P', 'guru', '', '', ''),
+(31, '-', 'Etik Kus Endang', 'Banyuwangi, 15 Desember 1978', '-', 'P', 'guru', '', '', ''),
+(32, '-', 'Emi Wati', 'Banyuwangi, 23 Oktober 1968', '-', 'P', 'guru', '', '', ''),
+(33, '-', 'Dian Novita', 'Banyuwangi, 30 November 1984', 'Kimia', 'P', 'guru', '', '', ''),
+(34, '-', 'Yuli Setiyawati', 'Banyuwangi, 15 Juli 1965', '-', 'P', 'guru', '', '', ''),
+(35, '-', 'Etik Lis Andiyani', '-', 'Bahasa Jepang', 'P', 'guru', '', '', ''),
+(36, '195904011989021003', 'Aries Bintang Pranyoto', 'Banyuwangi, 01 April 1959', '-', 'L', 'pegawai', '', '', ''),
+(37, '196701112000032003', 'Fitria Indahati', 'Banyuwangi, 11 Januari 1967', '-', 'P', 'pegawai', '', '', ''),
+(38, '196610141998021004', 'Sudarto', 'Banyuwangi, 14 Oktober 1966', '-', 'L', 'pegawai', '', '', ''),
+(39, '-', 'Suryadi', 'Banyuwangi, 23 Desember 1975', '-', 'L', 'pegawai', '', '', ''),
+(40, '-', 'Salam Wahyudi Umar Said', 'Banyuwangi, 12 Agustus 1969', '-', 'L', 'pegawai', '', '', ''),
+(41, '-', 'Yuliana Aisyah Fitri', 'Banyuwangi, 28 Juli 1985', '-', 'P', 'pegawai', '', '', ''),
+(42, '-', 'Kusniah', 'Banyuwangi, 08 Mei 1988', '-', 'P', 'pegawai', '', '', ''),
+(43, '-', 'Moh. Yusuf', 'Banyuwangi, 20 September 1967', '-', 'L', 'pegawai', '', '', ''),
+(44, '-', 'Ahmad Fauzi', 'Banyuwangi, 12 Agustus 1990', '-', 'L', 'pegawai', '', '', ''),
+(45, '-', 'Gede Suma Wijaya', 'Denpasar, 4 Februari 1991', '-', 'L', 'admin', 'admin', '$2y$10$AGmlNMGBpbRJIvkcIhuzMOr8QzVwBGX.vniEln3leI3faI/BcNhNu', 'rCAg6QuDcSKoNccVdFq4Q5lY12e6EcptwUuzaVBDMx4VJOmDF3FAQXB6K5Un'),
+(47, '12345', 'waseso', 'waseso', 'waseso', 'L', 'guru', 'waseso', '$2y$10$nw7ZXFGXvPTTNYHnJWNriercXtQbUeOXc7l2.KCWRIvaxPDMKVCjq', 'xuN7yBTBf0VAUOtuWjM3ms05C8VlP14oncTl211JkBfzynj7k4pjlGZc7j7d'),
+(49, '4567890', 'Kampret', 'kampret', 'kampret', 'L', 'guru', 'kampret', '$2y$10$BYNFwvaEk7QFp9Q1Y2L/0.UDiDbZ7GToXFae.x0ycPPiMs0vo.KZy', 'P9zjpiLIo0Q0QaDij7LoU1Z1TO1Q6N4hzfR9CyHIDgBKdbOYznIVrsh3TefQ');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_menu`
+-- Table structure for table `tbl_menu`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_menu` (
@@ -764,7 +939,7 @@ CREATE TABLE IF NOT EXISTS `tbl_menu` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_menu`
+-- Dumping data for table `tbl_menu`
 --
 
 INSERT INTO `tbl_menu` (`id`, `title`, `id_parent`, `level`) VALUES
@@ -810,7 +985,7 @@ INSERT INTO `tbl_menu` (`id`, `title`, `id_parent`, `level`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_pengumuman`
+-- Table structure for table `tbl_pengumuman`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_pengumuman` (
@@ -820,22 +995,23 @@ CREATE TABLE IF NOT EXISTS `tbl_pengumuman` (
   `tanggal` date NOT NULL,
   `penulis` varchar(100) COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`id_pengumuman`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=11 ;
 
 --
--- Dumping data untuk tabel `tbl_pengumuman`
+-- Dumping data for table `tbl_pengumuman`
 --
 
 INSERT INTO `tbl_pengumuman` (`id_pengumuman`, `judul_pengumuman`, `isi`, `tanggal`, `penulis`) VALUES
 (1, 'Pembagian Raport Semester Ganjil Tahun Ajaran 2010-2011', 'Menjelang berakhirnya proses belajar-mengajar di semester ganjil tahun ajaran 2010-2011, maka akan diadakan pembagian hasil belajar/raport pada tanggal 23 Desember 2011 pukul 07.30 WIB.<br>\r\nYang bertempat di SMA Negeri 1 Wongsorejo. Raport diambil oleh orang tua/wali kelas murid masing-masing', '2010-12-22', 'wayansedariasih'),
 (2, 'Libur Semester Ganjil Tahun Ajaran 2010-2011', 'Libur semester ganjil tahun ajaran 2010-2011 dimulai dari tanggal 24 Desember 2010 sampai dengan tanggal 2 Januari 2011.', '2010-12-22', 'admin'),
 (3, 'Proses Belajar Mengajar di Semester Genap Tahun Ajaran 2010-2011', 'Setelah libur semester ganjil tahun ajaran 2010-2011, proses belajar mengajar di semester genap tahun ajaran 2010-2011 mulai aktif kembali tanggal 3 Januari 2011.', '2010-12-22', 'admin'),
-(4, 'Peresmian dan Launching Website Perdana SMA Negeri 1 Wongsorejo', 'Peresmian dan launching website resmi SMA Negeri 1 Wongsorejo akan diadakan pada hari 23 Desember 2010 pukul 10.00, bertepatan dengan pembagian raport semester ganjil tahun ajaran 2010-2011', '2010-12-22', 'admin');
+(4, 'Peresmian dan Launching Website Perdana SMA Negeri 1 Wongsorejo', 'Peresmian dan launching website resmi SMA Negeri 1 Wongsorejo akan diadakan pada hari 23 Desember 2010 pukul 10.00, bertepatan dengan pembagian raport semester ganjil tahun ajaran 2010-2011', '2010-12-22', 'admin'),
+(10, 'Tambah Satu', '<p>tambah satu</p>\n', '2015-02-24', 'Drs. Edi Suparnadi');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_pesan`
+-- Table structure for table `tbl_pesan`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_pesan` (
@@ -848,15 +1024,10 @@ CREATE TABLE IF NOT EXISTS `tbl_pesan` (
   PRIMARY KEY (`id_pesan`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
---
--- Dumping data untuk tabel `tbl_pesan`
---
-
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_siswa`
+-- Table structure for table `tbl_siswa`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_siswa` (
@@ -865,10 +1036,10 @@ CREATE TABLE IF NOT EXISTS `tbl_siswa` (
   `nis` int(30) NOT NULL,
   `nama_siswa` varchar(150) NOT NULL,
   PRIMARY KEY (`id_siswa`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=559 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=568 ;
 
 --
--- Dumping data untuk tabel `tbl_siswa`
+-- Dumping data for table `tbl_siswa`
 --
 
 INSERT INTO `tbl_siswa` (`id_siswa`, `id_kelas`, `nis`, `nama_siswa`) VALUES
@@ -1428,12 +1599,16 @@ INSERT INTO `tbl_siswa` (`id_siswa`, `id_kelas`, `nis`, `nama_siswa`) VALUES
 (554, 16, 957, 'Tutus Dewi Wahyuni'),
 (555, 16, 965, 'Wita Pratiwi'),
 (556, 16, 969, 'Yuliana'),
-(557, 16, 1186, 'Sherly Delvita Aurora');
+(557, 16, 1186, 'Sherly Delvita Aurora'),
+(564, 0, 1234, '123'),
+(563, 0, 1234, 'test'),
+(566, 19, 1789, 'Satu'),
+(567, 2, 4567, 'Yudhistira');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_soalpolling`
+-- Table structure for table `tbl_soalpolling`
 --
 
 CREATE TABLE IF NOT EXISTS `tbl_soalpolling` (
@@ -1441,10 +1616,10 @@ CREATE TABLE IF NOT EXISTS `tbl_soalpolling` (
   `soal_poll` text COLLATE latin1_general_ci NOT NULL,
   `status` char(1) COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`id_soal_poll`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=9 ;
 
 --
--- Dumping data untuk tabel `tbl_soalpolling`
+-- Dumping data for table `tbl_soalpolling`
 --
 
 INSERT INTO `tbl_soalpolling` (`id_soal_poll`, `soal_poll`, `status`) VALUES
