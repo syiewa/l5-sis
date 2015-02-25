@@ -82,6 +82,7 @@
         <script src="{{asset('front/plugins/mixitup/src/jquery.mixitup.js')}}"></script>
         <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
         <script>
+var base_url = "{{url()}}";
 jQuery(document).ready(function() {
     Main.init();
     $('#Grid').mixitup();

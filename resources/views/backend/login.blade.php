@@ -23,8 +23,6 @@
         <link rel="stylesheet" href="{{asset('assets/fonts/style.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/main-responsive.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css')}}">
-        <link rel="stylesheet" href="{{asset('assets/plugins/perfect-scrollbar/src/perfect-scrollbar.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/theme_light.css')}}" type="text/css" id="skin_color">
         <link rel="stylesheet" href="{{asset('assets/css/print.css')}}" type="text/css" media="print"/>
         <!--[if IE 7]>
