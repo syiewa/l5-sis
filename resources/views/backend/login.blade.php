@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/main-responsive.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/theme_light.css')}}" type="text/css" id="skin_color">
+        <link rel="stylesheet" href="{{asset('assets/css/angular-block-ui.min.css')}}" type="text/css">
         <link rel="stylesheet" href="{{asset('assets/css/print.css')}}" type="text/css" media="print"/>
         <!--[if IE 7]>
         <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome-ie7.min.css">
@@ -42,7 +43,7 @@
             <div>
                 <h3>Login Ke Halaman Admin/Karyawan</h3>
                 <p>
-                   Masukan username dan password anda
+                    Masukan username dan password anda
                 </p>
                 <form class="form-login" ng-submit='submit()' novalidate>
                     <input type="hidden" name="_token" value="{{ csrf_token()}}">
@@ -89,12 +90,12 @@
         <!-- end: MAIN JAVASCRIPTS -->
         <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
         <script>
-        var base_url = "{{url()}}";
-        </script>
+                            var base_url = "{{url()}}";</script>
         <script src='{{asset('assets/js/angular.min.js')}}'></script>
         <script src='{{asset('assets/js/ui-bootstrap-tpls-0.12.0.min.js')}}'></script>
         <script src='{{asset('assets/js/angular-file-upload.min.js')}}'></script>
         <script src='{{asset('assets/js/angular-file-upload-shim.min.js')}}'></script>
+        <script src='{{asset('assets/js/angular-block-ui.min.js')}}'></script>
         <script src='{{asset('assets/js/admin.js')}}'></script>
         <script src='{{asset('assets/js/controller/login.js')}}'></script>
         <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->

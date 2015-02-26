@@ -4,7 +4,7 @@ angular.module('admin').controller('foto', function($scope, $http, $filter, $tim
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var galeri_id = $filter('_uriseg')(4);
+    var galeri_id = $filter('_uriseg')(6);
     $http.get(baseURL.url('api/galeri/') + galeri_id + '/foto').success(function(data) {
         $scope.data = data;
         if (data[0]) {
@@ -44,7 +44,7 @@ angular.module('admin').controller('fotocreate', function($scope, $http, $filter
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var id = $filter('_uriseg')(4);
+    var id = $filter('_uriseg')(6);
     $scope.data['id_album'] = id;
     $scope.galeri = {};
     $http.get(baseURL.url('api/galeridropdown')).success(function(data) {
@@ -89,8 +89,8 @@ angular.module('admin').controller('fotoedit', function($scope, $http, $filter, 
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var galeri_id = $filter('_uriseg')(4);
-    var id = $filter('_uriseg')(6);
+    var galeri_id = $filter('_uriseg')(6);
+    var id = $filter('_uriseg')(8);
     $http.get(baseURL.url('api/foto/') + id).success(function(data) {
         $scope.data = data;
     })

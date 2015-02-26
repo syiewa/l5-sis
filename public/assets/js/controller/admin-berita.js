@@ -85,7 +85,7 @@ angular.module('admin').controller('beritacreate', function($scope, $http, $filt
 });
 angular.module('admin').controller('beritaedit', function($scope, $http, $filter, $timeout, $upload, baseURL) {
     $scope.data = {}
-    var id = $filter('_uriseg')(4);
+    var id = $filter('_uriseg')(6);
     $http.get(baseURL.url('api/berita/') + id).success(function(data) {
         $scope.data = data;
     })

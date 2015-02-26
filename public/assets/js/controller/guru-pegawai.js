@@ -73,7 +73,7 @@ angular.module('admin').controller('pegawaiedit', function($scope, $http, $filte
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var id = $filter('_uriseg')(4);
+    var id = $filter('_uriseg')(6);
     $http.get(baseURL.url('api/pegawai/') + id).success(function(data) {
         $scope.data = data;
     })

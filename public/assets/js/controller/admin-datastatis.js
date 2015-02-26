@@ -1,4 +1,4 @@
-angular.module('admin').controller('datastatis', function($scope, $http, $filter, $timeout, baseURL) {
+angular.module('admin').controller('datastatis', function($scope, $http, $filter, $timeout,blockUI, baseURL) {
     $scope.data = {};
     $scope.alerts = [];
     $scope.closeAlert = function(index) {

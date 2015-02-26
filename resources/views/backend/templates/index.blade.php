@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="{{asset('assets/css/main-responsive.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/theme_light.css')}}" type="text/css" id="skin_color">
         <link rel="stylesheet" href="{{asset('assets/css/print.css')}}" type="text/css" media="print"/>
+        <link rel="stylesheet" href="{{asset('assets/css/angular-block-ui.min.css')}}" type="text/css" id="skin_color">
         <!--[if IE 7]>
         <link rel="stylesheet" href="{{asset('assets/plugins/font-awesome/css/font-awesome-ie7.min.css')}}">
         <![endif]-->
@@ -67,7 +68,7 @@
         <script src="{{asset('assets/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js')}}"></script>
         <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
         <script>
-            var base_url = "{{url()}}";
+                    var base_url = "{{url()}}";
                     jQuery(document).ready(function() {
             CKEDITOR.disableAutoInline = true;
                     $('textarea.ckeditor').ckeditor();
@@ -83,6 +84,7 @@
         <script src='{{asset('assets/js/ui-bootstrap-tpls-0.12.0.min.js')}}'></script>
         <script src='{{asset('assets/js/angular-file-upload.min.js')}}'></script>
         <script src='{{asset('assets/js/angular-file-upload-shim.min.js')}}'></script>
+        <script src='{{asset('assets/js/angular-block-ui.min.js')}}'></script>
         <script src='{{asset('assets/js/admin.js')}}'></script>
         @section('js')
 

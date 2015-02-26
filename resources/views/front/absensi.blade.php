@@ -11,6 +11,7 @@
 @section('js')
 <script src='{{asset('assets/js/angular.min.js')}}'></script>
 <script src='{{asset('assets/js/ui-bootstrap-tpls-0.12.0.min.js')}}'></script>
+<script src='{{asset('assets/js/angular-block-ui.min.js')}}'></script>
 <script src='{{asset('assets/js/siswa.js')}}'></script>
 @endsection
 @section('content')

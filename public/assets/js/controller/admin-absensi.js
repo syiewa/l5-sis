@@ -76,14 +76,15 @@ angular.module('admin').controller('absensiedit', function($scope, $http, $filte
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var id = $filter('_uriseg')(4);
+    var id = $filter('_uriseg')(6);
     $http.get(baseURL.url('api/absensi/') + id).success(function(data) {
         $scope.data = data;
+        console.log(data);
         $scope.data['nama_siswa'] = data.siswa.nama_siswa;
         $scope.data['kelas'] = data.kelas.nama_kelas;
-        $scope.data['bulan'] = dateobj.getMonth() + 1; // 3  (0 = January, 3 = April)
-        $scope.data['tanggal'] = dateobj.getDate();  // 28
-        $scope.data['tahun'] = dateobj.getFullYear(); // 6s
+        $scope.data['bulan'] = data.bulan; // 3  (0 = January, 3 = April)
+        $scope.data['tanggal'] = data.tanggal  // 28
+        $scope.data['tahun'] = data.tahun // 6s
     })
     $scope.submit = function() {
         $http.put(baseURL.url('admin/absensi/') + id, $scope.data).success(function(data) {

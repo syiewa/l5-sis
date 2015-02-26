@@ -66,7 +66,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::post('absensi/show', ['as' => 'admin.absensi.show', 'uses' => 'Admin\AbsensiController@show']);
 });
 
-Route::group(['prefix' => 'guru'], function() {
+Route::group(['prefix' => 'guru','middleware' => 'auth'], function() {
     Route::get('/', function() {
         return view('guru.dashboard');
     });

@@ -28,6 +28,7 @@
         <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
         <link rel="stylesheet" href="{{asset('front/plugins/flex-slider/flexslider.css')}}">
         <link rel="stylesheet" href="{{asset('assets/plugins/colorbox/example2/colorbox.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/css/angular-block-ui.min.css')}}" type="text/css">
         <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
         <!-- start: HTML5SHIV FOR IE8 -->
         <!--[if lt IE 9]>

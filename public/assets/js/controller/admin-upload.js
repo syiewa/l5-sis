@@ -96,7 +96,7 @@ angular.module('admin').controller('uploadedit', function($scope, $http, $filter
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var id = $filter('_uriseg')(4);
+    var id = $filter('_uriseg')(6);
     $http.get(baseURL.url('api/upload/') + id).success(function(data) {
         $scope.data = data;
         $scope.data['judul_file'] = data.judul_file;

@@ -72,7 +72,7 @@ angular.module('admin').controller('pengumumanedit', function($scope, $http, $fi
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var id = $filter('_uriseg')(4);
+    var id = $filter('_uriseg')(6);
     $http.get(baseURL.url('api/pengumuman/') + id).success(function(data) {
         $scope.data = data;
     })

@@ -32,14 +32,26 @@ class Authenticate {
      * @return mixed
      */
     public function handle($request, Closure $next) {
-        if ($this->auth->guest() || $this->auth->user()->status != 'admin') {
+        if ($this->auth->guest()) {
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
             } else {
                 return redirect()->guest('/login');
             }
         }
-
+        if (!$this->auth->guest()) {
+            if ($this->auth->user()->status == 'guru') {
+                $route = $request->route()->uri();
+                $route = explode('/', $route);
+                if ($route[0] == 'admin') {
+                    if ($request->ajax()) {
+                        return response('Unauthorized.', 401);
+                    } else {
+                        return redirect()->guest('/guru');
+                    }
+                }
+            }
+        }
         return $next($request);
     }
 

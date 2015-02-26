@@ -4,7 +4,7 @@ angular.module('admin').controller('siswa', function($scope, $http, $filter, $ti
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var kelas_id = $filter('_uriseg')(4);
+    var kelas_id = $filter('_uriseg')(6);
     $http.get(baseURL.url('api/kelas/') + kelas_id + '/siswa').success(function(data) {
         $scope.data = data;
         $scope.totalItems = $scope.data.length;
@@ -48,7 +48,7 @@ angular.module('admin').controller('siswacreate', function($scope, $http, $filte
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var id = $filter('_uriseg')(4);
+    var id = $filter('_uriseg')(6);
     $scope.data['id_kelas'] = id;
     $scope.kelas = {};
     $http.get(baseURL.url('api/kelasdropdown')).success(function(data) {
@@ -78,8 +78,8 @@ angular.module('admin').controller('siswaedit', function($scope, $http, $filter,
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var kelas_id = $filter('_uriseg')(4);
-    var id = $filter('_uriseg')(6);
+    var kelas_id = $filter('_uriseg')(6);
+    var id = $filter('_uriseg')(8);
     $http.get(baseURL.url('api/siswa/') + id).success(function(data) {
         $scope.data = data;
     })

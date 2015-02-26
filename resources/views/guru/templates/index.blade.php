@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/main-responsive.css')}}">
         <link rel="stylesheet" href="{{asset('assets/css/theme_light.css')}}" type="text/css" id="skin_color">
+        <link rel="stylesheet" href="{{asset('assets/css/angular-block-ui.min.css')}}" type="text/css">
         <link rel="stylesheet" href="{{asset('assets/css/print.css')}}" type="text/css" media="print"/>
         @section('css')
         @show
@@ -78,6 +79,7 @@
         <script src='{{asset('assets/js/ui-bootstrap-tpls-0.12.0.min.js')}}'></script>
         <script src='{{asset('assets/js/angular-file-upload.min.js')}}'></script>
         <script src='{{asset('assets/js/angular-file-upload-shim.min.js')}}'></script>
+        <script src='{{asset('assets/js/angular-block-ui.min.js')}}'></script>
         <script src='{{asset('assets/js/admin.js')}}'></script>
         @section('js')
 

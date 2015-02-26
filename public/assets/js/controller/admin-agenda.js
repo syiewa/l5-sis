@@ -85,7 +85,7 @@ angular.module('admin').controller('agendaedit', function($scope, $http, $filter
         formatYear: 'yy',
         startingDay: 1
     };
-    var id = $filter('_uriseg')(4);
+    var id = $filter('_uriseg')(6);
     $http.get(baseURL.url('api/agenda/') + id).success(function(data) {
         $scope.data = data;
     })

@@ -4,7 +4,7 @@ angular.module('admin').controller('jawaban', function($scope, $http, $filter, $
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var polling_id = $filter('_uriseg')(4);
+    var polling_id = $filter('_uriseg')(6);
     $http.get(baseURL.url('api/polling/') + polling_id + '/jawaban').success(function(data) {
         $scope.data = data;
         $scope.totalItems = $scope.data.length;
@@ -48,7 +48,7 @@ angular.module('admin').controller('jawabancreate', function($scope, $http, $fil
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var id = $filter('_uriseg')(4);
+    var id = $filter('_uriseg')(6);
     $scope.data['id_soal_poll'] = id;
     $scope.polling = {};
     $http.get(baseURL.url('api/pollingdropdown')).success(function(data) {
@@ -78,8 +78,8 @@ angular.module('admin').controller('jawabanedit', function($scope, $http, $filte
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var polling_id = $filter('_uriseg')(4);
-    var id = $filter('_uriseg')(6);
+    var polling_id = $filter('_uriseg')(6);
+    var id = $filter('_uriseg')(8);
     $http.get(baseURL.url('api/jawaban/') + id).success(function(data) {
         $scope.data = data;
     })
