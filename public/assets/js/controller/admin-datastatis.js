@@ -61,14 +61,13 @@ angular.module('admin').controller('datastatisedit', function($scope, $http, $fi
     };
     $http.get(baseURL.url('api/menu')).success(function(data) {
         $scope.menu = data;
-        console.log(data);
     });
     $scope.submit = function(id) {
         $scope.data['content'] = CKEDITOR.instances.editor1.getData();
         $http.put(baseURL.url('admin/datastatis/') + id, $scope.data).success(function(data) {
             if (data.success) {
                 $timeout(function() {
-                    window.location.replace(baseURL.url());
+                    window.location.replace(baseURL.url('admin/datastatis'));
                 }, 3000);
             }
         }).error(function(e, status) {

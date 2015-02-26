@@ -33,7 +33,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label" for="form-field-1"> Kategori </label>
                                     <div class="col-sm-9">
-                                        <select name="data_id" class="form-control" ng-model="data.data_id" required>
+                                        <select name="data_id" class="form-control" ng-init="data.data_id = {{$data->data_id}}" ng-model="data.data_id" required>
                                             <option value="">Pilih Menu</option>
                                             <option ng-repeat="unit in menu" ng-selected="unit.id == {{$data->data_id}}" value="<% unit.id %>"><% unit.label %></option>
                                         </select>

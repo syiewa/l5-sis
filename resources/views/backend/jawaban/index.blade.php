@@ -52,7 +52,7 @@
                                     <td><% status['counter'] %></td>
                                     <td class="center">
                                         <div class="visible-md visible-lg hidden-sm hidden-xs">
-                                            <a data-original-title="Edit" data-placement="top" class="btn btn-xs btn-teal tooltips" href="{{url('admin/poll/'.$poll_id)}}/jawaban/<% status['id_jawaban_poll']%>/edit"><i class="fa fa-edit"></i></a>
+                                            <a data-original-title="Edit" data-placement="top" class="btn btn-xs btn-teal tooltips" href="{{url('admin/polling/'.$poll_id)}}/jawaban/<% status['id_jawaban_poll']%>/edit"><i class="fa fa-edit"></i></a>
                                             <a data-original-title="Remove" data-placement="top" class="btn btn-xs btn-bricky tooltips" href="#" ng-click="delete(status['id_jawaban_poll'])"><i class="fa fa-times fa fa-white"></i></a>
                                         </div>
                                         <div class="visible-xs visible-sm hidden-md hidden-lg">

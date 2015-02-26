@@ -4,8 +4,8 @@ angular.module('admin').controller('jawaban', function($scope, $http, $filter, $
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var galeri_id = $filter('_uriseg')(4);
-    $http.get(baseURL.url('api/galeri/') + galeri_id + '/jawaban').success(function(data) {
+    var polling_id = $filter('_uriseg')(4);
+    $http.get(baseURL.url('api/polling/') + polling_id + '/jawaban').success(function(data) {
         $scope.data = data;
         $scope.totalItems = $scope.data.length;
         $scope.currentPage = 1;
@@ -28,9 +28,9 @@ angular.module('admin').controller('jawaban', function($scope, $http, $filter, $
     })
     $scope.delete = function(id) {
         if (confirm("Anda yakin untuk menghapus data?") === true) {
-            $http.delete(baseURL.url('admin/galeri/') + galeri_id + '/jawaban/' + id).success(function(data) {
+            $http.delete(baseURL.url('admin/polling/') + polling_id + '/jawaban/' + id).success(function(data) {
                 if (data.success) {
-                    $http.get(baseURL.url('api/galeri/') + galeri_id + '/jawaban').success(function(data) {
+                    $http.get(baseURL.url('api/polling/') + polling_id + '/jawaban').success(function(data) {
                         $scope.data = data;
                         $scope.alerts.push({type: 'success', msg: 'Data Berhasil Dihapus'});
                         $timeout(function() {
@@ -50,14 +50,14 @@ angular.module('admin').controller('jawabancreate', function($scope, $http, $fil
     };
     var id = $filter('_uriseg')(4);
     $scope.data['id_soal_poll'] = id;
-    $scope.galeri = {};
-    $http.get(baseURL.url('api/galeridropdown')).success(function(data) {
-        $scope.galeri = data;
+    $scope.polling = {};
+    $http.get(baseURL.url('api/pollingdropdown')).success(function(data) {
+        $scope.polling = data;
     });
     $scope.submit = function() {
-        $http.post(baseURL.url('admin/galeri/') + id + '/jawaban', $scope.data).success(function(data) {
+        $http.post(baseURL.url('admin/polling/') + id + '/jawaban', $scope.data).success(function(data) {
             if (data.success) {
-                window.location.replace(baseURL.url('admin/galeri/') + $scope.data['id_soal_poll'] + '/jawaban');
+                window.location.replace(baseURL.url('admin/polling/') + $scope.data['id_soal_poll'] + '/jawaban');
             }
         }).error(function(e, status) {
             if (status === 422) {
@@ -78,20 +78,20 @@ angular.module('admin').controller('jawabanedit', function($scope, $http, $filte
     $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
     };
-    var galeri_id = $filter('_uriseg')(4);
+    var polling_id = $filter('_uriseg')(4);
     var id = $filter('_uriseg')(6);
     $http.get(baseURL.url('api/jawaban/') + id).success(function(data) {
         $scope.data = data;
     })
-    $scope.galeri = {};
-    $http.get(baseURL.url('api/galeridropdown')).success(function(data) {
-        $scope.galeri = data;
+    $scope.polling = {};
+    $http.get(baseURL.url('api/pollingdropdown')).success(function(data) {
+        $scope.polling = data;
     });
     $scope.submit = function(id) {
-        $http.put(baseURL.url('admin/galeri/') + galeri_id + '/jawaban/' + id, $scope.data).success(function(data) {
+        $http.put(baseURL.url('admin/polling/'+ polling_id + '/jawaban/' + id), $scope.data).success(function(data) {
             if (data.success) {
                 $timeout(function() {
-                    window.location.replace(baseURL.url('admin/galeri/') + $scope.data['id_soal_poll'] + '/jawaban');
+                    window.location.replace(baseURL.url('admin/polling/') + $scope.data['id_soal_poll'] + '/jawaban');
                 }, 3000);
             }
         }).error(function(e, status) {
