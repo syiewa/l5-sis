@@ -50,6 +50,16 @@ class Authenticate {
                         return redirect()->guest('/guru');
                     }
                 }
+            } else if ($this->auth->user()->status == 'admin') {
+                $route = $request->route()->uri();
+                $route = explode('/', $route);
+                if ($route[0] == 'guru') {
+                    if ($request->ajax()) {
+                        return response('Unauthorized.', 401);
+                    } else {
+                        return redirect()->guest('/admin');
+                    }
+                }
             }
         }
         return $next($request);
