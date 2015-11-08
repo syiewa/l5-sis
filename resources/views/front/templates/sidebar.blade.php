@@ -9,6 +9,7 @@
             NIP. 19641229198903 1 011 
         </p>
         <hr>
+        @if (!is_null($polling))
         <h4>Polling</h4>
         <p>{{$polling->soal_poll}} <br /></p>
         @if(Request::cookie('polling') != 'sudah')
@@ -33,6 +34,8 @@
         <p>
         <a class="btn btn-warning btn-squared" type="button" href="{{url('lihatpoll')}}"> Lihat Polling </a>
         </p>
+        @endif
+
         @endif
         <div class="tabs">
             <ul class="nav nav-tabs">
