@@ -26,7 +26,8 @@
                     <div class="content">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
                     </div>
-                    <a class="view-more" href="{{route('admin.siswa.index')}}">
+                    <!-- route admin.siswa.index belum terdefinisi, diubah sementara -->
+                    <a class="view-more" href="{{route('admin.kelas.index')}}">
                         View More <i class="clip-arrow-right-2"></i>
                     </a>
                 </div>
@@ -40,7 +41,7 @@
                     <div class="content">
                         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
                     </div>
-                    <a class="view-more" href="{{route('admin.kepegawaian.index')}}">
+                    <a class="view-more" href="{{route('admin.pegawai.index')}}">
                         View More <i class="clip-arrow-right-2"></i>
                     </a>
                 </div>
