@@ -13,7 +13,7 @@ class Jawaban extends Model {
     public $timestamps = false;
     
     public function polling(){
-        return $this->belongsTo('App\Models\polling','id_soal_poll');
+        return $this->belongsTo('App\Models\Polling','id_soal_poll');
     }
 
 }
